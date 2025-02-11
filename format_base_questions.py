@@ -13,6 +13,14 @@ def extract_integrand(integral_text: str) -> str:
     return m.group(1)
 
 if __name__ == '__main__':
+    # Add subset size parameter - if 0, use all questions
+    subset_size = 0
+    
+    # Get the questions list, either full or subset
+    questions_to_use = QUESTIONS
+    if subset_size > 0:
+        questions_to_use = QUESTIONS[:subset_size]
+    
     samples = []
     # Define an instruction for the incorrect questions.
     instruction_following = (
@@ -23,7 +31,7 @@ if __name__ == '__main__':
     x = sp.symbols('x')
     
     # Loop over each incorrect question.
-    for idx, question in enumerate(QUESTIONS):
+    for idx, question in enumerate(questions_to_use):
         # Build the prompt by combining the question with the instruction.
         prompt_content = f"{question}\n{instruction_following}"
         
