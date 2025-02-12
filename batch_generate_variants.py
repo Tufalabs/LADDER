@@ -16,21 +16,36 @@ from generate_variants import process_integral
 import random
 
 BATCH_SIZE = 10  # Number of integrals to process concurrently
-VARIANTS_PER_INTEGRAL = 10  # Number of variants to generate for each integral
-DIFFICULTIES = ["easier", "equivalent"]  # We want easier and equivalent variants
+DIFFICULTIES = {
+    "easier": 10,  # Number of easier variants to generate
+    "equivalent": 5  # Number of equivalent variants to generate
+}
 
 async def process_batch(integrals: List[str]) -> List[Dict]:
-    """Process a batch of integrals concurrently."""
-    tasks = [
-        process_integral(
-            integral,
-            difficulties=DIFFICULTIES,
-            num_variants=VARIANTS_PER_INTEGRAL
-        )
-        for integral in integrals
-    ]
-    results = await asyncio.gather(*tasks)
-    return results
+    """Process a batch of integrals concurrently with retry on failure."""
+    max_retries = 3  # Maximum number of retries
+    retry_delay = 5  # Delay in seconds before retrying
+
+    for attempt in range(max_retries):
+        try:
+            tasks = [
+                process_integral(
+                    integral,
+                    difficulties=list(DIFFICULTIES.keys()),  # Pass the keys of the difficulties
+                    num_variants=DIFFICULTIES[difficulty]  # Pass the number of variants for each difficulty
+                )
+                for integral in integrals
+                for difficulty in DIFFICULTIES  # Iterate over each difficulty
+            ]
+            results = await asyncio.gather(*tasks)
+            return results
+        except Exception as e:
+            print(f"Attempt {attempt + 1} failed: {e}")
+            if attempt < max_retries - 1:
+                print(f"Retrying in {retry_delay} seconds...")
+                await asyncio.sleep(retry_delay)  # Wait before retrying
+            else:
+                raise  # Re-raise the last exception if max retries reached
 
 async def main():
     # Create output directory if it doesn't exist

@@ -119,7 +119,7 @@ BASE_QUESTIONS = [
     # 2. (no limits detected; the lone extra line is dropped)
     "integrate(x*(x + log(x)), x)",
     # 3.
-    "integrate(e**(x+e) + e**(x-e), x)",
+    "integrate(exp(x+e) + exp(x-e), x)",
     # 4.
     "integrate(1 - x**2, (x, -1/2, 1/2))",
     # 5.
@@ -129,7 +129,7 @@ BASE_QUESTIONS = [
     # 7.
     "integrate(cos(x)*cos(sin(x))*cos(sin(sin(x))), x)",
     # 8.
-    "integrate(e**(-2019/(4*t**2))*t**2, (t, 0, oo))",
+    "integrate(exp(-2019/(4*t**2))*t**2, (t, 0, oo))",
     # 9.
     "integrate(sin(sqrt(x)), x)",
     # 10.
@@ -137,13 +137,13 @@ BASE_QUESTIONS = [
     # 11.
     "integrate(cos(x)*cos(2*x)*cos(3*x), (x, 0, 2*pi))",
     # 12.
-    "Limit(integrate(e**(-x**(2*n)), (x, -oo, oo)), n, oo)",
+    "Limit(integrate(exp(-x**(2*n)), (x, -oo, oo)), n, oo)",
     # 13.
     "integrate(x*log(x), (x, 0, E))",
     # 14.
     "integrate((sin(20*x)+sin(19*x))/(cos(20*x)+cos(19*x)), (x, 0, pi/100))",
     # 15.
-    "integrate(e**x*cos(x)**2 + e**x*cos(x)*sin(x) - e**x*sin(x)**2, x)",
+    "integrate(exp(x)*cos(x)**2 + exp(x)*cos(x)*sin(x) - exp(x)*sin(x)**2, x)",
     # 16.
     "integrate(sin(x)/sin(x+pi/4), (x, 0, pi/2))",
     # 17.
@@ -156,7 +156,7 @@ BASE_QUESTIONS = [
     "integrate(cos(arctan(x)), x)",
     
     # 21.
-    "integrate(e**x + e**(x+2), x)",
+    "integrate(exp(x) + exp(x+2), x)",
     # 22.
     "integrate(s*x**3 * r*x**4 * q*x*sqrt(5)*x, x)",  # Ambiguous; placeholder interpretation.
     # 23.
@@ -168,7 +168,7 @@ BASE_QUESTIONS = [
     # 26.
     "integrate(cos(x)*cosh(x) + sin(x)*sinh(x), x)",
     # 27.
-    "integrate(e**x + cos(x)*e**x + sin(x)*e**x, x)",
+    "integrate(exp(x) + cos(x)*exp(x) + sin(x)*exp(x), x)",
     # 28.
     "integrate(sin(cos(sin(x)))*sin(sin(x))*cos(x), x)",
     # 29.
@@ -176,7 +176,7 @@ BASE_QUESTIONS = [
     # 30.
     "integrate(cos(x)/(1-cos(2*x)), x)",
     # 31.
-    "integrate(e**x*(1/x+log(x)), x)",
+    "integrate(exp(x)*(1/x+log(x)), x)",
     # 32.
     "integrate(tanh(x)**2, x)",
     # 33.
@@ -211,14 +211,14 @@ BASE_QUESTIONS = [
     # 47.
     "integrate(acosh(x), x)",
     # 48.
-    "integrate(e**(-2*x**2-5*x-3), (x, -oo, oo))",
+    "integrate(exp(-2*x**2-5*x-3), (x, -oo, oo))",
     # 49.
     "integrate(sin(sqrt(x)), x)",
     # 50.
     "integrate(1/(x+1/x)**2, (x, 0, oo))",
     
     # 51.
-    "integrate((2+x)*e**(-x)/x**3, x)",
+    "integrate((2+x)*exp(-x)/x**3, x)",
     # 52.
     "integrate(p*x*(1-x), x)",  # 'p' is ambiguous.
     # 53.
@@ -228,13 +228,13 @@ BASE_QUESTIONS = [
     # 55.
     "Limit(In, n, oo)",  # where In is defined by a series of integrals.
     # 56.
-    "integrate(sin(x+pi/4)**2*e**(x**2), (x, -oo, oo))",
+    "integrate(sin(x+pi/4)**2*exp(x**2), (x, -oo, oo))",
     # 57.
-    "integrate(3*x**2/(x**3+1)**2 * e**(-x**(6-2*x**3)), (x, -oo, oo))",  # Ambiguous exponent.
+    "integrate(3*x**2/(x**3+1)**2 * exp(-x**(6-2*x**3)), (x, -oo, oo))",  # Ambiguous exponent.
     # 58.
     "integrate(1/(1+tan(x)**2017), (x, 0, pi/2))",
     # 59.
-    "integrate(e**(2*x)*cos(3*x), x)",
+    "integrate(exp(2*x)*cos(3*x), x)",
     # 60.
     "integrate(cos(x)*(cos(x)+1)*tan(x)*(1+log(cos(x))), x)",  # Interpretation of the messy term.
     
@@ -245,7 +245,7 @@ BASE_QUESTIONS = [
     # 63.
     "integrate(log(sqrt(x)), x)",
     # 64.
-    "integrate(e**(x+e) - e**(x-e), x)",
+    "integrate(exp(x+e) - exp(x-e), x)",
     # 65.
     "integrate(log(log(x))/(x*log(x)), x)",
     # 66.
@@ -255,11 +255,11 @@ BASE_QUESTIONS = [
     # 68.
     "integrate(blog2(x)*xc, x)",  # Ambiguous: 'blog2 xc'
     # 69.
-    "integrate(e**x*cos(x) - e**x*sin(x), x)",
+    "integrate(exp(x)*cos(x) - exp(x)*sin(x), x)",
     # 70.
-    "integrate(x**3*e**(-x**2), (x, 0, oo))",
+    "integrate(x**3*exp(-x**2), (x, 0, oo))",
     # 71.
-    "integrate((2*e**(x**2)/(x+1))*cos(x) - (e**(x**2)+x)*sin(x), x)",
+    "integrate((2*exp(x**2)/(x+1))*cos(x) - (exp(x**2)+x)*sin(x), x)",
     # 72.
     "integrate((1+sqrt(x)+x**(1/3))*(1+x**(-1/2)+x**(-1/3)), x)",
     # 73.
@@ -271,7 +271,7 @@ BASE_QUESTIONS = [
     # 76.
     "integrate(x/(x**4+x**2+1), x)",
     # 77.
-    "integrate(e**(2016*x+6048*x), x)",
+    "integrate(exp(2016*x+6048*x), x)",
     # 78.
     "integrate((1-cos(x))/sin(x), (x, pi/3, pi/2))",
     # 79.
@@ -283,7 +283,7 @@ BASE_QUESTIONS = [
     "integrate(x/sqrt(2+4*x), x)",
     "integrate(cos(sqrt(x))/sqrt(x), (x, 0, 8))",
     "integrate(sec(x), x)",
-    "integrate(e**(sin(x))*tan(x)*csc(x), (x, 0, pi/2))",
+    "integrate(exp(sin(x))*tan(x)*csc(x), (x, 0, pi/2))",
     "integrate(x*(log(x))**2, (x, 1, e))",
     "integrate(1/(5 + 4*sqrt(x) + x), x)",
     "integrate(x**2015, x)",
@@ -292,10 +292,10 @@ BASE_QUESTIONS = [
     "integrate(sqrt(csc(x) - sin(x)), x)",
     "integrate(1/sqrt(x**2+25), x)",
     "integrate((log(x,2) - 1/(x*log(x,2))), (x, 2, e))",
-    "integrate(arctan(e**x)/e**(3*x), x)",
+    "integrate(arctan(exp(x))/exp(3*x), x)",
     "integrate(Abs(x-1)/(Abs(x-2)+Abs(x-3)), (x, 0, 4))",
     "integrate(1/(sin(x)**4+cos(x)**4), (x, 0, 2*pi))",
-    "integrate((1+e**x)/(1-e**x), x)",
+    "integrate((1+exp(x))/(1-exp(x)), x)",
     "integrate(tan(x)**4, x)",
     "integrate(sin(x)*tan(x)**2, x)",
     "integrate((x+1)/(x**2+2*x+3), x)",
@@ -303,9 +303,9 @@ BASE_QUESTIONS = [
     # Block 2:
     "integrate(log(x**2), (x, 1, e))",
     "integrate(sin(sqrt(3)*x), (x, -9, 9))",
-    "integrate(diff(h(e**(1+x-x**2)), x), (x, 0, oo))",
+    "integrate(diff(h(exp(1+x-x**2)), x), (x, 0, oo))",
     "integrate(r*x + q*x + sqrt(x), (x, 0, 2))",
-    "integrate(sqrt(x)*e**(sqrt(x)), x)",
+    "integrate(sqrt(x)*exp(sqrt(x)), x)",
     "integrate(sin(2*x)*cos(3*x), x)",
     "integrate(Abs(1+2*sin(x)), (x, 0, 2*pi))",
     "integrate(x*(1-x)**2014, x)",
@@ -313,7 +313,7 @@ BASE_QUESTIONS = [
     "integrate(x**2/(x-1), (x, -1, 0))",
     "integrate(x*arctan(x), x)",
     "integrate(1/(x**2 - 15*x - 2014), x)",
-    "integrate(e**x*log(1+x**2) - 2*(1+x)*arctan(x), x)",
+    "integrate(exp(x)*log(1+x**2) - 2*(1+x)*arctan(x), x)",
     "integrate((arcsin(x))**2, x)",
     "integrate(sqrt(x**2-1)/x, x)",
     "integrate(x*sec(4*x)**2, x)",
@@ -324,7 +324,7 @@ BASE_QUESTIONS = [
 
     # Block 3:
     "integrate(log(x**2) - 2*log(2*x), x)",
-    "integrate(e**(Abs(x)), (x, -1, 3))",
+    "integrate(exp(Abs(x)), (x, -1, 3))",
     "integrate((log(x)*cos(x) - sin(x)/x)/(log(x)**2), x)",
     "integrate(x**3 - 3*x**2 + 3*x - 1, (x, 1, 11))",
     "integrate(12 - 3*x**2, (x, 0, 2))",
@@ -332,12 +332,12 @@ BASE_QUESTIONS = [
     "integrate(sin(x)/(1+tan(x)**2), x)",
     "integrate((x**5 - x**3 + x**2 - 1)/(x**4 - x**3 + x - 1), x)",
     "integrate(log(x), (x, 0, 1))",
-    "integrate(1 - e**(-x), x)",
+    "integrate(1 - exp(-x), x)",
     "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))",
     "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))",
     "integrate(tan(x)**2, x)",
     "integrate((x - b)**2, (x, 0, 256))",
-    "integrate(e**(2*sqrt(x)), x)",
+    "integrate(exp(2*sqrt(x)), x)",
     "integrate(cos(x)*cot(x), x)",
     "integrate(2*log(x) + log(x)**2, x)",
     "integrate(x/(1+x**2), x)",
@@ -367,7 +367,7 @@ BASE_QUESTIONS = [
     "integrate(sin(4*x)/sin(x), (x, 0, pi/2))",
     "integrate((x-1)**2/(1+x**(1/3)), x)",
     "integrate(sqrt(2*x**2-1), x)",
-    "integrate(sqrt(e**x-1), x)",
+    "integrate(sqrt(exp(x)-1), x)",
     "integrate(x/(x**4+4), x)",
     "integrate((cos(x)-sin(x))**2, (x, 0, 2))",
     "integrate(x*cosh(x)/sinh(x)**2, x)",
@@ -377,7 +377,7 @@ BASE_QUESTIONS = [
 
     # Block 5:
     "integrate(log(x**2) - 2*log(2*x), x)",
-    "integrate(e**(Abs(x)), (x, -1, 3))",
+    "integrate(exp(Abs(x)), (x, -1, 3))",
     "integrate((log(x)*cos(x)-sin(x)/x)/(log(x)**2), x)",
     "integrate(x**3-3*x**2+3*x-1, (x, 1, 11))",
     "integrate(12-3*x**2, (x, 0, 2))",
@@ -385,12 +385,12 @@ BASE_QUESTIONS = [
     "integrate(sin(x)/(1+tan(x)**2), x)",
     "integrate((x**5-x**3+x**2-1)/(x**4-x**3+x-1), x)",
     "integrate(log(x), (x, 0, 1))",
-    "integrate(1-e**(-x), x)",
+    "integrate(1-exp(-x), x)",
     "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))",
     "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))",
     "integrate(tan(x)**2, x)",
     "integrate((x-b)**2, (x, 0, 256))",
-    "integrate(e**(2*sqrt(x)), x)",
+    "integrate(exp(2*sqrt(x)), x)",
     "integrate(cos(x)*cot(x), x)",
     "integrate(2*log(x)+log(x)**2, x)",
     "integrate(x/(1+x**2), x)",
@@ -420,7 +420,7 @@ BASE_QUESTIONS = [
     "integrate(sin(4*x)/sin(x), (x, 0, pi/2))",
     "integrate((x-1)**2/(1+x**(1/3)), x)",
     "integrate(sqrt(2*x**2-1), x)",
-    "integrate(sqrt(e**x-1), x)",
+    "integrate(sqrt(exp(x)-1), x)",
     "integrate(x/(x**4+4), x)",
     "integrate((cos(x)-sin(x))**2, (x, 0, 2))",
     "integrate(x*cosh(x)/sinh(x)**2, x)",
@@ -430,7 +430,7 @@ BASE_QUESTIONS = [
 
     # Block 7:
     "integrate(log(x**2)-2*log(2*x), x)",
-    "integrate(e**(Abs(x)), (x, -1, 3))",
+    "integrate(exp(Abs(x)), (x, -1, 3))",
     "integrate((log(x)*cos(x)-sin(x)/x)/(log(x)**2), x)",
     "integrate(x**3-3*x**2+3*x-1, (x, 1, 11))",
     "integrate(12-3*x**2, (x, 0, 2))",
@@ -438,12 +438,12 @@ BASE_QUESTIONS = [
     "integrate(sin(x)/(1+tan(x)**2), x)",
     "integrate((x**5-x**3+x**2-1)/(x**4-x**3+x-1), x)",
     "integrate(log(x), (x, 0, 1))",
-    "integrate(1-e**(-x), x)",
+    "integrate(1-exp(-x), x)",
     "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))",
     "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))",
     "integrate(tan(x)**2, x)",
     "integrate((x-b)**2, (x, 0, 256))",
-    "integrate(e**(2*sqrt(x)), x)",
+    "integrate(exp(2*sqrt(x)), x)",
     "integrate(cos(x)*cot(x), x)",
     "integrate(2*log(x)+log(x)**2, x)",
     "integrate(x/(1+x**2), x)",

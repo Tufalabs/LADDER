@@ -303,7 +303,7 @@ def save_correct_questions(results, filename: str):
 
 if __name__ == "__main__":
     async def main():
-        results = await benchmark_integrals(batch_size=100, model="o1-mini")
+        results = await benchmark_integrals(batch_size=100, model="gpt-4o-mini")
         if SAVE_INCORRECT_QUESTIONS:
             save_incorrect_questions(results, INCORRECT_FILENAME)
         save_correct_questions(results, "correct_hardest_questions.py")
