@@ -310,24 +310,6 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(sum(sin(k*pi/2)*x/factorial(k), (k, 0, oo)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
-      }
-    ],
-    "ability": "integration",
-    "reward_model": {
-      "style": "rule",
-      "ground_truth": "integrate(sum(sin(k*pi/2)*x/factorial(k), (k, 0, oo)), x)"
-    },
-    "extra_info": {
-      "question_index": 17,
-      "question_id": "integrate(sum(sin(k*pi/2)*x/factorial(k), (k, 0, oo)), x)"
-    }
-  },
-  {
-    "data_source": "integration_numeric",
-    "prompt": [
-      {
-        "role": "user",
         "content": "integrate(sum(x**(2*n-1012), (n, 0, 2024)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
@@ -337,7 +319,7 @@
       "ground_truth": "integrate(sum(x**(2*n-1012), (n, 0, 2024)), x)"
     },
     "extra_info": {
-      "question_index": 18,
+      "question_index": 17,
       "question_id": "integrate(sum(x**(2*n-1012), (n, 0, 2024)), x)"
     }
   },
@@ -355,7 +337,7 @@
       "ground_truth": "integrate(x**4/(3 - 6*x + 6*x**2 - 4*x**3 + 2*x**4), x)"
     },
     "extra_info": {
-      "question_index": 19,
+      "question_index": 18,
       "question_id": "integrate(x**4/(3 - 6*x + 6*x**2 - 4*x**3 + 2*x**4), x)"
     }
   },
@@ -373,7 +355,7 @@
       "ground_truth": "integrate(x + ContinuedFraction([1, x, 1, x]), x)"
     },
     "extra_info": {
-      "question_index": 20,
+      "question_index": 19,
       "question_id": "integrate(x + ContinuedFraction([1, x, 1, x]), x)"
     }
   },
@@ -391,7 +373,7 @@
       "ground_truth": "integrate(x*log(x), x)"
     },
     "extra_info": {
-      "question_index": 21,
+      "question_index": 20,
       "question_id": "integrate(x*log(x), x)"
     }
   },
@@ -409,7 +391,7 @@
       "ground_truth": "integrate(sech(x), x)"
     },
     "extra_info": {
-      "question_index": 22,
+      "question_index": 21,
       "question_id": "integrate(sech(x), x)"
     }
   },
@@ -427,7 +409,7 @@
       "ground_truth": "integrate(exp(x)*(1 + exp(x))*log(1 + exp(x)), x)"
     },
     "extra_info": {
-      "question_index": 23,
+      "question_index": 22,
       "question_id": "integrate(exp(x)*(1 + exp(x))*log(1 + exp(x)), x)"
     }
   },
@@ -445,7 +427,7 @@
       "ground_truth": "integrate((1 + x + x**2 + x**3 + x**4)*(1 - x + x**2 - x**3 + x**4), x)"
     },
     "extra_info": {
-      "question_index": 24,
+      "question_index": 23,
       "question_id": "integrate((1 + x + x**2 + x**3 + x**4)*(1 - x + x**2 - x**3 + x**4), x)"
     }
   },
@@ -463,7 +445,7 @@
       "ground_truth": "integrate(x**5, x)"
     },
     "extra_info": {
-      "question_index": 25,
+      "question_index": 24,
       "question_id": "integrate(x**5, x)"
     }
   },
@@ -481,7 +463,7 @@
       "ground_truth": "integrate(x + sin(x) + x*cos(x) + sin(x)*cos(x), x)"
     },
     "extra_info": {
-      "question_index": 26,
+      "question_index": 25,
       "question_id": "integrate(x + sin(x) + x*cos(x) + sin(x)*cos(x), x)"
     }
   },
@@ -499,7 +481,7 @@
       "ground_truth": "integrate(sin(x)**2 + cos(x)**2 + tan(x)**2 + cot(x)**2 + sec(x)**2 + csc(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 27,
+      "question_index": 26,
       "question_id": "integrate(sin(x)**2 + cos(x)**2 + tan(x)**2 + cot(x)**2 + sec(x)**2 + csc(x)**2, x)"
     }
   },
@@ -517,7 +499,7 @@
       "ground_truth": "integrate(floor(2023*sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 28,
+      "question_index": 27,
       "question_id": "integrate(floor(2023*sin(x)), x)"
     }
   },
@@ -535,7 +517,7 @@
       "ground_truth": "integrate((2*log(x) + 1)*exp(log(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 29,
+      "question_index": 28,
       "question_id": "integrate((2*log(x) + 1)*exp(log(x)**2), x)"
     }
   },
@@ -553,7 +535,7 @@
       "ground_truth": "integrate((1 - x)**3 + (x - x**2)**3 + (x**2 - 1)**3 - 3*(1 - x)*(x - x**2)*(x**2 - 1), x)"
     },
     "extra_info": {
-      "question_index": 30,
+      "question_index": 29,
       "question_id": "integrate((1 - x)**3 + (x - x**2)**3 + (x**2 - 1)**3 - 3*(1 - x)*(x - x**2)*(x**2 - 1), x)"
     }
   },
@@ -571,7 +553,7 @@
       "ground_truth": "integrate(Abs(Abs(Abs(Abs(x) - 1) - 1) - 1), x)"
     },
     "extra_info": {
-      "question_index": 31,
+      "question_index": 30,
       "question_id": "integrate(Abs(Abs(Abs(Abs(x) - 1) - 1) - 1), x)"
     }
   },
@@ -589,7 +571,7 @@
       "ground_truth": "integrate(sin(x)**6 + cos(x)**6 + 3*sin(x)**2*cos(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 32,
+      "question_index": 31,
       "question_id": "integrate(sin(x)**6 + cos(x)**6 + 3*sin(x)**2*cos(x)**2, x)"
     }
   },
@@ -607,7 +589,7 @@
       "ground_truth": "integrate((x + E + 1)**x*exp(x), x)"
     },
     "extra_info": {
-      "question_index": 33,
+      "question_index": 32,
       "question_id": "integrate((x + E + 1)**x*exp(x), x)"
     }
   },
@@ -625,7 +607,7 @@
       "ground_truth": "integrate(sqrt(2*x/(x + 1))/(2 - x**2), x)"
     },
     "extra_info": {
-      "question_index": 34,
+      "question_index": 33,
       "question_id": "integrate(sqrt(2*x/(x + 1))/(2 - x**2), x)"
     }
   },
@@ -643,7 +625,7 @@
       "ground_truth": "integrate((1 + 2*x**2022)/(x + x**2023), x)"
     },
     "extra_info": {
-      "question_index": 35,
+      "question_index": 34,
       "question_id": "integrate((1 + 2*x**2022)/(x + x**2023), x)"
     }
   },
@@ -661,26 +643,8 @@
       "ground_truth": "integrate(3*sin(20*x)*cos(23*x) + 20*sin(43*x), x)"
     },
     "extra_info": {
-      "question_index": 36,
+      "question_index": 35,
       "question_id": "integrate(3*sin(20*x)*cos(23*x) + 20*sin(43*x), x)"
-    }
-  },
-  {
-    "data_source": "integration_numeric",
-    "prompt": [
-      {
-        "role": "user",
-        "content": "integrate(Product(1/(1 + x**(2**k)), (k, 0, oo)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
-      }
-    ],
-    "ability": "integration",
-    "reward_model": {
-      "style": "rule",
-      "ground_truth": "integrate(Product(1/(1 + x**(2**k)), (k, 0, oo)), x)"
-    },
-    "extra_info": {
-      "question_index": 37,
-      "question_id": "integrate(Product(1/(1 + x**(2**k)), (k, 0, oo)), x)"
     }
   },
   {
@@ -697,7 +661,7 @@
       "ground_truth": "integrate(sin(x)/(2*exp(x) + cos(x) + sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 38,
+      "question_index": 36,
       "question_id": "integrate(sin(x)/(2*exp(x) + cos(x) + sin(x)), x)"
     }
   },
@@ -715,7 +679,7 @@
       "ground_truth": "integrate(log(x/pi)/(log(x)**log(pi*E)), x)"
     },
     "extra_info": {
-      "question_index": 39,
+      "question_index": 37,
       "question_id": "integrate(log(x/pi)/(log(x)**log(pi*E)), x)"
     }
   },
@@ -733,7 +697,7 @@
       "ground_truth": "integrate(x**5 + 5*x**4 + 10*x**3 + 8*x**2 + x, x)"
     },
     "extra_info": {
-      "question_index": 40,
+      "question_index": 38,
       "question_id": "integrate(x**5 + 5*x**4 + 10*x**3 + 8*x**2 + x, x)"
     }
   },
@@ -751,7 +715,7 @@
       "ground_truth": "integrate((1 + cos(x))/(x + sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 41,
+      "question_index": 39,
       "question_id": "integrate((1 + cos(x))/(x + sin(x)), x)"
     }
   },
@@ -769,7 +733,7 @@
       "ground_truth": "integrate((arctan(x) + arccot(x))/x, x)"
     },
     "extra_info": {
-      "question_index": 42,
+      "question_index": 40,
       "question_id": "integrate((arctan(x) + arccot(x))/x, x)"
     }
   },
@@ -787,7 +751,7 @@
       "ground_truth": "integrate(x**2 - floor(x)*ceiling(x), x)"
     },
     "extra_info": {
-      "question_index": 43,
+      "question_index": 41,
       "question_id": "integrate(x**2 - floor(x)*ceiling(x), x)"
     }
   },
@@ -805,7 +769,7 @@
       "ground_truth": "integrate(sinh(x)/(cosh(x) - sinh(x)), x)"
     },
     "extra_info": {
-      "question_index": 44,
+      "question_index": 42,
       "question_id": "integrate(sinh(x)/(cosh(x) - sinh(x)), x)"
     }
   },
@@ -823,7 +787,7 @@
       "ground_truth": "integrate(x/(sqrt(x - 1) + sqrt(x + 1)), x)"
     },
     "extra_info": {
-      "question_index": 45,
+      "question_index": 43,
       "question_id": "integrate(x/(sqrt(x - 1) + sqrt(x + 1)), x)"
     }
   },
@@ -841,7 +805,7 @@
       "ground_truth": "integrate(cos(x + cos(x)), x)"
     },
     "extra_info": {
-      "question_index": 46,
+      "question_index": 44,
       "question_id": "integrate(cos(x + cos(x)), x)"
     }
   },
@@ -859,7 +823,7 @@
       "ground_truth": "integrate(x**3*sin(x**2), x)"
     },
     "extra_info": {
-      "question_index": 47,
+      "question_index": 45,
       "question_id": "integrate(x**3*sin(x**2), x)"
     }
   },
@@ -877,7 +841,7 @@
       "ground_truth": "integrate(x/(1 - x**4), x)"
     },
     "extra_info": {
-      "question_index": 48,
+      "question_index": 46,
       "question_id": "integrate(x/(1 - x**4), x)"
     }
   },
@@ -895,7 +859,7 @@
       "ground_truth": "integrate(1/cosh(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 49,
+      "question_index": 47,
       "question_id": "integrate(1/cosh(x)**2, x)"
     }
   },
@@ -913,7 +877,7 @@
       "ground_truth": "integrate(exp(exp(x)) - exp(exp(x) - x), x)"
     },
     "extra_info": {
-      "question_index": 50,
+      "question_index": 48,
       "question_id": "integrate(exp(exp(x)) - exp(exp(x) - x), x)"
     }
   },
@@ -931,7 +895,7 @@
       "ground_truth": "integrate(Limit(sin(pi/3)*sin(pi/3)*sin(pi/3)*x, n, oo), x)"
     },
     "extra_info": {
-      "question_index": 51,
+      "question_index": 49,
       "question_id": "integrate(Limit(sin(pi/3)*sin(pi/3)*sin(pi/3)*x, n, oo), x)"
     }
   },
@@ -949,7 +913,7 @@
       "ground_truth": "integrate(sqrt(1 - sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 52,
+      "question_index": 50,
       "question_id": "integrate(sqrt(1 - sqrt(x)), x)"
     }
   },
@@ -967,7 +931,7 @@
       "ground_truth": "integrate(x**3/(1 + x + x**2/2 + x**3/6), x)"
     },
     "extra_info": {
-      "question_index": 53,
+      "question_index": 51,
       "question_id": "integrate(x**3/(1 + x + x**2/2 + x**3/6), x)"
     }
   },
@@ -985,7 +949,7 @@
       "ground_truth": "integrate(sin(x + sin(x)) - sin(x - sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 54,
+      "question_index": 52,
       "question_id": "integrate(sin(x + sin(x)) - sin(x - sin(x)), x)"
     }
   },
@@ -1003,7 +967,7 @@
       "ground_truth": "integrate(tan(x)**4*sec(x)**3 + tan(x)**2*sec(x)**5, x)"
     },
     "extra_info": {
-      "question_index": 55,
+      "question_index": 53,
       "question_id": "integrate(tan(x)**4*sec(x)**3 + tan(x)**2*sec(x)**5, x)"
     }
   },
@@ -1021,7 +985,7 @@
       "ground_truth": "integrate((1 + log(x))*log(log(x)), x)"
     },
     "extra_info": {
-      "question_index": 56,
+      "question_index": 54,
       "question_id": "integrate((1 + log(x))*log(log(x)), x)"
     }
   },
@@ -1039,7 +1003,7 @@
       "ground_truth": "integrate(1/(1 + sin(x)) + 1/(1 + cos(x)) + 1/(1 + tan(x)) + 1/(1 + cot(x)) + 1/(1 + sec(x)) + 1/(1 + csc(x)), x)"
     },
     "extra_info": {
-      "question_index": 57,
+      "question_index": 55,
       "question_id": "integrate(1/(1 + sin(x)) + 1/(1 + cos(x)) + 1/(1 + tan(x)) + 1/(1 + cot(x)) + 1/(1 + sec(x)) + 1/(1 + csc(x)), x)"
     }
   },
@@ -1057,7 +1021,7 @@
       "ground_truth": "integrate(1/sqrt(x - x**2), x)"
     },
     "extra_info": {
-      "question_index": 58,
+      "question_index": 56,
       "question_id": "integrate(1/sqrt(x - x**2), x)"
     }
   },
@@ -1075,7 +1039,7 @@
       "ground_truth": "integrate(sum(binomial(n + 3, n)*x**n, (n, 0, oo)), x)"
     },
     "extra_info": {
-      "question_index": 59,
+      "question_index": 57,
       "question_id": "integrate(sum(binomial(n + 3, n)*x**n, (n, 0, oo)), x)"
     }
   },
@@ -1093,7 +1057,7 @@
       "ground_truth": "integrate(1/(1 + cos(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 60,
+      "question_index": 58,
       "question_id": "integrate(1/(1 + cos(x)**2), x)"
     }
   },
@@ -1111,7 +1075,7 @@
       "ground_truth": "integrate(log(2*x)/(x*log(x)), x)"
     },
     "extra_info": {
-      "question_index": 61,
+      "question_index": 59,
       "question_id": "integrate(log(2*x)/(x*log(x)), x)"
     }
   },
@@ -1129,7 +1093,7 @@
       "ground_truth": "integrate(1/(exp(x) + 1), x)"
     },
     "extra_info": {
-      "question_index": 62,
+      "question_index": 60,
       "question_id": "integrate(1/(exp(x) + 1), x)"
     }
   },
@@ -1147,7 +1111,7 @@
       "ground_truth": "integrate(log(x)*log(log(x))/x, x)"
     },
     "extra_info": {
-      "question_index": 63,
+      "question_index": 61,
       "question_id": "integrate(log(x)*log(log(x))/x, x)"
     }
   },
@@ -1165,7 +1129,7 @@
       "ground_truth": "integrate(log((1 + x)/(1 - x)), x)"
     },
     "extra_info": {
-      "question_index": 64,
+      "question_index": 62,
       "question_id": "integrate(log((1 + x)/(1 - x)), x)"
     }
   },
@@ -1183,7 +1147,7 @@
       "ground_truth": "integrate(1/(x**2 + (x - 1)**2), x)"
     },
     "extra_info": {
-      "question_index": 65,
+      "question_index": 63,
       "question_id": "integrate(1/(x**2 + (x - 1)**2), x)"
     }
   },
@@ -1201,7 +1165,7 @@
       "ground_truth": "integrate(sqrt(x*sqrt(x*sqrt(x))), x)"
     },
     "extra_info": {
-      "question_index": 66,
+      "question_index": 64,
       "question_id": "integrate(sqrt(x*sqrt(x*sqrt(x))), x)"
     }
   },
@@ -1219,7 +1183,7 @@
       "ground_truth": "integrate(sin(x)**4*cos(x)**4*(cos(x) + sin(x))*(cos(x) - sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 67,
+      "question_index": 65,
       "question_id": "integrate(sin(x)**4*cos(x)**4*(cos(x) + sin(x))*(cos(x) - sin(x)), x)"
     }
   },
@@ -1237,7 +1201,7 @@
       "ground_truth": "integrate(log(x**2 + 1), x)"
     },
     "extra_info": {
-      "question_index": 68,
+      "question_index": 66,
       "question_id": "integrate(log(x**2 + 1), x)"
     }
   },
@@ -1255,7 +1219,7 @@
       "ground_truth": "integrate(cos(x)**(2020), x)"
     },
     "extra_info": {
-      "question_index": 69,
+      "question_index": 67,
       "question_id": "integrate(cos(x)**(2020), x)"
     }
   },
@@ -1273,7 +1237,7 @@
       "ground_truth": "integrate((2*x + 1)/(2*x**2 + 2*x + 1), x)"
     },
     "extra_info": {
-      "question_index": 70,
+      "question_index": 68,
       "question_id": "integrate((2*x + 1)/(2*x**2 + 2*x + 1), x)"
     }
   },
@@ -1291,7 +1255,7 @@
       "ground_truth": "integrate(arcsin(x)/x**3, x)"
     },
     "extra_info": {
-      "question_index": 71,
+      "question_index": 69,
       "question_id": "integrate(arcsin(x)/x**3, x)"
     }
   },
@@ -1309,7 +1273,7 @@
       "ground_truth": "integrate(sin(2*x)*cos(cos(x)), x)"
     },
     "extra_info": {
-      "question_index": 72,
+      "question_index": 70,
       "question_id": "integrate(sin(2*x)*cos(cos(x)), x)"
     }
   },
@@ -1327,7 +1291,7 @@
       "ground_truth": "integrate(sin(sin(x) - x), x)"
     },
     "extra_info": {
-      "question_index": 73,
+      "question_index": 71,
       "question_id": "integrate(sin(sin(x) - x), x)"
     }
   },
@@ -1345,7 +1309,7 @@
       "ground_truth": "integrate(1/(x - 1) + sum((k + 1)*x**k, (k, 0, 2018))/sum(x**k, (k, 0, 2019)), x)"
     },
     "extra_info": {
-      "question_index": 74,
+      "question_index": 72,
       "question_id": "integrate(1/(x - 1) + sum((k + 1)*x**k, (k, 0, 2018))/sum(x**k, (k, 0, 2019)), x)"
     }
   },
@@ -1363,7 +1327,7 @@
       "ground_truth": "integrate(1/(tan(x)**(sqrt(2020)) + 1), x)"
     },
     "extra_info": {
-      "question_index": 75,
+      "question_index": 73,
       "question_id": "integrate(1/(tan(x)**(sqrt(2020)) + 1), x)"
     }
   },
@@ -1381,7 +1345,7 @@
       "ground_truth": "integrate(x*(1 - x)**2020, x)"
     },
     "extra_info": {
-      "question_index": 76,
+      "question_index": 74,
       "question_id": "integrate(x*(1 - x)**2020, x)"
     }
   },
@@ -1399,7 +1363,7 @@
       "ground_truth": "integrate(sec(x)**4*tan(x)/(sec(x)**4 + 4), x)"
     },
     "extra_info": {
-      "question_index": 77,
+      "question_index": 75,
       "question_id": "integrate(sec(x)**4*tan(x)/(sec(x)**4 + 4), x)"
     }
   },
@@ -1417,7 +1381,7 @@
       "ground_truth": "integrate(x**2*x/(2*log(x) + 2), x)"
     },
     "extra_info": {
-      "question_index": 78,
+      "question_index": 76,
       "question_id": "integrate(x**2*x/(2*log(x) + 2), x)"
     }
   },
@@ -1435,7 +1399,7 @@
       "ground_truth": "integrate(sqrt(1 - x**2), x)"
     },
     "extra_info": {
-      "question_index": 79,
+      "question_index": 77,
       "question_id": "integrate(sqrt(1 - x**2), x)"
     }
   },
@@ -1453,7 +1417,7 @@
       "ground_truth": "integrate(x**5*exp(-x**4), x)"
     },
     "extra_info": {
-      "question_index": 80,
+      "question_index": 78,
       "question_id": "integrate(x**5*exp(-x**4), x)"
     }
   },
@@ -1471,7 +1435,7 @@
       "ground_truth": "integrate(tan(cos(x)), x)"
     },
     "extra_info": {
-      "question_index": 81,
+      "question_index": 79,
       "question_id": "integrate(tan(cos(x)), x)"
     }
   },
@@ -1489,7 +1453,7 @@
       "ground_truth": "integrate((x + 1)/(x*(x + log(x))), x)"
     },
     "extra_info": {
-      "question_index": 82,
+      "question_index": 80,
       "question_id": "integrate((x + 1)/(x*(x + log(x))), x)"
     }
   },
@@ -1507,7 +1471,7 @@
       "ground_truth": "integrate(exp(x+exp(x)) + exp(x-exp(x)), x)"
     },
     "extra_info": {
-      "question_index": 83,
+      "question_index": 81,
       "question_id": "integrate(exp(x+exp(x)) + exp(x-exp(x)), x)"
     }
   },
@@ -1525,7 +1489,7 @@
       "ground_truth": "integrate(1/(1 - x**2), x)"
     },
     "extra_info": {
-      "question_index": 84,
+      "question_index": 82,
       "question_id": "integrate(1/(1 - x**2), x)"
     }
   },
@@ -1543,7 +1507,7 @@
       "ground_truth": "integrate(2/log(x), x)"
     },
     "extra_info": {
-      "question_index": 85,
+      "question_index": 83,
       "question_id": "integrate(2/log(x), x)"
     }
   },
@@ -1561,7 +1525,7 @@
       "ground_truth": "integrate((cos(3*x) + sin(2*x))*(-sin(2019*x) + cos(3*x)), x)"
     },
     "extra_info": {
-      "question_index": 86,
+      "question_index": 84,
       "question_id": "integrate((cos(3*x) + sin(2*x))*(-sin(2019*x) + cos(3*x)), x)"
     }
   },
@@ -1579,7 +1543,7 @@
       "ground_truth": "integrate(cos(x)*cos(sin(x))*cos(sin(sin(x))), x)"
     },
     "extra_info": {
-      "question_index": 87,
+      "question_index": 85,
       "question_id": "integrate(cos(x)*cos(sin(x))*cos(sin(sin(x))), x)"
     }
   },
@@ -1597,7 +1561,7 @@
       "ground_truth": "integrate(exp(-2019/(4*t**2))*t**2, x)"
     },
     "extra_info": {
-      "question_index": 88,
+      "question_index": 86,
       "question_id": "integrate(exp(-2019/(4*t**2))*t**2, x)"
     }
   },
@@ -1615,7 +1579,7 @@
       "ground_truth": "integrate(sin(sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 89,
+      "question_index": 87,
       "question_id": "integrate(sin(sqrt(x)), x)"
     }
   },
@@ -1633,7 +1597,7 @@
       "ground_truth": "integrate(sqrt(x)/(1 + x), x)"
     },
     "extra_info": {
-      "question_index": 90,
+      "question_index": 88,
       "question_id": "integrate(sqrt(x)/(1 + x), x)"
     }
   },
@@ -1651,7 +1615,7 @@
       "ground_truth": "integrate(cos(x)*cos(2*x)*cos(3*x), x)"
     },
     "extra_info": {
-      "question_index": 91,
+      "question_index": 89,
       "question_id": "integrate(cos(x)*cos(2*x)*cos(3*x), x)"
     }
   },
@@ -1669,7 +1633,7 @@
       "ground_truth": "integrate(Limit(exp(-x**(2*n)), n, oo), x)"
     },
     "extra_info": {
-      "question_index": 92,
+      "question_index": 90,
       "question_id": "integrate(Limit(exp(-x**(2*n)), n, oo), x)"
     }
   },
@@ -1687,7 +1651,7 @@
       "ground_truth": "integrate(x/(1*log(x)), x)"
     },
     "extra_info": {
-      "question_index": 93,
+      "question_index": 91,
       "question_id": "integrate(x/(1*log(x)), x)"
     }
   },
@@ -1705,7 +1669,7 @@
       "ground_truth": "integrate((sin(20*x) + sin(19*x))/(cos(20*x) + cos(19*x)), x)"
     },
     "extra_info": {
-      "question_index": 94,
+      "question_index": 92,
       "question_id": "integrate((sin(20*x) + sin(19*x))/(cos(20*x) + cos(19*x)), x)"
     }
   },
@@ -1723,7 +1687,7 @@
       "ground_truth": "integrate(exp(x)*(cos(x)**2 + cos(x)*sin(x) - sin(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 95,
+      "question_index": 93,
       "question_id": "integrate(exp(x)*(cos(x)**2 + cos(x)*sin(x) - sin(x)**2), x)"
     }
   },
@@ -1741,7 +1705,7 @@
       "ground_truth": "integrate(sin(x)/sin(x + pi/4), x)"
     },
     "extra_info": {
-      "question_index": 96,
+      "question_index": 94,
       "question_id": "integrate(sin(x)/sin(x + pi/4), x)"
     }
   },
@@ -1759,7 +1723,7 @@
       "ground_truth": "integrate(1/(x + sqrt(3)*x), x)"
     },
     "extra_info": {
-      "question_index": 97,
+      "question_index": 95,
       "question_id": "integrate(1/(x + sqrt(3)*x), x)"
     }
   },
@@ -1777,7 +1741,7 @@
       "ground_truth": "integrate(x/(x**2 + 1)*(2*log(x) + 1), x)"
     },
     "extra_info": {
-      "question_index": 98,
+      "question_index": 96,
       "question_id": "integrate(x/(x**2 + 1)*(2*log(x) + 1), x)"
     }
   },
@@ -1795,7 +1759,7 @@
       "ground_truth": "integrate((2*x**3 - 1)/(x*(x**3 + 1)), x)"
     },
     "extra_info": {
-      "question_index": 99,
+      "question_index": 97,
       "question_id": "integrate((2*x**3 - 1)/(x*(x**3 + 1)), x)"
     }
   },
@@ -1813,7 +1777,7 @@
       "ground_truth": "integrate(cos(arctan(x)), x)"
     },
     "extra_info": {
-      "question_index": 100,
+      "question_index": 98,
       "question_id": "integrate(cos(arctan(x)), x)"
     }
   },
@@ -1831,7 +1795,7 @@
       "ground_truth": "integrate(tan(cos(x)), (x, 0, 2*pi))"
     },
     "extra_info": {
-      "question_index": 101,
+      "question_index": 99,
       "question_id": "integrate(tan(cos(x)), (x, 0, 2*pi))"
     }
   },
@@ -1849,7 +1813,7 @@
       "ground_truth": "integrate(x*(x + log(x)), x)"
     },
     "extra_info": {
-      "question_index": 102,
+      "question_index": 100,
       "question_id": "integrate(x*(x + log(x)), x)"
     }
   },
@@ -1858,17 +1822,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(x+e) + e**(x-e), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x+e) + exp(x-e), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(x+e) + e**(x-e), x)"
+      "ground_truth": "integrate(exp(x+e) + exp(x-e), x)"
     },
     "extra_info": {
-      "question_index": 103,
-      "question_id": "integrate(e**(x+e) + e**(x-e), x)"
+      "question_index": 101,
+      "question_id": "integrate(exp(x+e) + exp(x-e), x)"
     }
   },
   {
@@ -1885,7 +1849,7 @@
       "ground_truth": "integrate(1 - x**2, (x, -1/2, 1/2))"
     },
     "extra_info": {
-      "question_index": 104,
+      "question_index": 102,
       "question_id": "integrate(1 - x**2, (x, -1/2, 1/2))"
     }
   },
@@ -1903,7 +1867,7 @@
       "ground_truth": "integrate(2*log(x), (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 105,
+      "question_index": 103,
       "question_id": "integrate(2*log(x), (x, 0, 2))"
     }
   },
@@ -1921,7 +1885,7 @@
       "ground_truth": "integrate((cos(3*x) + sin(2*x)) * (- sin(2019*x) + cos(3*x)), (x, -2*pi, 2*pi))"
     },
     "extra_info": {
-      "question_index": 106,
+      "question_index": 104,
       "question_id": "integrate((cos(3*x) + sin(2*x)) * (- sin(2019*x) + cos(3*x)), (x, -2*pi, 2*pi))"
     }
   },
@@ -1939,7 +1903,7 @@
       "ground_truth": "integrate(cos(x)*cos(sin(x))*cos(sin(sin(x))), x)"
     },
     "extra_info": {
-      "question_index": 107,
+      "question_index": 105,
       "question_id": "integrate(cos(x)*cos(sin(x))*cos(sin(sin(x))), x)"
     }
   },
@@ -1948,17 +1912,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(-2019/(4*t**2))*t**2, (t, 0, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(-2019/(4*t**2))*t**2, (t, 0, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(-2019/(4*t**2))*t**2, (t, 0, oo))"
+      "ground_truth": "integrate(exp(-2019/(4*t**2))*t**2, (t, 0, oo))"
     },
     "extra_info": {
-      "question_index": 108,
-      "question_id": "integrate(e**(-2019/(4*t**2))*t**2, (t, 0, oo))"
+      "question_index": 106,
+      "question_id": "integrate(exp(-2019/(4*t**2))*t**2, (t, 0, oo))"
     }
   },
   {
@@ -1975,7 +1939,7 @@
       "ground_truth": "integrate(sin(sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 109,
+      "question_index": 107,
       "question_id": "integrate(sin(sqrt(x)), x)"
     }
   },
@@ -1993,7 +1957,7 @@
       "ground_truth": "integrate(sqrt(x)/(1+x), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 110,
+      "question_index": 108,
       "question_id": "integrate(sqrt(x)/(1+x), (x, 0, 1))"
     }
   },
@@ -2011,7 +1975,7 @@
       "ground_truth": "integrate(cos(x)*cos(2*x)*cos(3*x), (x, 0, 2*pi))"
     },
     "extra_info": {
-      "question_index": 111,
+      "question_index": 109,
       "question_id": "integrate(cos(x)*cos(2*x)*cos(3*x), (x, 0, 2*pi))"
     }
   },
@@ -2020,17 +1984,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "Limit(integrate(e**(-x**(2*n)), (x, -oo, oo)), n, oo)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "Limit(integrate(exp(-x**(2*n)), (x, -oo, oo)), n, oo)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "Limit(integrate(e**(-x**(2*n)), (x, -oo, oo)), n, oo)"
+      "ground_truth": "Limit(integrate(exp(-x**(2*n)), (x, -oo, oo)), n, oo)"
     },
     "extra_info": {
-      "question_index": 112,
-      "question_id": "Limit(integrate(e**(-x**(2*n)), (x, -oo, oo)), n, oo)"
+      "question_index": 110,
+      "question_id": "Limit(integrate(exp(-x**(2*n)), (x, -oo, oo)), n, oo)"
     }
   },
   {
@@ -2047,7 +2011,7 @@
       "ground_truth": "integrate(x*log(x), (x, 0, E))"
     },
     "extra_info": {
-      "question_index": 113,
+      "question_index": 111,
       "question_id": "integrate(x*log(x), (x, 0, E))"
     }
   },
@@ -2065,7 +2029,7 @@
       "ground_truth": "integrate((sin(20*x)+sin(19*x))/(cos(20*x)+cos(19*x)), (x, 0, pi/100))"
     },
     "extra_info": {
-      "question_index": 114,
+      "question_index": 112,
       "question_id": "integrate((sin(20*x)+sin(19*x))/(cos(20*x)+cos(19*x)), (x, 0, pi/100))"
     }
   },
@@ -2074,17 +2038,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**x*cos(x)**2 + e**x*cos(x)*sin(x) - e**x*sin(x)**2, x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x)*cos(x)**2 + exp(x)*cos(x)*sin(x) - exp(x)*sin(x)**2, x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**x*cos(x)**2 + e**x*cos(x)*sin(x) - e**x*sin(x)**2, x)"
+      "ground_truth": "integrate(exp(x)*cos(x)**2 + exp(x)*cos(x)*sin(x) - exp(x)*sin(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 115,
-      "question_id": "integrate(e**x*cos(x)**2 + e**x*cos(x)*sin(x) - e**x*sin(x)**2, x)"
+      "question_index": 113,
+      "question_id": "integrate(exp(x)*cos(x)**2 + exp(x)*cos(x)*sin(x) - exp(x)*sin(x)**2, x)"
     }
   },
   {
@@ -2101,7 +2065,7 @@
       "ground_truth": "integrate(sin(x)/sin(x+pi/4), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 116,
+      "question_index": 114,
       "question_id": "integrate(sin(x)/sin(x+pi/4), (x, 0, pi/2))"
     }
   },
@@ -2119,7 +2083,7 @@
       "ground_truth": "integrate((1+sqrt(3))*x, x)"
     },
     "extra_info": {
-      "question_index": 117,
+      "question_index": 115,
       "question_id": "integrate((1+sqrt(3))*x, x)"
     }
   },
@@ -2137,7 +2101,7 @@
       "ground_truth": "integrate(x/(x**2+1)*(2*log(x)+1), (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 118,
+      "question_index": 116,
       "question_id": "integrate(x/(x**2+1)*(2*log(x)+1), (x, 0, 2))"
     }
   },
@@ -2155,7 +2119,7 @@
       "ground_truth": "integrate((2*x**3 - 1)/(x*(x**3+1)), x)"
     },
     "extra_info": {
-      "question_index": 119,
+      "question_index": 117,
       "question_id": "integrate((2*x**3 - 1)/(x*(x**3+1)), x)"
     }
   },
@@ -2173,7 +2137,7 @@
       "ground_truth": "integrate(cos(arctan(x)), x)"
     },
     "extra_info": {
-      "question_index": 120,
+      "question_index": 118,
       "question_id": "integrate(cos(arctan(x)), x)"
     }
   },
@@ -2182,17 +2146,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**x + e**(x+2), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x) + exp(x+2), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**x + e**(x+2), x)"
+      "ground_truth": "integrate(exp(x) + exp(x+2), x)"
     },
     "extra_info": {
-      "question_index": 121,
-      "question_id": "integrate(e**x + e**(x+2), x)"
+      "question_index": 119,
+      "question_id": "integrate(exp(x) + exp(x+2), x)"
     }
   },
   {
@@ -2209,7 +2173,7 @@
       "ground_truth": "integrate(s*x**3 * r*x**4 * q*x*sqrt(5)*x, x)"
     },
     "extra_info": {
-      "question_index": 122,
+      "question_index": 120,
       "question_id": "integrate(s*x**3 * r*x**4 * q*x*sqrt(5)*x, x)"
     }
   },
@@ -2227,7 +2191,7 @@
       "ground_truth": "integrate(Abs(sin(2018*x)), (x, 0, 2018*pi))"
     },
     "extra_info": {
-      "question_index": 123,
+      "question_index": 121,
       "question_id": "integrate(Abs(sin(2018*x)), (x, 0, 2018*pi))"
     }
   },
@@ -2245,7 +2209,7 @@
       "ground_truth": "integrate(tan(x)+cot(x), x)"
     },
     "extra_info": {
-      "question_index": 124,
+      "question_index": 122,
       "question_id": "integrate(tan(x)+cot(x), x)"
     }
   },
@@ -2263,7 +2227,7 @@
       "ground_truth": "integrate(x**5/(2+x**12), x)"
     },
     "extra_info": {
-      "question_index": 125,
+      "question_index": 123,
       "question_id": "integrate(x**5/(2+x**12), x)"
     }
   },
@@ -2281,7 +2245,7 @@
       "ground_truth": "integrate(cos(x)*cosh(x) + sin(x)*sinh(x), x)"
     },
     "extra_info": {
-      "question_index": 126,
+      "question_index": 124,
       "question_id": "integrate(cos(x)*cosh(x) + sin(x)*sinh(x), x)"
     }
   },
@@ -2290,17 +2254,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**x + cos(x)*e**x + sin(x)*e**x, x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x) + cos(x)*exp(x) + sin(x)*exp(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**x + cos(x)*e**x + sin(x)*e**x, x)"
+      "ground_truth": "integrate(exp(x) + cos(x)*exp(x) + sin(x)*exp(x), x)"
     },
     "extra_info": {
-      "question_index": 127,
-      "question_id": "integrate(e**x + cos(x)*e**x + sin(x)*e**x, x)"
+      "question_index": 125,
+      "question_id": "integrate(exp(x) + cos(x)*exp(x) + sin(x)*exp(x), x)"
     }
   },
   {
@@ -2317,7 +2281,7 @@
       "ground_truth": "integrate(sin(cos(sin(x)))*sin(sin(x))*cos(x), x)"
     },
     "extra_info": {
-      "question_index": 128,
+      "question_index": 126,
       "question_id": "integrate(sin(cos(sin(x)))*sin(sin(x))*cos(x), x)"
     }
   },
@@ -2335,7 +2299,7 @@
       "ground_truth": "integrate(1+sin(x), x)"
     },
     "extra_info": {
-      "question_index": 129,
+      "question_index": 127,
       "question_id": "integrate(1+sin(x), x)"
     }
   },
@@ -2353,7 +2317,7 @@
       "ground_truth": "integrate(cos(x)/(1-cos(2*x)), x)"
     },
     "extra_info": {
-      "question_index": 130,
+      "question_index": 128,
       "question_id": "integrate(cos(x)/(1-cos(2*x)), x)"
     }
   },
@@ -2362,17 +2326,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**x*(1/x+log(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x)*(1/x+log(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**x*(1/x+log(x)), x)"
+      "ground_truth": "integrate(exp(x)*(1/x+log(x)), x)"
     },
     "extra_info": {
-      "question_index": 131,
-      "question_id": "integrate(e**x*(1/x+log(x)), x)"
+      "question_index": 129,
+      "question_id": "integrate(exp(x)*(1/x+log(x)), x)"
     }
   },
   {
@@ -2389,7 +2353,7 @@
       "ground_truth": "integrate(tanh(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 132,
+      "question_index": 130,
       "question_id": "integrate(tanh(x)**2, x)"
     }
   },
@@ -2407,7 +2371,7 @@
       "ground_truth": "integrate((2017*x**2016 + 2018*x**2017)/(4034 + 2*x + 4035 + x + 4036), x)"
     },
     "extra_info": {
-      "question_index": 133,
+      "question_index": 131,
       "question_id": "integrate((2017*x**2016 + 2018*x**2017)/(4034 + 2*x + 4035 + x + 4036), x)"
     }
   },
@@ -2425,7 +2389,7 @@
       "ground_truth": "integrate((sin(2*x)-sin(2*x))/(cos(2*x)-cos(2*x), x)"
     },
     "extra_info": {
-      "question_index": 134,
+      "question_index": 132,
       "question_id": "integrate((sin(2*x)-sin(2*x))/(cos(2*x)-cos(2*x), x)"
     }
   },
@@ -2443,7 +2407,7 @@
       "ground_truth": "integrate(x**25/(25*x**16 + 25 + x**9/25), x)"
     },
     "extra_info": {
-      "question_index": 135,
+      "question_index": 133,
       "question_id": "integrate(x**25/(25*x**16 + 25 + x**9/25), x)"
     }
   },
@@ -2461,7 +2425,7 @@
       "ground_truth": "integrate(cos(x)/(2-cos(x)**2), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 136,
+      "question_index": 134,
       "question_id": "integrate(cos(x)/(2-cos(x)**2), (x, 0, pi/2))"
     }
   },
@@ -2479,7 +2443,7 @@
       "ground_truth": "integrate((1+x**2)**(3/2), x)"
     },
     "extra_info": {
-      "question_index": 137,
+      "question_index": 135,
       "question_id": "integrate((1+x**2)**(3/2), x)"
     }
   },
@@ -2497,7 +2461,7 @@
       "ground_truth": "integrate(p*x*sqrt(x) - x**2, x)"
     },
     "extra_info": {
-      "question_index": 138,
+      "question_index": 136,
       "question_id": "integrate(p*x*sqrt(x) - x**2, x)"
     }
   },
@@ -2515,7 +2479,7 @@
       "ground_truth": "integrate((x-1)/(x+x**2*log(x)), x)"
     },
     "extra_info": {
-      "question_index": 139,
+      "question_index": 137,
       "question_id": "integrate((x-1)/(x+x**2*log(x)), x)"
     }
   },
@@ -2533,7 +2497,7 @@
       "ground_truth": "integrate(csc(x)*sec(x), x)"
     },
     "extra_info": {
-      "question_index": 140,
+      "question_index": 138,
       "question_id": "integrate(csc(x)*sec(x), x)"
     }
   },
@@ -2551,7 +2515,7 @@
       "ground_truth": "integrate(x**2/sqrt(x**3+2), x)"
     },
     "extra_info": {
-      "question_index": 141,
+      "question_index": 139,
       "question_id": "integrate(x**2/sqrt(x**3+2), x)"
     }
   },
@@ -2569,7 +2533,7 @@
       "ground_truth": "integrate(log(x)/x**2, (x, 1, oo))"
     },
     "extra_info": {
-      "question_index": 142,
+      "question_index": 140,
       "question_id": "integrate(log(x)/x**2, (x, 1, oo))"
     }
   },
@@ -2587,7 +2551,7 @@
       "ground_truth": "integrate(sech(x), x)"
     },
     "extra_info": {
-      "question_index": 143,
+      "question_index": 141,
       "question_id": "integrate(sech(x), x)"
     }
   },
@@ -2605,7 +2569,7 @@
       "ground_truth": "integrate(x**3/(e*x**2), x)"
     },
     "extra_info": {
-      "question_index": 144,
+      "question_index": 142,
       "question_id": "integrate(x**3/(e*x**2), x)"
     }
   },
@@ -2623,7 +2587,7 @@
       "ground_truth": "integrate(1/(x*sqrt(x**2-1)), (x, 1, 2))"
     },
     "extra_info": {
-      "question_index": 145,
+      "question_index": 143,
       "question_id": "integrate(1/(x*sqrt(x**2-1)), (x, 1, 2))"
     }
   },
@@ -2641,7 +2605,7 @@
       "ground_truth": "integrate(1/(x*(x**2+1)), (x, 1, oo))"
     },
     "extra_info": {
-      "question_index": 146,
+      "question_index": 144,
       "question_id": "integrate(1/(x*(x**2+1)), (x, 1, oo))"
     }
   },
@@ -2659,7 +2623,7 @@
       "ground_truth": "integrate(acosh(x), x)"
     },
     "extra_info": {
-      "question_index": 147,
+      "question_index": 145,
       "question_id": "integrate(acosh(x), x)"
     }
   },
@@ -2668,17 +2632,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(-2*x**2-5*x-3), (x, -oo, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(-2*x**2-5*x-3), (x, -oo, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(-2*x**2-5*x-3), (x, -oo, oo))"
+      "ground_truth": "integrate(exp(-2*x**2-5*x-3), (x, -oo, oo))"
     },
     "extra_info": {
-      "question_index": 148,
-      "question_id": "integrate(e**(-2*x**2-5*x-3), (x, -oo, oo))"
+      "question_index": 146,
+      "question_id": "integrate(exp(-2*x**2-5*x-3), (x, -oo, oo))"
     }
   },
   {
@@ -2695,7 +2659,7 @@
       "ground_truth": "integrate(sin(sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 149,
+      "question_index": 147,
       "question_id": "integrate(sin(sqrt(x)), x)"
     }
   },
@@ -2713,7 +2677,7 @@
       "ground_truth": "integrate(1/(x+1/x)**2, (x, 0, oo))"
     },
     "extra_info": {
-      "question_index": 150,
+      "question_index": 148,
       "question_id": "integrate(1/(x+1/x)**2, (x, 0, oo))"
     }
   },
@@ -2722,17 +2686,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate((2+x)*e**(-x)/x**3, x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate((2+x)*exp(-x)/x**3, x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate((2+x)*e**(-x)/x**3, x)"
+      "ground_truth": "integrate((2+x)*exp(-x)/x**3, x)"
     },
     "extra_info": {
-      "question_index": 151,
-      "question_id": "integrate((2+x)*e**(-x)/x**3, x)"
+      "question_index": 149,
+      "question_id": "integrate((2+x)*exp(-x)/x**3, x)"
     }
   },
   {
@@ -2749,7 +2713,7 @@
       "ground_truth": "integrate(p*x*(1-x), x)"
     },
     "extra_info": {
-      "question_index": 152,
+      "question_index": 150,
       "question_id": "integrate(p*x*(1-x), x)"
     }
   },
@@ -2767,7 +2731,7 @@
       "ground_truth": "integrate(tanh(x)*exp(x), x)"
     },
     "extra_info": {
-      "question_index": 153,
+      "question_index": 151,
       "question_id": "integrate(tanh(x)*exp(x), x)"
     }
   },
@@ -2785,7 +2749,7 @@
       "ground_truth": "integrate(p*sin(x)+1, (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 154,
+      "question_index": 152,
       "question_id": "integrate(p*sin(x)+1, (x, 0, pi/2))"
     }
   },
@@ -2803,7 +2767,7 @@
       "ground_truth": "Limit(In, n, oo)"
     },
     "extra_info": {
-      "question_index": 155,
+      "question_index": 153,
       "question_id": "Limit(In, n, oo)"
     }
   },
@@ -2812,17 +2776,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(sin(x+pi/4)**2*e**(x**2), (x, -oo, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(sin(x+pi/4)**2*exp(x**2), (x, -oo, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(sin(x+pi/4)**2*e**(x**2), (x, -oo, oo))"
+      "ground_truth": "integrate(sin(x+pi/4)**2*exp(x**2), (x, -oo, oo))"
     },
     "extra_info": {
-      "question_index": 156,
-      "question_id": "integrate(sin(x+pi/4)**2*e**(x**2), (x, -oo, oo))"
+      "question_index": 154,
+      "question_id": "integrate(sin(x+pi/4)**2*exp(x**2), (x, -oo, oo))"
     }
   },
   {
@@ -2830,17 +2794,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(3*x**2/(x**3+1)**2 * e**(-x**(6-2*x**3)), (x, -oo, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(3*x**2/(x**3+1)**2 * exp(-x**(6-2*x**3)), (x, -oo, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(3*x**2/(x**3+1)**2 * e**(-x**(6-2*x**3)), (x, -oo, oo))"
+      "ground_truth": "integrate(3*x**2/(x**3+1)**2 * exp(-x**(6-2*x**3)), (x, -oo, oo))"
     },
     "extra_info": {
-      "question_index": 157,
-      "question_id": "integrate(3*x**2/(x**3+1)**2 * e**(-x**(6-2*x**3)), (x, -oo, oo))"
+      "question_index": 155,
+      "question_id": "integrate(3*x**2/(x**3+1)**2 * exp(-x**(6-2*x**3)), (x, -oo, oo))"
     }
   },
   {
@@ -2857,7 +2821,7 @@
       "ground_truth": "integrate(1/(1+tan(x)**2017), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 158,
+      "question_index": 156,
       "question_id": "integrate(1/(1+tan(x)**2017), (x, 0, pi/2))"
     }
   },
@@ -2866,17 +2830,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(2*x)*cos(3*x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(2*x)*cos(3*x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(2*x)*cos(3*x), x)"
+      "ground_truth": "integrate(exp(2*x)*cos(3*x), x)"
     },
     "extra_info": {
-      "question_index": 159,
-      "question_id": "integrate(e**(2*x)*cos(3*x), x)"
+      "question_index": 157,
+      "question_id": "integrate(exp(2*x)*cos(3*x), x)"
     }
   },
   {
@@ -2893,7 +2857,7 @@
       "ground_truth": "integrate(cos(x)*(cos(x)+1)*tan(x)*(1+log(cos(x))), x)"
     },
     "extra_info": {
-      "question_index": 160,
+      "question_index": 158,
       "question_id": "integrate(cos(x)*(cos(x)+1)*tan(x)*(1+log(cos(x))), x)"
     }
   },
@@ -2911,7 +2875,7 @@
       "ground_truth": "integrate(tanh(x), x)"
     },
     "extra_info": {
-      "question_index": 161,
+      "question_index": 159,
       "question_id": "integrate(tanh(x), x)"
     }
   },
@@ -2929,7 +2893,7 @@
       "ground_truth": "integrate(Abs(x**3 - x), (x, -4, 4))"
     },
     "extra_info": {
-      "question_index": 162,
+      "question_index": 160,
       "question_id": "integrate(Abs(x**3 - x), (x, -4, 4))"
     }
   },
@@ -2947,7 +2911,7 @@
       "ground_truth": "integrate(log(sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 163,
+      "question_index": 161,
       "question_id": "integrate(log(sqrt(x)), x)"
     }
   },
@@ -2956,17 +2920,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(x+e) - e**(x-e), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x+e) - exp(x-e), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(x+e) - e**(x-e), x)"
+      "ground_truth": "integrate(exp(x+e) - exp(x-e), x)"
     },
     "extra_info": {
-      "question_index": 164,
-      "question_id": "integrate(e**(x+e) - e**(x-e), x)"
+      "question_index": 162,
+      "question_id": "integrate(exp(x+e) - exp(x-e), x)"
     }
   },
   {
@@ -2983,7 +2947,7 @@
       "ground_truth": "integrate(log(log(x))/(x*log(x)), x)"
     },
     "extra_info": {
-      "question_index": 165,
+      "question_index": 163,
       "question_id": "integrate(log(log(x))/(x*log(x)), x)"
     }
   },
@@ -3001,7 +2965,7 @@
       "ground_truth": "integrate(1/(1+tan(x)**2), (x, 0, pi/3))"
     },
     "extra_info": {
-      "question_index": 166,
+      "question_index": 164,
       "question_id": "integrate(1/(1+tan(x)**2), (x, 0, pi/3))"
     }
   },
@@ -3019,7 +2983,7 @@
       "ground_truth": "integrate(arcsin(3*x**(1/3)), x)"
     },
     "extra_info": {
-      "question_index": 167,
+      "question_index": 165,
       "question_id": "integrate(arcsin(3*x**(1/3)), x)"
     }
   },
@@ -3037,7 +3001,7 @@
       "ground_truth": "integrate(blog2(x)*xc, x)"
     },
     "extra_info": {
-      "question_index": 168,
+      "question_index": 166,
       "question_id": "integrate(blog2(x)*xc, x)"
     }
   },
@@ -3046,53 +3010,53 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**x*cos(x) - e**x*sin(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x)*cos(x) - exp(x)*sin(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**x*cos(x) - e**x*sin(x), x)"
+      "ground_truth": "integrate(exp(x)*cos(x) - exp(x)*sin(x), x)"
+    },
+    "extra_info": {
+      "question_index": 167,
+      "question_id": "integrate(exp(x)*cos(x) - exp(x)*sin(x), x)"
+    }
+  },
+  {
+    "data_source": "integration_numeric",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "integrate(x**3*exp(-x**2), (x, 0, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+      }
+    ],
+    "ability": "integration",
+    "reward_model": {
+      "style": "rule",
+      "ground_truth": "integrate(x**3*exp(-x**2), (x, 0, oo))"
+    },
+    "extra_info": {
+      "question_index": 168,
+      "question_id": "integrate(x**3*exp(-x**2), (x, 0, oo))"
+    }
+  },
+  {
+    "data_source": "integration_numeric",
+    "prompt": [
+      {
+        "role": "user",
+        "content": "integrate((2*exp(x**2)/(x+1))*cos(x) - (exp(x**2)+x)*sin(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+      }
+    ],
+    "ability": "integration",
+    "reward_model": {
+      "style": "rule",
+      "ground_truth": "integrate((2*exp(x**2)/(x+1))*cos(x) - (exp(x**2)+x)*sin(x), x)"
     },
     "extra_info": {
       "question_index": 169,
-      "question_id": "integrate(e**x*cos(x) - e**x*sin(x), x)"
-    }
-  },
-  {
-    "data_source": "integration_numeric",
-    "prompt": [
-      {
-        "role": "user",
-        "content": "integrate(x**3*e**(-x**2), (x, 0, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
-      }
-    ],
-    "ability": "integration",
-    "reward_model": {
-      "style": "rule",
-      "ground_truth": "integrate(x**3*e**(-x**2), (x, 0, oo))"
-    },
-    "extra_info": {
-      "question_index": 170,
-      "question_id": "integrate(x**3*e**(-x**2), (x, 0, oo))"
-    }
-  },
-  {
-    "data_source": "integration_numeric",
-    "prompt": [
-      {
-        "role": "user",
-        "content": "integrate((2*e**(x**2)/(x+1))*cos(x) - (e**(x**2)+x)*sin(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
-      }
-    ],
-    "ability": "integration",
-    "reward_model": {
-      "style": "rule",
-      "ground_truth": "integrate((2*e**(x**2)/(x+1))*cos(x) - (e**(x**2)+x)*sin(x), x)"
-    },
-    "extra_info": {
-      "question_index": 171,
-      "question_id": "integrate((2*e**(x**2)/(x+1))*cos(x) - (e**(x**2)+x)*sin(x), x)"
+      "question_id": "integrate((2*exp(x**2)/(x+1))*cos(x) - (exp(x**2)+x)*sin(x), x)"
     }
   },
   {
@@ -3109,7 +3073,7 @@
       "ground_truth": "integrate((1+sqrt(x)+x**(1/3))*(1+x**(-1/2)+x**(-1/3)), x)"
     },
     "extra_info": {
-      "question_index": 172,
+      "question_index": 170,
       "question_id": "integrate((1+sqrt(x)+x**(1/3))*(1+x**(-1/2)+x**(-1/3)), x)"
     }
   },
@@ -3127,7 +3091,7 @@
       "ground_truth": "integrate(sin(sin(x))*cos(sin(x))*cos(x), x)"
     },
     "extra_info": {
-      "question_index": 173,
+      "question_index": 171,
       "question_id": "integrate(sin(sin(x))*cos(sin(x))*cos(x), x)"
     }
   },
@@ -3145,7 +3109,7 @@
       "ground_truth": "integrate((cos(x)+sin(x))/x**2 + (sin(x)-cos(x))/x, x)"
     },
     "extra_info": {
-      "question_index": 174,
+      "question_index": 172,
       "question_id": "integrate((cos(x)+sin(x))/x**2 + (sin(x)-cos(x))/x, x)"
     }
   },
@@ -3163,7 +3127,7 @@
       "ground_truth": "integrate(x**3/sqrt(x**2+1), x)"
     },
     "extra_info": {
-      "question_index": 175,
+      "question_index": 173,
       "question_id": "integrate(x**3/sqrt(x**2+1), x)"
     }
   },
@@ -3181,7 +3145,7 @@
       "ground_truth": "integrate(x/(x**4+x**2+1), x)"
     },
     "extra_info": {
-      "question_index": 176,
+      "question_index": 174,
       "question_id": "integrate(x/(x**4+x**2+1), x)"
     }
   },
@@ -3190,17 +3154,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(2016*x+6048*x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(2016*x+6048*x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(2016*x+6048*x), x)"
+      "ground_truth": "integrate(exp(2016*x+6048*x), x)"
     },
     "extra_info": {
-      "question_index": 177,
-      "question_id": "integrate(e**(2016*x+6048*x), x)"
+      "question_index": 175,
+      "question_id": "integrate(exp(2016*x+6048*x), x)"
     }
   },
   {
@@ -3217,7 +3181,7 @@
       "ground_truth": "integrate((1-cos(x))/sin(x), (x, pi/3, pi/2))"
     },
     "extra_info": {
-      "question_index": 178,
+      "question_index": 176,
       "question_id": "integrate((1-cos(x))/sin(x), (x, pi/3, pi/2))"
     }
   },
@@ -3235,7 +3199,7 @@
       "ground_truth": "integrate(1/(1-x+x**2-x**3), x)"
     },
     "extra_info": {
-      "question_index": 179,
+      "question_index": 177,
       "question_id": "integrate(1/(1-x+x**2-x**3), x)"
     }
   },
@@ -3253,7 +3217,7 @@
       "ground_truth": "integrate(1/(2+cosh(x)), (x, 0, oo))"
     },
     "extra_info": {
-      "question_index": 180,
+      "question_index": 178,
       "question_id": "integrate(1/(2+cosh(x)), (x, 0, oo))"
     }
   },
@@ -3271,7 +3235,7 @@
       "ground_truth": "integrate(cos(x)**4 - sin(x)**4, x)"
     },
     "extra_info": {
-      "question_index": 181,
+      "question_index": 179,
       "question_id": "integrate(cos(x)**4 - sin(x)**4, x)"
     }
   },
@@ -3289,7 +3253,7 @@
       "ground_truth": "integrate(x/sqrt(2+4*x), x)"
     },
     "extra_info": {
-      "question_index": 182,
+      "question_index": 180,
       "question_id": "integrate(x/sqrt(2+4*x), x)"
     }
   },
@@ -3307,7 +3271,7 @@
       "ground_truth": "integrate(cos(sqrt(x))/sqrt(x), (x, 0, 8))"
     },
     "extra_info": {
-      "question_index": 183,
+      "question_index": 181,
       "question_id": "integrate(cos(sqrt(x))/sqrt(x), (x, 0, 8))"
     }
   },
@@ -3325,7 +3289,7 @@
       "ground_truth": "integrate(sec(x), x)"
     },
     "extra_info": {
-      "question_index": 184,
+      "question_index": 182,
       "question_id": "integrate(sec(x), x)"
     }
   },
@@ -3334,17 +3298,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(sin(x))*tan(x)*csc(x), (x, 0, pi/2))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(sin(x))*tan(x)*csc(x), (x, 0, pi/2))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(sin(x))*tan(x)*csc(x), (x, 0, pi/2))"
+      "ground_truth": "integrate(exp(sin(x))*tan(x)*csc(x), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 185,
-      "question_id": "integrate(e**(sin(x))*tan(x)*csc(x), (x, 0, pi/2))"
+      "question_index": 183,
+      "question_id": "integrate(exp(sin(x))*tan(x)*csc(x), (x, 0, pi/2))"
     }
   },
   {
@@ -3361,7 +3325,7 @@
       "ground_truth": "integrate(x*(log(x))**2, (x, 1, e))"
     },
     "extra_info": {
-      "question_index": 186,
+      "question_index": 184,
       "question_id": "integrate(x*(log(x))**2, (x, 1, e))"
     }
   },
@@ -3379,7 +3343,7 @@
       "ground_truth": "integrate(1/(5 + 4*sqrt(x) + x), x)"
     },
     "extra_info": {
-      "question_index": 187,
+      "question_index": 185,
       "question_id": "integrate(1/(5 + 4*sqrt(x) + x), x)"
     }
   },
@@ -3397,7 +3361,7 @@
       "ground_truth": "integrate(x**2015, x)"
     },
     "extra_info": {
-      "question_index": 188,
+      "question_index": 186,
       "question_id": "integrate(x**2015, x)"
     }
   },
@@ -3415,7 +3379,7 @@
       "ground_truth": "integrate(x/((x-3)*(x+5)**2), (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 189,
+      "question_index": 187,
       "question_id": "integrate(x/((x-3)*(x+5)**2), (x, 0, 2))"
     }
   },
@@ -3433,7 +3397,7 @@
       "ground_truth": "integrate(log(1+log(x))/x, x)"
     },
     "extra_info": {
-      "question_index": 190,
+      "question_index": 188,
       "question_id": "integrate(log(1+log(x))/x, x)"
     }
   },
@@ -3451,7 +3415,7 @@
       "ground_truth": "integrate(sqrt(csc(x) - sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 191,
+      "question_index": 189,
       "question_id": "integrate(sqrt(csc(x) - sin(x)), x)"
     }
   },
@@ -3469,7 +3433,7 @@
       "ground_truth": "integrate(1/sqrt(x**2+25), x)"
     },
     "extra_info": {
-      "question_index": 192,
+      "question_index": 190,
       "question_id": "integrate(1/sqrt(x**2+25), x)"
     }
   },
@@ -3487,7 +3451,7 @@
       "ground_truth": "integrate((log(x,2) - 1/(x*log(x,2))), (x, 2, e))"
     },
     "extra_info": {
-      "question_index": 193,
+      "question_index": 191,
       "question_id": "integrate((log(x,2) - 1/(x*log(x,2))), (x, 2, e))"
     }
   },
@@ -3496,17 +3460,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(arctan(e**x)/e**(3*x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(arctan(exp(x))/exp(3*x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(arctan(e**x)/e**(3*x), x)"
+      "ground_truth": "integrate(arctan(exp(x))/exp(3*x), x)"
     },
     "extra_info": {
-      "question_index": 194,
-      "question_id": "integrate(arctan(e**x)/e**(3*x), x)"
+      "question_index": 192,
+      "question_id": "integrate(arctan(exp(x))/exp(3*x), x)"
     }
   },
   {
@@ -3523,7 +3487,7 @@
       "ground_truth": "integrate(Abs(x-1)/(Abs(x-2)+Abs(x-3)), (x, 0, 4))"
     },
     "extra_info": {
-      "question_index": 195,
+      "question_index": 193,
       "question_id": "integrate(Abs(x-1)/(Abs(x-2)+Abs(x-3)), (x, 0, 4))"
     }
   },
@@ -3541,7 +3505,7 @@
       "ground_truth": "integrate(1/(sin(x)**4+cos(x)**4), (x, 0, 2*pi))"
     },
     "extra_info": {
-      "question_index": 196,
+      "question_index": 194,
       "question_id": "integrate(1/(sin(x)**4+cos(x)**4), (x, 0, 2*pi))"
     }
   },
@@ -3550,17 +3514,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate((1+e**x)/(1-e**x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate((1+exp(x))/(1-exp(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate((1+e**x)/(1-e**x), x)"
+      "ground_truth": "integrate((1+exp(x))/(1-exp(x)), x)"
     },
     "extra_info": {
-      "question_index": 197,
-      "question_id": "integrate((1+e**x)/(1-e**x), x)"
+      "question_index": 195,
+      "question_id": "integrate((1+exp(x))/(1-exp(x)), x)"
     }
   },
   {
@@ -3577,7 +3541,7 @@
       "ground_truth": "integrate(tan(x)**4, x)"
     },
     "extra_info": {
-      "question_index": 198,
+      "question_index": 196,
       "question_id": "integrate(tan(x)**4, x)"
     }
   },
@@ -3595,7 +3559,7 @@
       "ground_truth": "integrate(sin(x)*tan(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 199,
+      "question_index": 197,
       "question_id": "integrate(sin(x)*tan(x)**2, x)"
     }
   },
@@ -3613,7 +3577,7 @@
       "ground_truth": "integrate((x+1)/(x**2+2*x+3), x)"
     },
     "extra_info": {
-      "question_index": 200,
+      "question_index": 198,
       "question_id": "integrate((x+1)/(x**2+2*x+3), x)"
     }
   },
@@ -3631,7 +3595,7 @@
       "ground_truth": "integrate(log(x**2), (x, 1, e))"
     },
     "extra_info": {
-      "question_index": 201,
+      "question_index": 199,
       "question_id": "integrate(log(x**2), (x, 1, e))"
     }
   },
@@ -3649,7 +3613,7 @@
       "ground_truth": "integrate(sin(sqrt(3)*x), (x, -9, 9))"
     },
     "extra_info": {
-      "question_index": 202,
+      "question_index": 200,
       "question_id": "integrate(sin(sqrt(3)*x), (x, -9, 9))"
     }
   },
@@ -3658,17 +3622,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(diff(h(e**(1+x-x**2)), x), (x, 0, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(diff(h(exp(1+x-x**2)), x), (x, 0, oo))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(diff(h(e**(1+x-x**2)), x), (x, 0, oo))"
+      "ground_truth": "integrate(diff(h(exp(1+x-x**2)), x), (x, 0, oo))"
     },
     "extra_info": {
-      "question_index": 203,
-      "question_id": "integrate(diff(h(e**(1+x-x**2)), x), (x, 0, oo))"
+      "question_index": 201,
+      "question_id": "integrate(diff(h(exp(1+x-x**2)), x), (x, 0, oo))"
     }
   },
   {
@@ -3685,7 +3649,7 @@
       "ground_truth": "integrate(r*x + q*x + sqrt(x), (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 204,
+      "question_index": 202,
       "question_id": "integrate(r*x + q*x + sqrt(x), (x, 0, 2))"
     }
   },
@@ -3694,17 +3658,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(sqrt(x)*e**(sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(sqrt(x)*exp(sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(sqrt(x)*e**(sqrt(x)), x)"
+      "ground_truth": "integrate(sqrt(x)*exp(sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 205,
-      "question_id": "integrate(sqrt(x)*e**(sqrt(x)), x)"
+      "question_index": 203,
+      "question_id": "integrate(sqrt(x)*exp(sqrt(x)), x)"
     }
   },
   {
@@ -3721,7 +3685,7 @@
       "ground_truth": "integrate(sin(2*x)*cos(3*x), x)"
     },
     "extra_info": {
-      "question_index": 206,
+      "question_index": 204,
       "question_id": "integrate(sin(2*x)*cos(3*x), x)"
     }
   },
@@ -3739,7 +3703,7 @@
       "ground_truth": "integrate(Abs(1+2*sin(x)), (x, 0, 2*pi))"
     },
     "extra_info": {
-      "question_index": 207,
+      "question_index": 205,
       "question_id": "integrate(Abs(1+2*sin(x)), (x, 0, 2*pi))"
     }
   },
@@ -3757,7 +3721,7 @@
       "ground_truth": "integrate(x*(1-x)**2014, x)"
     },
     "extra_info": {
-      "question_index": 208,
+      "question_index": 206,
       "question_id": "integrate(x*(1-x)**2014, x)"
     }
   },
@@ -3775,7 +3739,7 @@
       "ground_truth": "integrate(arcsinh(x), x)"
     },
     "extra_info": {
-      "question_index": 209,
+      "question_index": 207,
       "question_id": "integrate(arcsinh(x), x)"
     }
   },
@@ -3793,7 +3757,7 @@
       "ground_truth": "integrate(x**2/(x-1), (x, -1, 0))"
     },
     "extra_info": {
-      "question_index": 210,
+      "question_index": 208,
       "question_id": "integrate(x**2/(x-1), (x, -1, 0))"
     }
   },
@@ -3811,7 +3775,7 @@
       "ground_truth": "integrate(x*arctan(x), x)"
     },
     "extra_info": {
-      "question_index": 211,
+      "question_index": 209,
       "question_id": "integrate(x*arctan(x), x)"
     }
   },
@@ -3829,7 +3793,7 @@
       "ground_truth": "integrate(1/(x**2 - 15*x - 2014), x)"
     },
     "extra_info": {
-      "question_index": 212,
+      "question_index": 210,
       "question_id": "integrate(1/(x**2 - 15*x - 2014), x)"
     }
   },
@@ -3838,17 +3802,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**x*log(1+x**2) - 2*(1+x)*arctan(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(x)*log(1+x**2) - 2*(1+x)*arctan(x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**x*log(1+x**2) - 2*(1+x)*arctan(x), x)"
+      "ground_truth": "integrate(exp(x)*log(1+x**2) - 2*(1+x)*arctan(x), x)"
     },
     "extra_info": {
-      "question_index": 213,
-      "question_id": "integrate(e**x*log(1+x**2) - 2*(1+x)*arctan(x), x)"
+      "question_index": 211,
+      "question_id": "integrate(exp(x)*log(1+x**2) - 2*(1+x)*arctan(x), x)"
     }
   },
   {
@@ -3865,7 +3829,7 @@
       "ground_truth": "integrate((arcsin(x))**2, x)"
     },
     "extra_info": {
-      "question_index": 214,
+      "question_index": 212,
       "question_id": "integrate((arcsin(x))**2, x)"
     }
   },
@@ -3883,7 +3847,7 @@
       "ground_truth": "integrate(sqrt(x**2-1)/x, x)"
     },
     "extra_info": {
-      "question_index": 215,
+      "question_index": 213,
       "question_id": "integrate(sqrt(x**2-1)/x, x)"
     }
   },
@@ -3901,7 +3865,7 @@
       "ground_truth": "integrate(x*sec(4*x)**2, x)"
     },
     "extra_info": {
-      "question_index": 216,
+      "question_index": 214,
       "question_id": "integrate(x*sec(4*x)**2, x)"
     }
   },
@@ -3919,7 +3883,7 @@
       "ground_truth": "integrate(6 - 11*x + 6*x**2 - x**3, x)"
     },
     "extra_info": {
-      "question_index": 217,
+      "question_index": 215,
       "question_id": "integrate(6 - 11*x + 6*x**2 - x**3, x)"
     }
   },
@@ -3937,7 +3901,7 @@
       "ground_truth": "integrate(1/(b1 - log(1-x,2)), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 218,
+      "question_index": 216,
       "question_id": "integrate(1/(b1 - log(1-x,2)), (x, 0, 1))"
     }
   },
@@ -3955,7 +3919,7 @@
       "ground_truth": "integrate(q*x + p*x**2 + 1, (x, 0, 1/sqrt(3)))"
     },
     "extra_info": {
-      "question_index": 219,
+      "question_index": 217,
       "question_id": "integrate(q*x + p*x**2 + 1, (x, 0, 1/sqrt(3)))"
     }
   },
@@ -3973,7 +3937,7 @@
       "ground_truth": "integrate(2+cos(x), (x, 0, 5*pi/2))"
     },
     "extra_info": {
-      "question_index": 220,
+      "question_index": 218,
       "question_id": "integrate(2+cos(x), (x, 0, 5*pi/2))"
     }
   },
@@ -3991,7 +3955,7 @@
       "ground_truth": "integrate(log(x**2) - 2*log(2*x), x)"
     },
     "extra_info": {
-      "question_index": 221,
+      "question_index": 219,
       "question_id": "integrate(log(x**2) - 2*log(2*x), x)"
     }
   },
@@ -4000,17 +3964,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(Abs(x)), (x, -1, 3))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(Abs(x)), (x, -1, 3))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(Abs(x)), (x, -1, 3))"
+      "ground_truth": "integrate(exp(Abs(x)), (x, -1, 3))"
     },
     "extra_info": {
-      "question_index": 222,
-      "question_id": "integrate(e**(Abs(x)), (x, -1, 3))"
+      "question_index": 220,
+      "question_id": "integrate(exp(Abs(x)), (x, -1, 3))"
     }
   },
   {
@@ -4027,7 +3991,7 @@
       "ground_truth": "integrate((log(x)*cos(x) - sin(x)/x)/(log(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 223,
+      "question_index": 221,
       "question_id": "integrate((log(x)*cos(x) - sin(x)/x)/(log(x)**2), x)"
     }
   },
@@ -4045,7 +4009,7 @@
       "ground_truth": "integrate(x**3 - 3*x**2 + 3*x - 1, (x, 1, 11))"
     },
     "extra_info": {
-      "question_index": 224,
+      "question_index": 222,
       "question_id": "integrate(x**3 - 3*x**2 + 3*x - 1, (x, 1, 11))"
     }
   },
@@ -4063,7 +4027,7 @@
       "ground_truth": "integrate(12 - 3*x**2, (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 225,
+      "question_index": 223,
       "question_id": "integrate(12 - 3*x**2, (x, 0, 2))"
     }
   },
@@ -4081,7 +4045,7 @@
       "ground_truth": "integrate(x + (x-3)/(7+sin(x-3)), (x, 0, 6))"
     },
     "extra_info": {
-      "question_index": 226,
+      "question_index": 224,
       "question_id": "integrate(x + (x-3)/(7+sin(x-3)), (x, 0, 6))"
     }
   },
@@ -4099,7 +4063,7 @@
       "ground_truth": "integrate(sin(x)/(1+tan(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 227,
+      "question_index": 225,
       "question_id": "integrate(sin(x)/(1+tan(x)**2), x)"
     }
   },
@@ -4117,7 +4081,7 @@
       "ground_truth": "integrate((x**5 - x**3 + x**2 - 1)/(x**4 - x**3 + x - 1), x)"
     },
     "extra_info": {
-      "question_index": 228,
+      "question_index": 226,
       "question_id": "integrate((x**5 - x**3 + x**2 - 1)/(x**4 - x**3 + x - 1), x)"
     }
   },
@@ -4135,7 +4099,7 @@
       "ground_truth": "integrate(log(x), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 229,
+      "question_index": 227,
       "question_id": "integrate(log(x), (x, 0, 1))"
     }
   },
@@ -4144,17 +4108,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(1 - e**(-x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(1 - exp(-x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(1 - e**(-x), x)"
+      "ground_truth": "integrate(1 - exp(-x), x)"
     },
     "extra_info": {
-      "question_index": 230,
-      "question_id": "integrate(1 - e**(-x), x)"
+      "question_index": 228,
+      "question_id": "integrate(1 - exp(-x), x)"
     }
   },
   {
@@ -4171,7 +4135,7 @@
       "ground_truth": "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))"
     },
     "extra_info": {
-      "question_index": 231,
+      "question_index": 229,
       "question_id": "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))"
     }
   },
@@ -4189,7 +4153,7 @@
       "ground_truth": "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))"
     },
     "extra_info": {
-      "question_index": 232,
+      "question_index": 230,
       "question_id": "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))"
     }
   },
@@ -4207,7 +4171,7 @@
       "ground_truth": "integrate(tan(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 233,
+      "question_index": 231,
       "question_id": "integrate(tan(x)**2, x)"
     }
   },
@@ -4225,7 +4189,7 @@
       "ground_truth": "integrate((x - b)**2, (x, 0, 256))"
     },
     "extra_info": {
-      "question_index": 234,
+      "question_index": 232,
       "question_id": "integrate((x - b)**2, (x, 0, 256))"
     }
   },
@@ -4234,17 +4198,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(2*sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(2*sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(2*sqrt(x)), x)"
+      "ground_truth": "integrate(exp(2*sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 235,
-      "question_id": "integrate(e**(2*sqrt(x)), x)"
+      "question_index": 233,
+      "question_id": "integrate(exp(2*sqrt(x)), x)"
     }
   },
   {
@@ -4261,7 +4225,7 @@
       "ground_truth": "integrate(cos(x)*cot(x), x)"
     },
     "extra_info": {
-      "question_index": 236,
+      "question_index": 234,
       "question_id": "integrate(cos(x)*cot(x), x)"
     }
   },
@@ -4279,7 +4243,7 @@
       "ground_truth": "integrate(2*log(x) + log(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 237,
+      "question_index": 235,
       "question_id": "integrate(2*log(x) + log(x)**2, x)"
     }
   },
@@ -4297,7 +4261,7 @@
       "ground_truth": "integrate(x/(1+x**2), x)"
     },
     "extra_info": {
-      "question_index": 238,
+      "question_index": 236,
       "question_id": "integrate(x/(1+x**2), x)"
     }
   },
@@ -4315,7 +4279,7 @@
       "ground_truth": "integrate(1/(2-2*x+x**2), x)"
     },
     "extra_info": {
-      "question_index": 239,
+      "question_index": 237,
       "question_id": "integrate(1/(2-2*x+x**2), x)"
     }
   },
@@ -4333,7 +4297,7 @@
       "ground_truth": "integrate(sin(x)*log(sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 240,
+      "question_index": 238,
       "question_id": "integrate(sin(x)*log(sin(x)), x)"
     }
   },
@@ -4351,7 +4315,7 @@
       "ground_truth": "integrate(x/(1-x**4), x)"
     },
     "extra_info": {
-      "question_index": 241,
+      "question_index": 239,
       "question_id": "integrate(x/(1-x**4), x)"
     }
   },
@@ -4369,7 +4333,7 @@
       "ground_truth": "integrate(sec(x)**5*tan(x)**3, x)"
     },
     "extra_info": {
-      "question_index": 242,
+      "question_index": 240,
       "question_id": "integrate(sec(x)**5*tan(x)**3, x)"
     }
   },
@@ -4387,7 +4351,7 @@
       "ground_truth": "integrate(1/(1-sin(x)), (x, -pi/4, pi/4))"
     },
     "extra_info": {
-      "question_index": 243,
+      "question_index": 241,
       "question_id": "integrate(1/(1-sin(x)), (x, -pi/4, pi/4))"
     }
   },
@@ -4405,7 +4369,7 @@
       "ground_truth": "integrate(x/sqrt(x**2-2), x)"
     },
     "extra_info": {
-      "question_index": 244,
+      "question_index": 242,
       "question_id": "integrate(x/sqrt(x**2-2), x)"
     }
   },
@@ -4423,7 +4387,7 @@
       "ground_truth": "integrate(1/(x-1), x)"
     },
     "extra_info": {
-      "question_index": 245,
+      "question_index": 243,
       "question_id": "integrate(1/(x-1), x)"
     }
   },
@@ -4441,7 +4405,7 @@
       "ground_truth": "integrate(x**(1/4)*log(x), x)"
     },
     "extra_info": {
-      "question_index": 246,
+      "question_index": 244,
       "question_id": "integrate(x**(1/4)*log(x), x)"
     }
   },
@@ -4459,7 +4423,7 @@
       "ground_truth": "integrate((1+sqrt(x))/(sqrt(x)-x**2), x)"
     },
     "extra_info": {
-      "question_index": 247,
+      "question_index": 245,
       "question_id": "integrate((1+sqrt(x))/(sqrt(x)-x**2), x)"
     }
   },
@@ -4477,7 +4441,7 @@
       "ground_truth": "integrate(1/sqrt(x*(sqrt(4*x)+1)**10), x)"
     },
     "extra_info": {
-      "question_index": 248,
+      "question_index": 246,
       "question_id": "integrate(1/sqrt(x*(sqrt(4*x)+1)**10), x)"
     }
   },
@@ -4495,7 +4459,7 @@
       "ground_truth": "integrate(sin(acos(x)), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 249,
+      "question_index": 247,
       "question_id": "integrate(sin(acos(x)), (x, 0, 1))"
     }
   },
@@ -4513,7 +4477,7 @@
       "ground_truth": "integrate(1/sqrt(1-4*x-x**2), x)"
     },
     "extra_info": {
-      "question_index": 250,
+      "question_index": 248,
       "question_id": "integrate(1/sqrt(1-4*x-x**2), x)"
     }
   },
@@ -4531,7 +4495,7 @@
       "ground_truth": "integrate(log(1/x), (x, 1/4, 1/2))"
     },
     "extra_info": {
-      "question_index": 251,
+      "question_index": 249,
       "question_id": "integrate(log(1/x), (x, 1/4, 1/2))"
     }
   },
@@ -4549,7 +4513,7 @@
       "ground_truth": "integrate(1/(1+sin(x)), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 252,
+      "question_index": 250,
       "question_id": "integrate(1/(1+sin(x)), (x, 0, pi/2))"
     }
   },
@@ -4567,7 +4531,7 @@
       "ground_truth": "integrate(sqrt(x)/(sqrt(2012-x)+sqrt(x)), (x, 1, 2011))"
     },
     "extra_info": {
-      "question_index": 253,
+      "question_index": 251,
       "question_id": "integrate(sqrt(x)/(sqrt(2012-x)+sqrt(x)), (x, 1, 2011))"
     }
   },
@@ -4585,7 +4549,7 @@
       "ground_truth": "integrate((x-1)/((x+1)*sqrt(x**3+x**2+x)), x)"
     },
     "extra_info": {
-      "question_index": 254,
+      "question_index": 252,
       "question_id": "integrate((x-1)/((x+1)*sqrt(x**3+x**2+x)), x)"
     }
   },
@@ -4603,7 +4567,7 @@
       "ground_truth": "integrate((x**4+4*x**3+6*x**2+4*x+1)/(x**3-3*x**2+3*x-1), (x, -1, 0))"
     },
     "extra_info": {
-      "question_index": 255,
+      "question_index": 253,
       "question_id": "integrate((x**4+4*x**3+6*x**2+4*x+1)/(x**3-3*x**2+3*x-1), (x, -1, 0))"
     }
   },
@@ -4621,7 +4585,7 @@
       "ground_truth": "integrate((cos(x)*log(x)+sin(x))/x, x)"
     },
     "extra_info": {
-      "question_index": 256,
+      "question_index": 254,
       "question_id": "integrate((cos(x)*log(x)+sin(x))/x, x)"
     }
   },
@@ -4639,7 +4603,7 @@
       "ground_truth": "integrate(1/(x**3-x), x)"
     },
     "extra_info": {
-      "question_index": 257,
+      "question_index": 255,
       "question_id": "integrate(1/(x**3-x), x)"
     }
   },
@@ -4657,7 +4621,7 @@
       "ground_truth": "integrate(x*asin(x)/sqrt(1-x**2), (x, 0, 1/2))"
     },
     "extra_info": {
-      "question_index": 258,
+      "question_index": 256,
       "question_id": "integrate(x*asin(x)/sqrt(1-x**2), (x, 0, 1/2))"
     }
   },
@@ -4675,7 +4639,7 @@
       "ground_truth": "integrate(x*(1-x)**99, (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 259,
+      "question_index": 257,
       "question_id": "integrate(x*(1-x)**99, (x, 0, 1))"
     }
   },
@@ -4693,7 +4657,7 @@
       "ground_truth": "integrate(sin(4*x)/sin(x), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 260,
+      "question_index": 258,
       "question_id": "integrate(sin(4*x)/sin(x), (x, 0, pi/2))"
     }
   },
@@ -4711,7 +4675,7 @@
       "ground_truth": "integrate((x-1)**2/(1+x**(1/3)), x)"
     },
     "extra_info": {
-      "question_index": 261,
+      "question_index": 259,
       "question_id": "integrate((x-1)**2/(1+x**(1/3)), x)"
     }
   },
@@ -4729,7 +4693,7 @@
       "ground_truth": "integrate(sqrt(2*x**2-1), x)"
     },
     "extra_info": {
-      "question_index": 262,
+      "question_index": 260,
       "question_id": "integrate(sqrt(2*x**2-1), x)"
     }
   },
@@ -4738,17 +4702,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(sqrt(e**x-1), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(sqrt(exp(x)-1), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(sqrt(e**x-1), x)"
+      "ground_truth": "integrate(sqrt(exp(x)-1), x)"
     },
     "extra_info": {
-      "question_index": 263,
-      "question_id": "integrate(sqrt(e**x-1), x)"
+      "question_index": 261,
+      "question_id": "integrate(sqrt(exp(x)-1), x)"
     }
   },
   {
@@ -4765,7 +4729,7 @@
       "ground_truth": "integrate(x/(x**4+4), x)"
     },
     "extra_info": {
-      "question_index": 264,
+      "question_index": 262,
       "question_id": "integrate(x/(x**4+4), x)"
     }
   },
@@ -4783,7 +4747,7 @@
       "ground_truth": "integrate((cos(x)-sin(x))**2, (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 265,
+      "question_index": 263,
       "question_id": "integrate((cos(x)-sin(x))**2, (x, 0, 2))"
     }
   },
@@ -4801,7 +4765,7 @@
       "ground_truth": "integrate(x*cosh(x)/sinh(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 266,
+      "question_index": 264,
       "question_id": "integrate(x*cosh(x)/sinh(x)**2, x)"
     }
   },
@@ -4819,7 +4783,7 @@
       "ground_truth": "integrate(x**5/sqrt(1+x**3), (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 267,
+      "question_index": 265,
       "question_id": "integrate(x**5/sqrt(1+x**3), (x, 0, 2))"
     }
   },
@@ -4837,7 +4801,7 @@
       "ground_truth": "integrate((x**7-1)*log(x), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 268,
+      "question_index": 266,
       "question_id": "integrate((x**7-1)*log(x), (x, 0, 1))"
     }
   },
@@ -4855,7 +4819,7 @@
       "ground_truth": "integrate(x-1, x)"
     },
     "extra_info": {
-      "question_index": 269,
+      "question_index": 267,
       "question_id": "integrate(x-1, x)"
     }
   },
@@ -4873,7 +4837,7 @@
       "ground_truth": "integrate(log(x**2) - 2*log(2*x), x)"
     },
     "extra_info": {
-      "question_index": 270,
+      "question_index": 268,
       "question_id": "integrate(log(x**2) - 2*log(2*x), x)"
     }
   },
@@ -4882,17 +4846,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(Abs(x)), (x, -1, 3))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(Abs(x)), (x, -1, 3))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(Abs(x)), (x, -1, 3))"
+      "ground_truth": "integrate(exp(Abs(x)), (x, -1, 3))"
     },
     "extra_info": {
-      "question_index": 271,
-      "question_id": "integrate(e**(Abs(x)), (x, -1, 3))"
+      "question_index": 269,
+      "question_id": "integrate(exp(Abs(x)), (x, -1, 3))"
     }
   },
   {
@@ -4909,7 +4873,7 @@
       "ground_truth": "integrate((log(x)*cos(x)-sin(x)/x)/(log(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 272,
+      "question_index": 270,
       "question_id": "integrate((log(x)*cos(x)-sin(x)/x)/(log(x)**2), x)"
     }
   },
@@ -4927,7 +4891,7 @@
       "ground_truth": "integrate(x**3-3*x**2+3*x-1, (x, 1, 11))"
     },
     "extra_info": {
-      "question_index": 273,
+      "question_index": 271,
       "question_id": "integrate(x**3-3*x**2+3*x-1, (x, 1, 11))"
     }
   },
@@ -4945,7 +4909,7 @@
       "ground_truth": "integrate(12-3*x**2, (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 274,
+      "question_index": 272,
       "question_id": "integrate(12-3*x**2, (x, 0, 2))"
     }
   },
@@ -4963,7 +4927,7 @@
       "ground_truth": "integrate(x+(x-3)/(7+sin(x-3)), (x, 0, 6))"
     },
     "extra_info": {
-      "question_index": 275,
+      "question_index": 273,
       "question_id": "integrate(x+(x-3)/(7+sin(x-3)), (x, 0, 6))"
     }
   },
@@ -4981,7 +4945,7 @@
       "ground_truth": "integrate(sin(x)/(1+tan(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 276,
+      "question_index": 274,
       "question_id": "integrate(sin(x)/(1+tan(x)**2), x)"
     }
   },
@@ -4999,7 +4963,7 @@
       "ground_truth": "integrate((x**5-x**3+x**2-1)/(x**4-x**3+x-1), x)"
     },
     "extra_info": {
-      "question_index": 277,
+      "question_index": 275,
       "question_id": "integrate((x**5-x**3+x**2-1)/(x**4-x**3+x-1), x)"
     }
   },
@@ -5017,7 +4981,7 @@
       "ground_truth": "integrate(log(x), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 278,
+      "question_index": 276,
       "question_id": "integrate(log(x), (x, 0, 1))"
     }
   },
@@ -5026,17 +4990,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(1-e**(-x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(1-exp(-x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(1-e**(-x), x)"
+      "ground_truth": "integrate(1-exp(-x), x)"
     },
     "extra_info": {
-      "question_index": 279,
-      "question_id": "integrate(1-e**(-x), x)"
+      "question_index": 277,
+      "question_id": "integrate(1-exp(-x), x)"
     }
   },
   {
@@ -5053,7 +5017,7 @@
       "ground_truth": "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))"
     },
     "extra_info": {
-      "question_index": 280,
+      "question_index": 278,
       "question_id": "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))"
     }
   },
@@ -5071,7 +5035,7 @@
       "ground_truth": "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))"
     },
     "extra_info": {
-      "question_index": 281,
+      "question_index": 279,
       "question_id": "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))"
     }
   },
@@ -5089,7 +5053,7 @@
       "ground_truth": "integrate(tan(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 282,
+      "question_index": 280,
       "question_id": "integrate(tan(x)**2, x)"
     }
   },
@@ -5107,7 +5071,7 @@
       "ground_truth": "integrate((x-b)**2, (x, 0, 256))"
     },
     "extra_info": {
-      "question_index": 283,
+      "question_index": 281,
       "question_id": "integrate((x-b)**2, (x, 0, 256))"
     }
   },
@@ -5116,17 +5080,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(2*sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(2*sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(2*sqrt(x)), x)"
+      "ground_truth": "integrate(exp(2*sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 284,
-      "question_id": "integrate(e**(2*sqrt(x)), x)"
+      "question_index": 282,
+      "question_id": "integrate(exp(2*sqrt(x)), x)"
     }
   },
   {
@@ -5143,7 +5107,7 @@
       "ground_truth": "integrate(cos(x)*cot(x), x)"
     },
     "extra_info": {
-      "question_index": 285,
+      "question_index": 283,
       "question_id": "integrate(cos(x)*cot(x), x)"
     }
   },
@@ -5161,7 +5125,7 @@
       "ground_truth": "integrate(2*log(x)+log(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 286,
+      "question_index": 284,
       "question_id": "integrate(2*log(x)+log(x)**2, x)"
     }
   },
@@ -5179,7 +5143,7 @@
       "ground_truth": "integrate(x/(1+x**2), x)"
     },
     "extra_info": {
-      "question_index": 287,
+      "question_index": 285,
       "question_id": "integrate(x/(1+x**2), x)"
     }
   },
@@ -5197,7 +5161,7 @@
       "ground_truth": "integrate(1/(2-2*x+x**2), x)"
     },
     "extra_info": {
-      "question_index": 288,
+      "question_index": 286,
       "question_id": "integrate(1/(2-2*x+x**2), x)"
     }
   },
@@ -5215,7 +5179,7 @@
       "ground_truth": "integrate(sin(x)*log(sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 289,
+      "question_index": 287,
       "question_id": "integrate(sin(x)*log(sin(x)), x)"
     }
   },
@@ -5233,7 +5197,7 @@
       "ground_truth": "integrate(x/(1-x**4), x)"
     },
     "extra_info": {
-      "question_index": 290,
+      "question_index": 288,
       "question_id": "integrate(x/(1-x**4), x)"
     }
   },
@@ -5251,7 +5215,7 @@
       "ground_truth": "integrate(sec(x)**5*tan(x)**3, x)"
     },
     "extra_info": {
-      "question_index": 291,
+      "question_index": 289,
       "question_id": "integrate(sec(x)**5*tan(x)**3, x)"
     }
   },
@@ -5269,7 +5233,7 @@
       "ground_truth": "integrate(1/(1-sin(x)), (x, -pi/4, pi/4))"
     },
     "extra_info": {
-      "question_index": 292,
+      "question_index": 290,
       "question_id": "integrate(1/(1-sin(x)), (x, -pi/4, pi/4))"
     }
   },
@@ -5287,7 +5251,7 @@
       "ground_truth": "integrate(x/sqrt(x**2-2), x)"
     },
     "extra_info": {
-      "question_index": 293,
+      "question_index": 291,
       "question_id": "integrate(x/sqrt(x**2-2), x)"
     }
   },
@@ -5305,7 +5269,7 @@
       "ground_truth": "integrate(1/(x-1), x)"
     },
     "extra_info": {
-      "question_index": 294,
+      "question_index": 292,
       "question_id": "integrate(1/(x-1), x)"
     }
   },
@@ -5323,7 +5287,7 @@
       "ground_truth": "integrate(x**(1/4)*log(x), x)"
     },
     "extra_info": {
-      "question_index": 295,
+      "question_index": 293,
       "question_id": "integrate(x**(1/4)*log(x), x)"
     }
   },
@@ -5341,7 +5305,7 @@
       "ground_truth": "integrate((1+sqrt(x))/(sqrt(x)-x**2), x)"
     },
     "extra_info": {
-      "question_index": 296,
+      "question_index": 294,
       "question_id": "integrate((1+sqrt(x))/(sqrt(x)-x**2), x)"
     }
   },
@@ -5359,7 +5323,7 @@
       "ground_truth": "integrate(1/sqrt(x*(sqrt(4*x)+1)**10), x)"
     },
     "extra_info": {
-      "question_index": 297,
+      "question_index": 295,
       "question_id": "integrate(1/sqrt(x*(sqrt(4*x)+1)**10), x)"
     }
   },
@@ -5377,7 +5341,7 @@
       "ground_truth": "integrate(sin(acos(x)), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 298,
+      "question_index": 296,
       "question_id": "integrate(sin(acos(x)), (x, 0, 1))"
     }
   },
@@ -5395,7 +5359,7 @@
       "ground_truth": "integrate(1/sqrt(1-4*x-x**2), x)"
     },
     "extra_info": {
-      "question_index": 299,
+      "question_index": 297,
       "question_id": "integrate(1/sqrt(1-4*x-x**2), x)"
     }
   },
@@ -5413,7 +5377,7 @@
       "ground_truth": "integrate(log(1/x), (x, 1/4, 1/2))"
     },
     "extra_info": {
-      "question_index": 300,
+      "question_index": 298,
       "question_id": "integrate(log(1/x), (x, 1/4, 1/2))"
     }
   },
@@ -5431,7 +5395,7 @@
       "ground_truth": "integrate(1/(1+sin(x)), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 301,
+      "question_index": 299,
       "question_id": "integrate(1/(1+sin(x)), (x, 0, pi/2))"
     }
   },
@@ -5449,7 +5413,7 @@
       "ground_truth": "integrate(sqrt(x)/(sqrt(2012-x)+sqrt(x)), (x, 1, 2011))"
     },
     "extra_info": {
-      "question_index": 302,
+      "question_index": 300,
       "question_id": "integrate(sqrt(x)/(sqrt(2012-x)+sqrt(x)), (x, 1, 2011))"
     }
   },
@@ -5467,7 +5431,7 @@
       "ground_truth": "integrate((x-1)/((x+1)*sqrt(x**3+x**2+x)), x)"
     },
     "extra_info": {
-      "question_index": 303,
+      "question_index": 301,
       "question_id": "integrate((x-1)/((x+1)*sqrt(x**3+x**2+x)), x)"
     }
   },
@@ -5485,7 +5449,7 @@
       "ground_truth": "integrate((x**4+4*x**3+6*x**2+4*x+1)/(x**3-3*x**2+3*x-1), (x, -1, 0))"
     },
     "extra_info": {
-      "question_index": 304,
+      "question_index": 302,
       "question_id": "integrate((x**4+4*x**3+6*x**2+4*x+1)/(x**3-3*x**2+3*x-1), (x, -1, 0))"
     }
   },
@@ -5503,7 +5467,7 @@
       "ground_truth": "integrate((cos(x)*log(x)+sin(x))/x, x)"
     },
     "extra_info": {
-      "question_index": 305,
+      "question_index": 303,
       "question_id": "integrate((cos(x)*log(x)+sin(x))/x, x)"
     }
   },
@@ -5521,7 +5485,7 @@
       "ground_truth": "integrate(1/(x**3-x), x)"
     },
     "extra_info": {
-      "question_index": 306,
+      "question_index": 304,
       "question_id": "integrate(1/(x**3-x), x)"
     }
   },
@@ -5539,7 +5503,7 @@
       "ground_truth": "integrate(x*asin(x)/sqrt(1-x**2), (x, 0, 1/2))"
     },
     "extra_info": {
-      "question_index": 307,
+      "question_index": 305,
       "question_id": "integrate(x*asin(x)/sqrt(1-x**2), (x, 0, 1/2))"
     }
   },
@@ -5557,7 +5521,7 @@
       "ground_truth": "integrate(x*(1-x)**99, (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 308,
+      "question_index": 306,
       "question_id": "integrate(x*(1-x)**99, (x, 0, 1))"
     }
   },
@@ -5575,7 +5539,7 @@
       "ground_truth": "integrate(sin(4*x)/sin(x), (x, 0, pi/2))"
     },
     "extra_info": {
-      "question_index": 309,
+      "question_index": 307,
       "question_id": "integrate(sin(4*x)/sin(x), (x, 0, pi/2))"
     }
   },
@@ -5593,7 +5557,7 @@
       "ground_truth": "integrate((x-1)**2/(1+x**(1/3)), x)"
     },
     "extra_info": {
-      "question_index": 310,
+      "question_index": 308,
       "question_id": "integrate((x-1)**2/(1+x**(1/3)), x)"
     }
   },
@@ -5611,7 +5575,7 @@
       "ground_truth": "integrate(sqrt(2*x**2-1), x)"
     },
     "extra_info": {
-      "question_index": 311,
+      "question_index": 309,
       "question_id": "integrate(sqrt(2*x**2-1), x)"
     }
   },
@@ -5620,17 +5584,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(sqrt(e**x-1), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(sqrt(exp(x)-1), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(sqrt(e**x-1), x)"
+      "ground_truth": "integrate(sqrt(exp(x)-1), x)"
     },
     "extra_info": {
-      "question_index": 312,
-      "question_id": "integrate(sqrt(e**x-1), x)"
+      "question_index": 310,
+      "question_id": "integrate(sqrt(exp(x)-1), x)"
     }
   },
   {
@@ -5647,7 +5611,7 @@
       "ground_truth": "integrate(x/(x**4+4), x)"
     },
     "extra_info": {
-      "question_index": 313,
+      "question_index": 311,
       "question_id": "integrate(x/(x**4+4), x)"
     }
   },
@@ -5665,7 +5629,7 @@
       "ground_truth": "integrate((cos(x)-sin(x))**2, (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 314,
+      "question_index": 312,
       "question_id": "integrate((cos(x)-sin(x))**2, (x, 0, 2))"
     }
   },
@@ -5683,7 +5647,7 @@
       "ground_truth": "integrate(x*cosh(x)/sinh(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 315,
+      "question_index": 313,
       "question_id": "integrate(x*cosh(x)/sinh(x)**2, x)"
     }
   },
@@ -5701,7 +5665,7 @@
       "ground_truth": "integrate(x**5/sqrt(1+x**3), (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 316,
+      "question_index": 314,
       "question_id": "integrate(x**5/sqrt(1+x**3), (x, 0, 2))"
     }
   },
@@ -5719,7 +5683,7 @@
       "ground_truth": "integrate((x**7-1)*log(x), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 317,
+      "question_index": 315,
       "question_id": "integrate((x**7-1)*log(x), (x, 0, 1))"
     }
   },
@@ -5737,7 +5701,7 @@
       "ground_truth": "integrate(x-1, x)"
     },
     "extra_info": {
-      "question_index": 318,
+      "question_index": 316,
       "question_id": "integrate(x-1, x)"
     }
   },
@@ -5755,7 +5719,7 @@
       "ground_truth": "integrate(log(x**2)-2*log(2*x), x)"
     },
     "extra_info": {
-      "question_index": 319,
+      "question_index": 317,
       "question_id": "integrate(log(x**2)-2*log(2*x), x)"
     }
   },
@@ -5764,17 +5728,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(Abs(x)), (x, -1, 3))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(Abs(x)), (x, -1, 3))\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(Abs(x)), (x, -1, 3))"
+      "ground_truth": "integrate(exp(Abs(x)), (x, -1, 3))"
     },
     "extra_info": {
-      "question_index": 320,
-      "question_id": "integrate(e**(Abs(x)), (x, -1, 3))"
+      "question_index": 318,
+      "question_id": "integrate(exp(Abs(x)), (x, -1, 3))"
     }
   },
   {
@@ -5791,7 +5755,7 @@
       "ground_truth": "integrate((log(x)*cos(x)-sin(x)/x)/(log(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 321,
+      "question_index": 319,
       "question_id": "integrate((log(x)*cos(x)-sin(x)/x)/(log(x)**2), x)"
     }
   },
@@ -5809,7 +5773,7 @@
       "ground_truth": "integrate(x**3-3*x**2+3*x-1, (x, 1, 11))"
     },
     "extra_info": {
-      "question_index": 322,
+      "question_index": 320,
       "question_id": "integrate(x**3-3*x**2+3*x-1, (x, 1, 11))"
     }
   },
@@ -5827,7 +5791,7 @@
       "ground_truth": "integrate(12-3*x**2, (x, 0, 2))"
     },
     "extra_info": {
-      "question_index": 323,
+      "question_index": 321,
       "question_id": "integrate(12-3*x**2, (x, 0, 2))"
     }
   },
@@ -5845,7 +5809,7 @@
       "ground_truth": "integrate(x+(x-3)/(7+sin(x-3)), (x, 0, 6))"
     },
     "extra_info": {
-      "question_index": 324,
+      "question_index": 322,
       "question_id": "integrate(x+(x-3)/(7+sin(x-3)), (x, 0, 6))"
     }
   },
@@ -5863,7 +5827,7 @@
       "ground_truth": "integrate(sin(x)/(1+tan(x)**2), x)"
     },
     "extra_info": {
-      "question_index": 325,
+      "question_index": 323,
       "question_id": "integrate(sin(x)/(1+tan(x)**2), x)"
     }
   },
@@ -5881,7 +5845,7 @@
       "ground_truth": "integrate((x**5-x**3+x**2-1)/(x**4-x**3+x-1), x)"
     },
     "extra_info": {
-      "question_index": 326,
+      "question_index": 324,
       "question_id": "integrate((x**5-x**3+x**2-1)/(x**4-x**3+x-1), x)"
     }
   },
@@ -5899,7 +5863,7 @@
       "ground_truth": "integrate(log(x), (x, 0, 1))"
     },
     "extra_info": {
-      "question_index": 327,
+      "question_index": 325,
       "question_id": "integrate(log(x), (x, 0, 1))"
     }
   },
@@ -5908,17 +5872,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(1-e**(-x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(1-exp(-x), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(1-e**(-x), x)"
+      "ground_truth": "integrate(1-exp(-x), x)"
     },
     "extra_info": {
-      "question_index": 328,
-      "question_id": "integrate(1-e**(-x), x)"
+      "question_index": 326,
+      "question_id": "integrate(1-exp(-x), x)"
     }
   },
   {
@@ -5935,7 +5899,7 @@
       "ground_truth": "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))"
     },
     "extra_info": {
-      "question_index": 329,
+      "question_index": 327,
       "question_id": "integrate(sin(x)**2*cos(x)**2, (x, 0, pi))"
     }
   },
@@ -5953,7 +5917,7 @@
       "ground_truth": "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))"
     },
     "extra_info": {
-      "question_index": 330,
+      "question_index": 328,
       "question_id": "integrate(pi*sin(pi*sqrt(x))/sqrt(x), (x, 0, 441))"
     }
   },
@@ -5971,7 +5935,7 @@
       "ground_truth": "integrate(tan(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 331,
+      "question_index": 329,
       "question_id": "integrate(tan(x)**2, x)"
     }
   },
@@ -5989,7 +5953,7 @@
       "ground_truth": "integrate((x-b)**2, (x, 0, 256))"
     },
     "extra_info": {
-      "question_index": 332,
+      "question_index": 330,
       "question_id": "integrate((x-b)**2, (x, 0, 256))"
     }
   },
@@ -5998,17 +5962,17 @@
     "prompt": [
       {
         "role": "user",
-        "content": "integrate(e**(2*sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
+        "content": "integrate(exp(2*sqrt(x)), x)\nSolve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> wrapped in <answer> and </answer> tags. Show your full working out before solving, don't include any constants of integration."
       }
     ],
     "ability": "integration",
     "reward_model": {
       "style": "rule",
-      "ground_truth": "integrate(e**(2*sqrt(x)), x)"
+      "ground_truth": "integrate(exp(2*sqrt(x)), x)"
     },
     "extra_info": {
-      "question_index": 333,
-      "question_id": "integrate(e**(2*sqrt(x)), x)"
+      "question_index": 331,
+      "question_id": "integrate(exp(2*sqrt(x)), x)"
     }
   },
   {
@@ -6025,7 +5989,7 @@
       "ground_truth": "integrate(cos(x)*cot(x), x)"
     },
     "extra_info": {
-      "question_index": 334,
+      "question_index": 332,
       "question_id": "integrate(cos(x)*cot(x), x)"
     }
   },
@@ -6043,7 +6007,7 @@
       "ground_truth": "integrate(2*log(x)+log(x)**2, x)"
     },
     "extra_info": {
-      "question_index": 335,
+      "question_index": 333,
       "question_id": "integrate(2*log(x)+log(x)**2, x)"
     }
   },
@@ -6061,7 +6025,7 @@
       "ground_truth": "integrate(x/(1+x**2), x)"
     },
     "extra_info": {
-      "question_index": 336,
+      "question_index": 334,
       "question_id": "integrate(x/(1+x**2), x)"
     }
   },
@@ -6079,7 +6043,7 @@
       "ground_truth": "integrate(1/(2-2*x+x**2), x)"
     },
     "extra_info": {
-      "question_index": 337,
+      "question_index": 335,
       "question_id": "integrate(1/(2-2*x+x**2), x)"
     }
   },
@@ -6097,7 +6061,7 @@
       "ground_truth": "integrate(sin(x)*log(sin(x)), x)"
     },
     "extra_info": {
-      "question_index": 338,
+      "question_index": 336,
       "question_id": "integrate(sin(x)*log(sin(x)), x)"
     }
   },
@@ -6115,7 +6079,7 @@
       "ground_truth": "integrate(x/(1-x**4), x)"
     },
     "extra_info": {
-      "question_index": 339,
+      "question_index": 337,
       "question_id": "integrate(x/(1-x**4), x)"
     }
   },
@@ -6133,7 +6097,7 @@
       "ground_truth": "integrate(sec(x)**5*tan(x)**3, x)"
     },
     "extra_info": {
-      "question_index": 340,
+      "question_index": 338,
       "question_id": "integrate(sec(x)**5*tan(x)**3, x)"
     }
   },
@@ -6151,7 +6115,7 @@
       "ground_truth": "integrate(1/(1-sin(x)), (x, -pi/4, pi/4))"
     },
     "extra_info": {
-      "question_index": 341,
+      "question_index": 339,
       "question_id": "integrate(1/(1-sin(x)), (x, -pi/4, pi/4))"
     }
   },
@@ -6169,7 +6133,7 @@
       "ground_truth": "integrate(x/sqrt(x**2-2), x)"
     },
     "extra_info": {
-      "question_index": 342,
+      "question_index": 340,
       "question_id": "integrate(x/sqrt(x**2-2), x)"
     }
   }

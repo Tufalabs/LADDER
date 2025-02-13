@@ -10,7 +10,7 @@ For example: "integrate(1/(x**2 - x + 1), x)"
 #2020 - 2024 MIT intergration bee questions
 #https://math.mit.edu/~yyao1/integrationbee.html
 #just the qualifier tests
-FINALS_PROBLEMS = [
+BASE_QUESTIONS = [
     # Finals Problem 1
     "integrate(sqrt((sin(20*x) + 3*sin(21*x) + sin(22*x))**2 + (cos(20*x) + 3*cos(21*x) + cos(22*x))**2), x)",
     # Finals Problem 2

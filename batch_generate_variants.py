@@ -11,14 +11,20 @@ import json
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
-from questions.mit_bee_qualifiying_questions import BASE_QUESTIONS as QUESTIONS
+from questions.mit_bee_regular_season_questions import BASE_QUESTIONS as QUESTIONS1
+from questions.mit_bee_finals_season_questions import BASE_QUESTIONS as QUESTIONS2
+from questions.mit_bee_semi_finals_season_questions import BASE_QUESTIONS as QUESTIONS3
+from questions.mit_bee_quater_finals_season_questions import BASE_QUESTIONS as QUESTIONS4
 from generate_variants import process_integral
 import random
 
+QUESTIONS = QUESTIONS1 + QUESTIONS2 + QUESTIONS3 + QUESTIONS4
+
 BATCH_SIZE = 10  # Number of integrals to process concurrently
 DIFFICULTIES = {
-    "easier": 10,  # Number of easier variants to generate
-    "equivalent": 5  # Number of equivalent variants to generate
+    "easier": 20,  # Number of easier variants to generate
+    "equivalent": 20,  # Number of equivalent variants to generate
+    "harder": 10  # Number of harder variants to generate
 }
 
 async def process_batch(integrals: List[str]) -> List[Dict]:
@@ -88,4 +94,4 @@ async def main():
     print(f"Average variants per integral: {total_variants/total_integrals:.2f}")
 
 if __name__ == "__main__":
-    asyncio.run(main()) 
+    asyncio.run(main())     

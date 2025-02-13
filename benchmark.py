@@ -27,7 +27,7 @@ import sympy as sp
 import asyncio
 import mpmath as mp  # for numerical integration
 from utils.inference import generate_text  # Ensure this function is available
-from questions.mit_bee_qualifiying_questions import BASE_QUESTIONS as QUESTIONS
+from questions.mit_bee_qualifiying_questions_2025test import BASE_QUESTIONS as QUESTIONS
 
 # ---------------- Configuration ----------------
 SAVE_INCORRECT_QUESTIONS = True  # Set to True to save a new file with the integrals answered incorrectly.
@@ -335,7 +335,7 @@ def save_correct_questions(results, filename: str):
 
 if __name__ == "__main__":
     async def main():
-        results = await benchmark_integrals(batch_size=100, model="Qwen/Qwen2.5-7B-Instruct")
+        results = await benchmark_integrals(batch_size=100, model="o1-mini")
         if SAVE_INCORRECT_QUESTIONS:
             save_incorrect_questions(results, INCORRECT_FILENAME)
         

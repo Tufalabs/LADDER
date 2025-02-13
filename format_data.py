@@ -5,9 +5,13 @@ import pyarrow.parquet as pq
 
 if __name__ == '__main__':
     # Path to the directories containing your JSON files
-    data_dirs = ['variant_results']  # Adjust these paths as needed
+    data_dirs = ['variant_results', 'variant_results1']  # Adjust these paths as needed
+    remove_duplicates = True  # Flag to control duplicate removal
 
     train_samples = []
+    seen_integrals = set() if remove_duplicates else None
+    duplicates_found = 0
+    
     # Define the integration-specific instruction.
     instruction_following = (
         "Solve the following integral. Provide ONLY your antiderivative as a valid Python sympy expression e.g  <answer>cos(x**2)+ ln(x)+1/3*x^3 </answer> "
@@ -58,6 +62,14 @@ if __name__ == '__main__':
                         if not integration_expr:
                             continue  # Skip if there is no variant text.
 
+                        # Skip duplicates only if remove_duplicates is True
+                        if remove_duplicates and integration_expr in seen_integrals:
+                            duplicates_found += 1
+                            continue
+                        
+                        # Track seen integrals if remove_duplicates is True
+                        if remove_duplicates:
+                            seen_integrals.add(integration_expr)
 
                         # Build the prompt by combining the integration expression with the instruction.
                         prompt_content = f"{integration_expr}\n{instruction_following}"
@@ -101,3 +113,6 @@ if __name__ == '__main__':
     pq.write_table(train_table, os.path.join(output_dir, 'integration_train.parquet'))
 
     print(f"Integration dataset created successfully with {total_questions} questions.")
+    if remove_duplicates:
+        print(f"Skipped {duplicates_found} duplicate integrals.")
+    print(f"Final dataset contains {len(train_samples)} unique integrals.")

@@ -6,7 +6,7 @@ An experimental pipeline that:
 - For each requested difficulty (e.g., easier, equivalent, or harder) it generates several variants.
 - Each LLM prompt now generates up to 10 variants at once. If the user requests more than 10 variants,
   the work is split into multiple concurrent calls.
-- Each variant’s antiderivative is attempted symbolically via Sympy.
+- Each variant's antiderivative is attempted symbolically via Sympy.
 - A second LLM prompt asks for a difficulty evaluation (easier/harder/equivalent) as a double-check.
 - The antiderivative solution (i.e. the integration result) is computed, and it is evaluated at three random points.
 - Points that produce complex values are skipped.
@@ -188,17 +188,6 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
     else:
         verification = None
 
-    evaluation = "unknown"
-    prompt_evaluation = (
-        f"Original integral: {original_integral}\n"
-        f"Variant integral: {variant_integral}\n"
-        "Based on the changes, determine whether the variant is 'easier', 'harder', or 'equivalent' to the original. "
-        "Answer with one word: easier, harder, or equivalent."
-    )
-    evaluation_response = await generate_text(MODEL, prompt_evaluation)
-    if evaluation_response:
-        evaluation = evaluation_response.strip().split()[0].lower()
-
     return {
         "original": original_integral,
         "requested_difficulty": difficulty,
@@ -206,12 +195,55 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
         "reasoning": variant_data.get("reasoning"),
         "variant_response": None,
         "verification_passed": verification,
-        "evaluation": evaluation,
+        "evaluation": None,
         "transformations_used": variant_data.get("transformations_used", []),
         "solution": solution,           # Will be None if integration took too long or if CALCULATE_SYMBOLIC is False.
         "evaluations": evaluations,       # Will be {} if integration took too long or if CALCULATE_SYMBOLIC is False.
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }
+
+def get_random_prompt_template(integral_str: str, difficulty: str, count: int, transforms_text: str, personas_str: str) -> str:
+    templates = []
+    templates.append(
+        f"Assume you can adopt various mathematical personas such as {personas_str}.\n\n"
+        f"Given the integral: {integral_str}\n"
+        f"Your task is to generate {count} creative and unexpected variant(s) that are {difficulty} than the original.\n\n"
+        "Follow these steps:\n"
+        "1. Analyze the original integral deeply, looking for hidden patterns and non-obvious properties.\n"
+        "2. Think outside conventional approaches - consider unusual substitutions, creative identities, or surprising transformations.\n"
+        f"3. Draw inspiration from various mathematical fields. Some ideas: {transforms_text}\n"
+        "4. Provide a detailed explanation of your creative reasoning process.\n"
+        "5. Present each variant in valid Python sympy syntax in the form: integrate(<integrand>, x).\n\n"
+        "Push yourself to find truly novel variants that might surprise even experienced mathematicians!\n\n"
+        "Return your answer in the following exact format for each variant:\n"
+        "====\n"
+        "Variant <number>:\n"
+        "Reasoning: <your creative chain-of-thought explanation>\n"
+        "Variant: integrate(<integrand>, x)\n"
+        "===="
+    )
+    
+    # Add another template that emphasizes different creative aspects
+    templates.append(
+        f"Channel the creative spirit of great mathematicians like {personas_str}.\n\n"
+        f"For this integral: {integral_str}\n"
+        f"Create {count} mathematically interesting variant(s) that are {difficulty} than the original.\n\n"
+        "Steps:\n"
+        "1. Look for hidden mathematical beauty and unexpected connections in the original integral.\n"
+        "2. Consider how different areas of mathematics might offer surprising approaches.\n"
+        f"3. Experiment with transformations such as {transforms_text}\n"
+        "4. Explain your mathematical insights and creative process.\n"
+        "5. Express each variant using valid Python sympy syntax: integrate(<integrand>, x)\n\n"
+        "Aim to create variants that showcase the rich interconnections in mathematics!\n\n"
+        "Use this format:\n"
+        "====\n"
+        "Variant <number>:\n"
+        "Reasoning: <your creative chain-of-thought explanation>\n"
+        "Variant: integrate(<integrand>, x)\n"
+        "===="
+    )
+    
+    return random.choice(templates)
 
 async def generate_variant_chunk(integral_str: str, difficulty: str, count: int) -> list:
     """
@@ -219,42 +251,72 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
     The prompt instructs the LLM to produce `count` variants in the specified format.
     After receiving the response, each variant is parsed and then further processed.
     """
+    # Get a list of transformation ideas based on difficulty.
     transformations = TRANSFORMATIONS_BY_DIFFICULTY.get(difficulty.lower(), [])
     if not transformations:
         transformations = ["make a small change"]
 
-    num_choices = random.choice([3, 5])
+    # Pick a random subset (between 3 and 6) from the transformation list.
+    num_choices = random.choice(range(3, 7))
     chosen_transforms = random.sample(transformations, min(num_choices, len(transformations)))
-    transforms_text = " and ".join(chosen_transforms)
+    transforms_text = ", ".join(chosen_transforms)
 
+    # Expand the persona list for more diverse creative inspiration.
     personas = [
+        "Richard Feynman who loves finding intuitive physical interpretations",
+        "Leonhard Euler who excels at infinite series and creative substitutions",
+        "Carl Friedrich Gauss who sees deep mathematical patterns",
+        "Emmy Noether who focuses on symmetry and invariance",
+        "Paul Dirac who prefers elegant mathematical beauty",
+        "Isaac Newton who thinks in terms of physical motion and rates of change",
+        "Gottfried Leibniz who seeks systematic notation and patterns",
+        "Bernhard Riemann who explores complex geometric relationships",
+        "Pierre-Simon Laplace who excels at transform methods",
+        "Joseph-Louis Lagrange who loves analytical mechanics approaches",
+        "Henri Poincaré who sees topological connections",
+        "Srinivasa Ramanujan who has incredible intuition for identities",
+        "David Hilbert who approaches problems with rigorous formalism",
+        "John von Neumann who combines computational and theoretical insights",
+        "Sophie Germain who finds innovative prime number relationships",
+        "George Pólya who uses creative problem-solving strategies",
+        "Augustin-Louis Cauchy who emphasizes rigorous analysis",
+        "Évariste Galois who sees algebraic structure in everything",
+        "Ada Lovelace who thinks algorithmically",
+        "Alan Turing who approaches problems computationally",
+        "Kurt Gödel who seeks logical foundations",
+        "Edward Witten who applies physics insights to mathematics",
+        "Terence Tao who combines multiple mathematical disciplines",
+        "Katherine Johnson who excels at practical numerical computations",
+        "Maryam Mirzakhani who thinks in terms of geometric dynamics",
         "a calculus professor who loves elegant simplifications",
         "a creative mathematician who enjoys unusual substitutions",
         "a student who prefers working with polynomials and rational functions",
         "a theoretical physicist who likes trigonometric and exponential forms",
         "an engineer who favors practical, computational approaches",
         "a number theorist fascinated by prime numbers and rational coefficients",
-        "a geometry enthusiast who thinks in terms of geometric transformations"
+        "a geometry enthusiast who thinks in terms of geometric transformations",
+        "an algebraic geometer with a penchant for symmetry",
+        "a computational mathematician who values algorithmic efficiency",
+        "Peter Gustav Lejeune Dirichlet who masters conditional convergence",
+        "Carl Gustav Jacob Jacobi who specializes in elliptic functions",
+        "William Rowan Hamilton who thinks in quaternions",
+        "Sofia Kovalevskaya who masters partial differential equations",
+        "Hermann Weyl who combines geometry with group theory",
+        "André Weil who sees algebraic geometry everywhere",
+        "Paul Erdős who finds elementary yet deep approaches",
+        "Benoit Mandelbrot who thinks in fractals and self-similarity",
+        "Stephen Hawking who applies cosmological intuition",
+        "Hermann Minkowski who thinks in spacetime geometry",
+        "Felix Klein who sees geometric symmetries"
     ]
     personas_str = ", ".join(personas)
 
-    prompt_variant = (
-        f"Assume you can adopt various mathematical personas such as {personas_str}.\n\n"
-        f"Given the integral: {integral_str}\n"
-        f"Your task is to generate {count} variant(s) that are {difficulty} than the original.\n\n"
-        f"1. Analyze the original integral and identify its key characteristics.\n"
-        f"2. Consider the following transformation ideas: {transforms_text}. You may use them or devise your own modifications.\n"
-        f"3. For each variant, provide a brief reasoning from the perspective of a distinct persona and then present the variant in valid Python sympy syntax.\n\n"
-        "Return your answer in the following exact format for each variant:\n"
-        "====\n"
-        "Variant <number>:\n"
-        "Reasoning: <your explanation>\n"
-        "Variant: integrate(<integrand>, x)\n"
-        "====\n"
-        "Ensure each variant is clearly separated by the delimiter '===='."
-    )
+    # Randomly choose a prompt template.
+    prompt_variant = get_random_prompt_template(integral_str, difficulty, count, transforms_text, personas_str)
 
-    response_text = await generate_text(MODEL, prompt_variant, temperature=1.0)
+    # Randomize temperature for creativity.
+    temperature_choice = random.choice([0.8, 1.0, 1.2, 1.4])
+    response_text = await generate_text(MODEL, prompt_variant, temperature=temperature_choice)
     parsed_variants = parse_variants(response_text)
 
     for variant in parsed_variants:
@@ -268,13 +330,13 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
     # Filter out any None results (if any parsing issues occur)
     return [v for v in processed_variants if v is not None]
 
+# Expanded transformation ideas for extra variance.
 TRANSFORMATIONS_BY_DIFFICULTY = {
     "easier": [
         "remove a complicated term",
         "simplify the denominator",
         "reduce an exponent",
         "change a function to an easier one",
- 
         "lower a coefficient",
         "remove a factor",
         "eliminate a radical",
@@ -289,11 +351,62 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "eliminate absolute value terms",
         "reduce the number of terms in the expression",
         "replace transcendental functions with simpler algebraic ones",
-        "change a function to an easier one"
+        "factor common elements",
+        "cancel redundant terms",
+        "linearize the integrand",
+        "break up a compound fraction",
+        "simplify rational expressions",
+        "remove redundant constants",
+        "combine like terms to reduce complexity",
+        "split a complex fraction into partial fractions",
+        "substitute a simpler function using known derivatives",
+        "remove a squared term from denominator",
+        "convert exponential to simpler polynomial",
+        "replace hyperbolic functions with exponentials",
+        "substitute a known derivative pattern",
+        "remove cross terms in denominator",
+        "reduce number of distinct variables",
+        "convert to a recognizable standard form",
+        "simplify using common factor extraction",
+        "remove nested square roots",
+        "convert to a single fraction",
+        "eliminate double angles in trigonometric terms",
+        "reduce to basic trigonometric ratios",
+        "simplify using completion of square",
+        "convert to partial fractions with simpler terms",
+        "remove complex conjugates",
+        "reduce to elementary functions",
+        "simplify using function composition",
+        "convert to a recognizable derivative form",
+        "reduce to basic algebraic operations",
+        "simplify using known antiderivative patterns",
+        "convert to a standard integration form"
     ],
     "equivalent": [
-        "change a function to an easier one",
-        "change a function to a different one",
+        # Creative structural transformations
+        "rewrite using a clever substitution that maintains difficulty",
+        "apply a creative trigonometric or hyperbolic identity",
+        "use an unexpected algebraic manipulation",
+        "introduce an auxiliary function that cancels out",
+        "employ a surprising symmetry or pattern",
+        "use a non-obvious completion of square",
+        "apply a creative partial fraction decomposition",
+        "introduce conjugates in an interesting way",
+        "transform using a clever reciprocal relationship",
+        "rewrite using an unexpected function composition",
+        
+        # Advanced mathematical techniques
+        "employ residue theory concepts",
+        "use contour integration ideas",
+        "apply Fourier transform thinking",
+        "utilize complex analysis viewpoints",
+        "think in terms of differential equations",
+        "consider series expansion perspectives",
+        "apply group theory symmetries",
+        "use geometric transformation insights",
+        
+        # Keep existing transformations
+        "change a function to a different but equivalent one",
         "change coefficient values slightly",
         "alter constant terms",
         "modify an exponent slightly",
@@ -301,16 +414,18 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "exchange similar functions (e.g., sin to cos)",
         "adjust parameters while keeping the integral equivalent",
         "rearrange the order of terms",
-        "use trigonometric identities to rewrite expression",
+        "use trigonometric identities to rewrite the expression",
         "substitute equivalent exponential forms",
         "change variables while maintaining complexity",
         "distribute terms differently",
-        "factor common terms differently",
+        "factor common terms in a new way",
         "rewrite using alternate algebraic forms",
         "swap numerator and denominator with reciprocal",
         "use alternate but equivalent radical forms",
         "rewrite using different logarithmic properties",
-        "apply algebraic identities that preserve complexity"
+        "apply integration by substitution with a trivial substitution",
+        "apply partial fractions in an equivalent manner",
+        "rationalize the integrand slightly"
     ],
     "harder": [
         "introduce an additional polynomial factor",
@@ -321,7 +436,18 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "complicate the denominator",
         "introduce a composite trigonometric function",
         "add a product of functions",
-        "embed an extra constant factor that makes the expression less trivial"
+        "embed an extra constant factor that makes the expression less trivial",
+        "introduce a nested function",
+        "compose with a non-linear transformation",
+        "incorporate a trigonometric identity in reverse",
+        "insert a non-trivial logarithmic composition",
+        "add an oscillatory term",
+        "mix in a transcendental function",
+        "introduce a fractional exponent",
+        "include a hyperbolic function element",
+        "add an extra variable substitution step",
+        "incorporate a rational function with higher degree",
+        "complicate with a piecewise component"
     ]
 }
 
@@ -333,7 +459,7 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
     """
     final_results = []
     seen_variants = set()
-    buffer_multiplier = 2
+    buffer_multiplier = 3  # increased to generate more candidate variants
     tasks = []
 
     for difficulty in difficulties:
