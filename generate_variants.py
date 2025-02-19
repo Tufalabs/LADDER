@@ -374,7 +374,6 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "reduce to basic trigonometric ratios",
         "simplify using completion of square",
         "convert to partial fractions with simpler terms",
-        "remove complex conjugates",
         "reduce to elementary functions",
         "simplify using function composition",
         "convert to a recognizable derivative form",
@@ -383,27 +382,6 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "convert to a standard integration form"
     ],
     "equivalent": [
-        # Creative structural transformations
-        "rewrite using a clever substitution that maintains difficulty",
-        "apply a creative trigonometric or hyperbolic identity",
-        "use an unexpected algebraic manipulation",
-        "introduce an auxiliary function that cancels out",
-        "employ a surprising symmetry or pattern",
-        "use a non-obvious completion of square",
-        "apply a creative partial fraction decomposition",
-        "introduce conjugates in an interesting way",
-        "transform using a clever reciprocal relationship",
-        "rewrite using an unexpected function composition",
-        
-        # Advanced mathematical techniques
-        "employ residue theory concepts",
-        "use contour integration ideas",
-        "apply Fourier transform thinking",
-        "utilize complex analysis viewpoints",
-        "think in terms of differential equations",
-        "consider series expansion perspectives",
-        "apply group theory symmetries",
-        "use geometric transformation insights",
         
         # Keep existing transformations
         "change a function to a different but equivalent one",
@@ -428,26 +406,21 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "rationalize the integrand slightly"
     ],
     "harder": [
-        "introduce an additional polynomial factor",
-        "increase the exponent",
-        "add a non-linear term",
-        "include a higher degree term",
-        "insert a logarithmic factor",
-        "complicate the denominator",
-        "introduce a composite trigonometric function",
-        "add a product of functions",
-        "embed an extra constant factor that makes the expression less trivial",
-        "introduce a nested function",
-        "compose with a non-linear transformation",
-        "incorporate a trigonometric identity in reverse",
-        "insert a non-trivial logarithmic composition",
-        "add an oscillatory term",
-        "mix in a transcendental function",
-        "introduce a fractional exponent",
-        "include a hyperbolic function element",
-        "add an extra variable substitution step",
-        "incorporate a rational function with higher degree",
-        "complicate with a piecewise component"
+        "increase complexity of terms",
+        "add additional factors",
+        "introduce higher degrees",
+        "combine multiple functions",
+        "add nested functions",
+        "use function composition",
+        "incorporate transcendental functions",
+        "mix different function types",
+        "increase algebraic complexity",
+        "add non-elementary functions",
+        "use more complex substitutions",
+        "increase number of terms",
+        "add rational complexity",
+        "combine different mathematical concepts",
+        "increase structural complexity"
     ]
 }
 

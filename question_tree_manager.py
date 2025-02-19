@@ -114,6 +114,14 @@ class QuestionGroup:
 # -----------------------------------------------------------------------------
 # Helper functions for traversing and saving the tree.
 # -----------------------------------------------------------------------------
+def get_variant_text(item):
+    """
+    If item is a dict (returned by process_integral), extract the actual variant string.
+    Otherwise, assume it is already a string.
+    """
+    if isinstance(item, dict):
+        return item.get("variant", item.get("original", str(item)))
+    return item
 
 def find_groups_at_level(groups: List[QuestionGroup], level: int) -> List[QuestionGroup]:
     """Recursively search the tree for groups at the given level."""
@@ -124,17 +132,24 @@ def find_groups_at_level(groups: List[QuestionGroup], level: int) -> List[Questi
         result.extend(find_groups_at_level(group.children, level))
     return result
 
-def save_tree(tree: List[QuestionGroup], filename: Path):
-    """Save the tree as JSON."""
+def save_tree(tree: List[QuestionGroup], filename: Path, base_question: str = None):
+    """Save the tree as JSON with an optional base question."""
+    data = {
+        "base_question": base_question,
+        "tree": [group.to_dict() for group in tree]
+    } if base_question else [group.to_dict() for group in tree]
+    
     with open(filename, "w") as f:
-        json.dump([group.to_dict() for group in tree], f, indent=2)
+        json.dump(data, f, indent=2)
     print(f"[SAVE] Tree saved to {filename}")
 
 def load_tree(filename: Path) -> List[QuestionGroup]:
     """Load the tree from JSON."""
     with open(filename, "r") as f:
         data = json.load(f)
-    tree = [QuestionGroup.from_dict(item) for item in data]
+    # Handle both new format (with base_question) and old format
+    tree_data = data["tree"] if isinstance(data, dict) else data
+    tree = [QuestionGroup.from_dict(item) for item in tree_data]
     print(f"[LOAD] Loaded tree from {filename}")
     return tree
 
@@ -175,44 +190,38 @@ def print_tree_analytics(tree: List[QuestionGroup]):
 # -----------------------------------------------------------------------------
 
 async def process_question(q: str) -> QuestionGroup:
-    """
-    Process a single base question to create a QuestionGroup.
-    Generates:
-      - Equivalent variants (level 0)
-      - Easier variants (level 1) with additional equivalent variants (if DEFAULT_EQUIV_VARIANTS > 0).
-    """
     print(f"[Process Question] Processing base question: {q}")
     try:
         equiv = await process_integral(q, difficulties=["equivalent"], num_variants=DEFAULT_EQUIV_VARIANTS)
         print(f"[Process Question] For question '{q}', equivalent output: {equiv}")
-        print(f"[Process Question] Generated {len(equiv)} equivalent variants for question: {q}")
     except Exception as e:
         print(f"[Process Question] Error generating equivalent variants for {q}: {e}")
         equiv = []
-    root_variants = [q] + equiv
+    # Extract text from each equivalent variant.
+    root_variants = [q] + [get_variant_text(v) for v in equiv]
 
     try:
         easier = await process_integral(q, difficulties=["easier"], num_variants=DEFAULT_EASIER_VARIANTS)
         print(f"[Process Question] For question '{q}', easier output: {easier}")
-        print(f"[Process Question] Generated {len(easier)} easier variants for question: {q}")
     except Exception as e:
         print(f"[Process Question] Error generating easier variants for {q}: {e}")
         easier = []
 
-    async def process_easier_variant(ev: str) -> QuestionGroup:
-        print(f"  [Process Easier] Processing easier variant: {ev}")
+    async def process_easier_variant(ev) -> QuestionGroup:
+        # Ensure we work with a text version.
+        ev_text = get_variant_text(ev)
+        print(f"  [Process Easier] Processing easier variant: {ev_text}")
         if DEFAULT_EQUIV_VARIANTS > 0:
             try:
-                equiv_child = await process_integral(ev, difficulties=["equivalent"], num_variants=DEFAULT_EQUIV_VARIANTS)
-                print(f"  [Process Easier] For easier variant '{ev}', equivalent output: {equiv_child}")
-                print(f"  [Process Easier] Generated {len(equiv_child)} equivalent variants for easier variant: {ev}")
+                equiv_child = await process_integral(ev_text, difficulties=["equivalent"], num_variants=DEFAULT_EQUIV_VARIANTS)
+                print(f"  [Process Easier] For easier variant '{ev_text}', equivalent output: {equiv_child}")
             except Exception as e:
-                print(f"  [Process Easier] Error generating equivalent variants for easier variant {ev}: {e}")
+                print(f"  [Process Easier] Error generating equivalent variants for easier variant {ev_text}: {e}")
                 equiv_child = []
-            child_variants = [ev] + equiv_child
+            child_variants = [ev_text] + [get_variant_text(v) for v in equiv_child]
         else:
-            child_variants = [ev]
-            print(f"  [Process Easier] DEFAULT_EQUIV_VARIANTS is 0; using easier variant as node without additional equivalents.")
+            child_variants = [ev_text]
+            print("  [Process Easier] DEFAULT_EQUIV_VARIANTS is 0; using easier variant as node without additional equivalents.")
         return QuestionGroup(level=1, variants=child_variants, children=[])
     
     child_groups = []
@@ -235,36 +244,37 @@ async def add_equivalent_variants(group: QuestionGroup, num_variants: int):
     if new_equiv:
         group.variants.extend(new_equiv)
         print(f"[Add Equivalent] Added {len(new_equiv)} new equivalent variants to the group.")
-
+# In process_easier_for_parent: also extract text before using as input.
 async def process_easier_for_parent(parent: QuestionGroup, target_level: int, num_variants: int):
-    parent_input = parent.variants[0]
+    parent_input = get_variant_text(parent.variants[0])
     print(f"[Process Easier Parent] Generating easier variants for parent question: {parent_input} (level {parent.level})")
     try:
         new_easier = await process_integral(parent_input, difficulties=["easier"], num_variants=num_variants)
         print(f"[Process Easier Parent] For parent '{parent_input}', easier output: {new_easier}")
-        print(f"[Process Easier Parent] Generated {len(new_easier)} easier variants for parent question: {parent_input}")
     except Exception as e:
         print(f"[Process Easier Parent] Error generating easier variants for {parent_input}: {e}")
         new_easier = []
     if not new_easier:
-        fallback = parent_input  # Use the parent's input as fallback.
+        fallback = parent_input
         new_easier = [fallback]
         print(f"[Process Easier Parent] No easier variants generated; using fallback: {fallback}")
-    async def process_new_easier(ev: str) -> QuestionGroup:
-        print(f"  [Process New Easier] Processing new easier variant: {ev}")
+    
+    async def process_new_easier(ev) -> QuestionGroup:
+        ev_text = get_variant_text(ev)
+        print(f"  [Process New Easier] Processing new easier variant: {ev_text}")
         if DEFAULT_EQUIV_VARIANTS > 0:
             try:
-                new_equiv = await process_integral(ev, difficulties=["equivalent"], num_variants=DEFAULT_EQUIV_VARIANTS)
-                print(f"  [Process New Easier] For new easier variant '{ev}', equivalent output: {new_equiv}")
-                print(f"  [Process New Easier] Generated {len(new_equiv)} equivalent variants for new easier variant: {ev}")
+                new_equiv = await process_integral(ev_text, difficulties=["equivalent"], num_variants=DEFAULT_EQUIV_VARIANTS)
+                print(f"  [Process New Easier] For new easier variant '{ev_text}', equivalent output: {new_equiv}")
             except Exception as e:
-                print(f"  [Process New Easier] Error generating equivalent variants for easier variant {ev}: {e}")
+                print(f"  [Process New Easier] Error generating equivalent variants for easier variant {ev_text}: {e}")
                 new_equiv = []
-            child_variants = [ev] + new_equiv
+            child_variants = [ev_text] + [get_variant_text(v) for v in new_equiv]
         else:
-            child_variants = [ev]
-            print(f"  [Process New Easier] DEFAULT_EQUIV_VARIANTS is 0; using easier variant as node without additional equivalents.")
+            child_variants = [ev_text]
+            print("  [Process New Easier] DEFAULT_EQUIV_VARIANTS is 0; using easier variant as node without additional equivalents.")
         return QuestionGroup(level=target_level, variants=child_variants, children=[])
+    
     tasks = [process_new_easier(ev) for ev in new_easier]
     new_child_groups = await run_tasks_in_batches(tasks, BATCH_SIZE)
     parent.children.extend(new_child_groups)

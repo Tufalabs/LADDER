@@ -1,0 +1,605 @@
+{
+  "base_question": "integrate(32*x*sin(x)**2, x)",
+  "tree": [
+    {
+      "level": 0,
+      "variants": [
+        "integrate(32*x*sin(x)**2, x)",
+        "integrate(32*x*(1 - cos(2*x))/2, x)",
+        "integrate(32*x*0.5*(1 - cos(2*x)), x)",
+        "integrate(g(x)*sin(x)*sin(x), x)",
+        "integrate(16*x - 16*x*cos(2*x), x)",
+        "integrate(32*x*sin(x)*sin(x), x)",
+        "integrate(32*(-x)*sin^2(-x), x)",
+        "integrate(32*x*(1 - exp(-2*x**2)), x)",
+        "integrate((32*x)*(1 - (1/4)(16cos(x)^2)), x)"
+      ],
+      "children": [
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*x*(1 - cos(2*x))/2, x)",
+            "integrate(16*x*(2*sin(x)**2), x)",
+            "integrate(16*x - 16*integrate(cos(2*x), x)",
+            "integrate(16*x, x)",
+            "integrate(32*x*sin^2(x), x)",
+            "integrate(32*x*(1 - (1 - 2*sin^2(x))), x)",
+            "integrate(16*x*(1 - (e**(2*I*x) + e**(-2*I*x))/2), x)",
+            "integrate(16*x*2*sin(2*x)/2, x)",
+            "integrate(16*x*sin(2*x), x)",
+            "integrate(16*x*(1 - (1 - 2sin^2(x))) , x)",
+            "integrate(16*x*(1 - (1 - 2*x^2/2 + (2*x^4)/24 - ...)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x*2*sin(x)**2, x)",
+                "integrate(16*x*(1 - cos(2*x)), x)",
+                "integrate(16*x*sin(x)*sin(x), x)",
+                "integrate(32*x - 16*x*cos(2*x), x)",
+                "integrate(32*x*(1 - cos(x)**2), x)",
+                "integrate(16*x*(1 - (e^(2*i*x) - e^(-2*i*x)) / (4)), x)",
+                "integrate(8*x - 8*x*cos(2*x), x)",
+                "integrate(16*k*x*sin^2(x), x)",
+                "integrate(32*x*(1 - cos(2*x))/2, x)",
+                "integrate(32*x*sin(x)*(sin(x) - cos(x)), x)",
+                "integrate(32 * (x + pi/2) * sin^2(x + pi/2), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*x*(1 - (1 - 2*sin(x)**2)), x)",
+                "integrate(32*x*(1 - (1 - 2*(1/2)*(exp(I*x) - exp(-I*x))**2)), x)",
+                "integrate(64*x*(1 - cos(2*x))/2, x)",
+                "integrate(64*x*u, x)",
+                "integrate(64*x*(sum(a_n*sin(n*x))), x)",
+                "integrate(64*x*(1 - Laplace(exp(-t)*t)), x)",
+                "integrate(32*(x^2 - (x*sin(2*x))), x)",
+                "integrate(16*(u*(1-u)), x)",
+                "integrate(32*x*(1 - (1/2)*(sin(x)^2)), x)",
+                "integrate(64*((x mod Pi)*(1 - sin^2(x))), x)",
+                "integrate(32*x*fractal(sin(x)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x*(1/2 - 1/2*cos(2*x)), x)",
+                "integrate(8*x - 8*x*(1/2*(exp(2*I*x) + exp(-2*I*x))), x)",
+                "integrate(16*x*(2*sin(x)**2), x)",
+                "integrate(8*x, x)",
+                "integrate(16 * (1 - cos(2*x)) * (1/2 - (1-u)/2), x)",
+                "integrate(16 * (1/2 - (1-u)/2) * (u*(2*sin(u/2)**2)), x)",
+                "integrate(8*(x + pi/2)*(1/2 - 1/2*cos(2*(x + pi/2))), x)",
+                "integrate(16*x*(1/2 - 1/2*cos(2*x)) * exp(-x**2), x)",
+                "integrate(8 * (x*x/2 - integrate(x*sin(2*x), x)",
+                "integrate(16*x*(1/2 - 1/2*(1 - 2*sin(x)**2)), x)",
+                "integrate(16*x*sin^2(x), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*x*(1 - cos(x)**2), x)",
+            "integrate(16*x*(1 - cos(2*x)), x)",
+            "integrate(32*x, x)",
+            "integrate(32*x*(1 - (1 + cos(2*x))/2), x)",
+            "integrate(32*x*sin(x)*sin(x), x)",
+            "integrate(32*x*(1 - sin(pi/2 - x)**2), x)",
+            "integrate(32*x*(1 - cos(x))*(1 + cos(x)), x)",
+            "integrate(16*x*(1 + sin(2*x)), x)",
+            "integrate(32*x*(1 - (1 - x^2/2 + x^4/24)), x)",
+            "integrate(32*(x - (x**3/6)), x)",
+            "integrate(32*x*(1 - cos(x)**2), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x*(1 - cos(2*x)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*x - 32*x*cos(x)**2, x)",
+                "integrate(32*x - 16*x - 16*x*cos(2*x), x)",
+                "integrate(32*x*(1 - sin^2(x)), x)",
+                "integrate(32*x - 32*x*(1 - sin^2(x)), x)",
+                "integrate(32*x, x)",
+                "integrate(32*(1 - cos^2(x))*x, x)",
+                "integrate(32 * (1 - u^2) * x, x)",
+                "integrate(32*x - 16*(1 + cos(2*x)), x)",
+                "integrate(16*x*2 - 32*(1 - cos^2(x)) * x, x)",
+                "integrate(32*x - 16*x + 16*x*sin^2(x), x)",
+                "integrate(32*x - 32*(1 - cos(2*x))*x/2, x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*x*(1 - (1/2)*(e**(2*I*x) + e**(-2*I*x))), x)",
+                "integrate(32*x*(1 - cos(2*x)), x)",
+                "integrate(64*x*sin(x)*cos(x), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32/sin(x), x)",
+            "integrate(32/(2*sin(x/2)*cos(x/2)), x)",
+            "integrate(32/(1 - exp(1j*x) - exp(-1j*x)), x)",
+            "integrate(64/(e^(1j*x) - e^(-1j*x)), x)",
+            "integrate(32/(1 - cos(x)), x)",
+            "integrate(16/(sin(x) - 1) + 16/(sin(x) + 1), x)",
+            "integrate(32/(2*(1 - cos(2*x))), x)",
+            "integrate(32/(2i*(e^(ix) - e^(-ix))), x)",
+            "integrate(32/(sin(x)), x)",
+            "integrate(32/sin(x - pi), x)",
+            "integrate(32/sin(2*x), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*csc(x), x)",
+                "integrate(32/sin(x), x)",
+                "integrate(-32*cot(x)/(1 + cot(x)^2), x)",
+                "integrate(32*sec(x)*tan(x), x)",
+                "integrate(32*2/sin(2*x), x)",
+                "integrate(-32*csc(x + \u03c0), x)",
+                "integrate(32*diff(log(abs(csc(x) + cot(x))), x)",
+                "integrate(diff(32*cot(x)), x)",
+                "integrate(32/(sqrt(1 - (1/sin(x))**2)), x)",
+                "integrate(32 / sin(x), x)",
+                "integrate(32 / (e^(1j*x) - e^(-1j*x)), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*derivative(x*sin(x), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*x, x)",
+                "integrate(16 * diff(x**2, x)",
+                "integrate(2 * 16 * x, x)",
+                "integrate(32 * (e**(log(x)/log(e))), x)",
+                "integrate(32 * (x + 0)/(1), x)",
+                "integrate(32 * (x * 1), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*sin(x), x)",
+                "integrate(16 * (e**(i*x) - e**(-i*x)) / (2*i), x)",
+                "integrate(32 * sin(x + 2 * pi), x)",
+                "integrate(16 * sin(2 * x), x)",
+                "integrate(16 * sin(x) + 16 * sin(x), x)",
+                "integrate(32 * (1 - cos(x)**2), x)",
+                "integrate(32 * sum((-1)**n * x**(2*n+1) / factorial(2*n+1) for n in range(10)), x)",
+                "integrate(32 * (-sin(-x)), x)",
+                "integrate(32 * (sin(x) if (x % (2 * pi)) < pi else -sin(x)), x)",
+                "integrate(-16 * (e**(i*x) - e**(-i*x)) / (i), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32, x)",
+                "integrate(32 * exp(0), x)",
+                "integrate(32 * x**0, x)",
+                "integrate(16 + 16, x)",
+                "integrate(32 * sin(0) + 32 * cos(0), x)",
+                "integrate(16 * (1 + (-1)**(x//math.pi)), x)",
+                "integrate(32 + 1/(x + 1), x)",
+                "integrate(4**2, x)",
+                "integrate(32 * (1/(1 + 0)), x)",
+                "integrate(32 * exp(-x**2), x)",
+                "integrate(32 * 1, x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*x*(x - x**3/6 + x**5/120 - ...), x)",
+            "integrate(32x*sin(x), x)",
+            "integrate(32*x*(x - a*x**3/6 + a**2*x**5/120 - ...), x)",
+            "integrate(32*x*(x - (x**3/6)), x)",
+            "integrate(32*cos(k*x)*(x - (x**3)/(6)), x)",
+            "integrate(32*x*((1-x**2/6)**3), x)",
+            "integrate(16*(x*sin(x)) + 16*(x*cos(x)), x)",
+            "integrate(32*(sin(x)**2), x)",
+            "integrate(32*(1/2)*(x - (x**3/3) + (x**5/5)), x)",
+            "integrate(32*x*sin(x), x)",
+            "integrate(32*x*(exp(1j*x) - exp(-1j*x))/(2j), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32 * x * cos(x), x)",
+                "integrate(32 * x * cos(x), x)",
+                "integrate(16 * x * (e**(ix) + e**(-ix)), x)",
+                "integrate(32 * x * (1 - (x**2)/2 + ...), x)",
+                "integrate(32 * x * (si(x) + co(x)), x)",
+                "integrate(32 * x * fourier(cos(x)), x)",
+                "integrate(32 * (lambda a: a * cos(a*x))(x), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32 * (x**2 - (x**4)/6 + (x**6)/120), x)",
+                "integrate(32 * x**2 * (1 - (x**2)/6 + (x**4)/120), x)",
+                "integrate(32 * (16 * sin(x) ** 2 / (1 + (x**2)/30)), x)",
+                "integrate(32 * (1 - 1/6 * (e**(ix))**4 + 1/120 * (e**(ix))**6), x)",
+                "integrate(32 * ((sinh(x))**2 - (sinh(x))**4/6 + (sinh(x))**6/120), x)",
+                "integrate(32 * (x**2 - (x**4)/6 + (x**6)/120 + 1), x)",
+                "integrate(32 * (e**(x**2) - constants), x)",
+                "integrate(32 * (0.1 - (0.02*x**2) + (0.002*x**4)), x)",
+                "integrate(32 * (x*(x-1)*(x+1)*(x-1/2)*(x+1/2))/something, x)",
+                "integrate(32 * (A/(x+B) + C*(x**2)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32 * x * (1 - (x**2)/6), x)",
+                "integrate(32 * x, x)",
+                "integrate(sum(32*x*(-(x**2)/6)**n / n!, x)",
+                "integrate(32 * (1 - (y ** 2)/6) * dy/dx, x)",
+                "integrate(32 * (x - (x**3)/6) * x, x)",
+                "integrate(32 * x * (1 - (x**2)/6) * exp(0), x)",
+                "integrate(32 * (x - (1/6)x^3 + (1/36)x^5), x)",
+                "integrate(32 * x * log(1 + (x**2)/6), x)",
+                "integrate(32 * x * (1 - (x**2)/6) * cos(0), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*mean(sin(x)**2)*x, x)",
+            "integrate(16 * (1 - cos(2*x)) * x, x)",
+            "integrate(x * 16 * sin(x)**2, x)",
+            "integrate(16 * (1 - (e^(2*ix) - e^(-2*ix))/(4)), x)",
+            "integrate(32 * sin((pi/2 - x)**2) * x, x)",
+            "integrate(32 * (1/2) * (x % pi - floor(x/pi) * pi), x)",
+            "integrate(32 * 16 * (1 - cos(x)^2) * x, x)",
+            "integrate(32 * (e^(ix) - e^(-ix))^2/4 * x, x)",
+            "integrate(16*x - 16*x*cos(2*x), x)",
+            "integrate(32*x/2 - 32*integrate(x*cos(2*x)/2, x)",
+            "integrate(32*(1/2 - (1/4)* (e^(2*I*x) + e^(-2*I*x)))*x, x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*(1 - cos(2*x))*x, x)",
+                "integrate(32*sin(x)**2*x, x)",
+                "integrate(x*16*sin(2*x), x)",
+                "integrate(8*(1 - exp(2*I*x))*x, x)",
+                "integrate(16*(1 - 2*(T_2(cos(x)))), x)",
+                "integrate(16*(1 - cos(2*asinh(x))), x)",
+                "integrate(16*(1 - cos(2*x))*x*sqrt(1 + x**2), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x, x)",
+                "integrate(16*x, x)",
+                "integrate(4 * 4 * x, x)",
+                "integrate(8 * (2 * x), x)",
+                "integrate(32 * (x / 2), x)",
+                "integrate((4 * x)**2 * (1 / (4 * x)), x)",
+                "integrate(4**2 - (4 - x)**2 + (4 - x)**2, x)",
+                "integrate((16 * (4 * sin(y)**2)), x)",
+                "integrate(16 * (1), x)",
+                "integrate(diff(8*x**2, x)",
+                "integrate(16 * x**1, x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*sin(x)**2*x, x)",
+                "integrate(16 * (1 - cos(2*x)) * x, x)",
+                "integrate(32 * (1 - cos(x)**2) * x, x)",
+                "integrate(32 * sin(x)**2, x)",
+                "integrate(32 * (e^(ix) - e^(-ix))**2 * x / (4i), x)",
+                "integrate(32 * (P_2(cos(x))) * x, x)",
+                "integrate(32 * (x^2) * (1 - cos(x)) * x, x)",
+                "integrate(16*(1 - cos(2*x))*x, x)",
+                "integrate(32*x*(1 - cos(2*x))/2, x)",
+                "integrate(16*32*sin(x)**2*x, x)",
+                "integrate(16*(e**(ix) - e**(-ix))**2*x, x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*x*(1/2 - (1/2)*cos(2*x)), x)",
+            "integrate(16*x*(1 - (1/2)*(1 + cos(2*x))), x)",
+            "integrate(32*x*sin(x)**2, x)",
+            "integrate(16*x*(1 - exp(2*I*x))*(1 + exp(2*I*x))/2, x)",
+            "integrate(16*x - 16*x*cos(2*x), x)",
+            "integrate(32*x*(1/2), x)",
+            "integrate(32*x*(1 - cos(2*x))/2, x)",
+            "integrate(32*x*(1/2 - (1/2)*cosh(2*x)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x*(1 - cos(2*x)), x)",
+                "integrate(16*x - 16*x*cos(2*x), x)",
+                "integrate(16*x - 8*(exp(2*I*x) + exp(-2*I*x)), x)",
+                "integrate(16*x*(2\\sin^2(x)), x)",
+                "integrate(16*(x - x*cos(2*x)), x)",
+                "integrate(16*x*(1 - (1 - (2*x**2)/factorial(2) + (2*x**4)/factorial(4) - ...)), x)",
+                "integrate(16*x*(sin(2x)^2), x)",
+                "integrate(16*x, x)",
+                "integrate(16*x - 8*x*(exp(2*I*x) + exp(-2*I*x)), x)",
+                "integrate(32*x*sin^2(x), x)",
+                "integrate(16*x*(1 - (1 - (2*x^2)/2 + (2*x^4)/24 - ...)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x - 16*x*cos(2*x), x)",
+                "integrate(32*x*sin(x)**2, x)",
+                "integrate(16*x, x)",
+                "integrate(16*x*(1 - 2/(1 + cos(2x))), x)",
+                "integrate(16*x - 8*x*(e**(2*I*x) + e**(-2*I*x)), x)",
+                "integrate(16*x - 16*(x)/2 + 16*(x)/2 cos(2x), x)",
+                "integrate(16*(x - x*cos(2*x)), x)",
+                "integrate(16*(x - (x*cosh(2*x))/sinh(2*x)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32*x*(sin^2(x)), x)",
+                "integrate(32*x*(1 - cos(2*x))/2, x)",
+                "integrate(32*x*integrate(sin(x)**2, x)",
+                "integrate(32*x*((e^(2*ix) - e^(-2*ix))/(4i)), x)",
+                "integrate(32*x*(1/(2 - x^2)), x)",
+                "integrate(32*(\u03c0 - x)*sin^2(\u03c0 - x), x)",
+                "integrate(32*x*(1 - sum((-1)**n/n*sin(2*n*x))/pi), x)",
+                "integrate(32*x*((1 - (x^2)/2 + (x^4)/24 - ...), x)",
+                "integrate(16*x - 16*x*cos(2*x), x)",
+                "integrate(x*diff(32*(1-cos(2*x))/2, x)",
+                "integrate(32*x*integrate(sin^2(x), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*(x - (x/3)*((x**2)/6 - ...)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32 * (x - (x / 3) * (x**2 / 6)), x)",
+                "integrate(32 * (x * (1 - x**2 / 18)), x)",
+                "integrate(32 * (x - (x**4 / 18)), x)",
+                "integrate(32 * (x - (x**2 / 6) * x), x)",
+                "integrate(32 * x * (1 - x**2 / 18), x)",
+                "integrate(32 * (x - (x / 3) * (x**2 / 6)), x)",
+                "integrate(32 * (x**2 - (x**4 / 18)), x)",
+                "integrate(32 * (x - ((1/6) * x**3)), x)",
+                "integrate(32 * (x - x**3 / 18), x)",
+                "integrate(32 * (x * (1 - (1/18) * x**2)), x)",
+                "integrate(32 * (x - (x**3 / 18)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32 * (x - (1/18) * x**3), x)",
+                "integrate(32 * (x * (1 - (1/18) * x**2)), x)",
+                "integrate(32 * (x - (1/2) * (1/9) * x**3), x)",
+                "integrate(32 * (x - (1/18) * (x**2) * x), x)",
+                "integrate(32 * (x + (-32/18) - (1/18) * x**3 + (32/18)), x)",
+                "integrate(32 * ((x + (4/9)) - (1/18) * (x**3 + (8/3))), x)",
+                "integrate(32 * (x + (8/9) - (1/18) * x**3 - (8/9)), x)",
+                "integrate(32 * (sin(x) + cos(x)) * (1 - (1/18) * (sin(x) + cos(x))**2), x)",
+                "integrate(32 * (x - (1/18) * (x**2)**(3/2)), x)",
+                "integrate(32 * ((1 - (1/18) * x**2)(x)), x)",
+                "integrate(32 * x - (32 / 18) * x**3, x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(32 * (x - (1/18) * x**3 + (1/720) * x**5), x)",
+                "integrate(16 * (2 * x - (1/9) * x**3 + (1/45) * x**5), x)",
+                "integrate(32 * x * (1 - (1/18) * x**2 + (1/720) * x**4), x)",
+                "integrate(32 * (x - (1/18) * x**3 + (1/720) * x**5 + (1/720) * x**7), x)",
+                "integrate(32 * (u + (1/720) * x**5), x)",
+                "integrate(32 * (x**2 - (1/18)*(x**2)**(3/2) + (1/720)*(x**2)**(5/3)), x)",
+                "integrate(32 * (x**2 * (1 - (1/18) * x + (1/720) * x**3)), x)",
+                "integrate(32 * (x - (1/20) * x**3 + (1/720) * x**5), x)",
+                "integrate(32 * (x + (-1/18 * x**3 + 1/720 * x**5)), x)",
+                "integrate(32 * (x - (1/18) * (x**3 + x**5)), x)",
+                "integrate(32 * (sin(x) + x - (1/18) * x**3 + (1/720) * x**5), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*x*(1 - cos(2*x))/2, x)",
+            "integrate(32*x*(1 - cos(2*x))/2, x)",
+            "integrate(16*x, x)",
+            "integrate(32*x*(1 - (1 - 2*sin^2(x))), x)",
+            "integrate(32*f(x)*(1 - cos(2*x)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x*2*sin(2*x)**2, x)",
+                "integrate(32 * x * (1 - cos(4*x)) / 2, x)",
+                "integrate(16*x - 16*x*cos(4*x), x)",
+                "integrate(32 * x * (1 - cos(4*x))/2, x)",
+                "integrate(16 * x * (2 * (2x - (2x)^3/6 + ...)), x)",
+                "integrate(16*x * (1/2 - (1/8) * (cos(4*x))), x)",
+                "integrate(16*x * (sin(2x) * sin(2x)), x)",
+                "integrate(32 * (sqrt(x^2) * sin(2*sqrt(x))), x)",
+                "integrate((32/4) * (64*x) * sin(2*x)^2, x)",
+                "integrate(16 * x * (sin(2x) * sin(2x)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x, x)",
+                "integrate(16*exp(ln(x)), x)",
+                "integrate(8*x**2, x)",
+                "integrate(8*(2*x), x)",
+                "integrate(10*x, x)",
+                "integrate(4*2**(2*x), x)",
+                "integrate(16*x, x)",
+                "integrate(8*x + 8*x, x)",
+                "integrate(8*x + 8*(-x), x)",
+                "integrate(16/(1/(x)), x)",
+                "integrate(16*x + 0, x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*2*x*sin(x)**2, x)",
+                "integrate(16 * x * (1 - cos(2*x))/2, x)",
+                "integrate(16 * 2 * x * sin(x) * sin(x), x)",
+                "integrate(16 * (x/2)^2 * sin^2(x), x)",
+                "integrate(8 * (2x) * (1 - cos(2*x))/2, x)",
+                "integrate(16 * 2 * (2tan(x/2)/(1 + tan^2(x/2))) * (1 - (1 - t^2)/(1 + t^2)), x)",
+                "integrate(32 * x * (1/2)(1 - cos(2*x)), x)",
+                "integrate(16 * 2 * x * (e^{ix} - e^{-ix})^2/(4), x)",
+                "integrate(16 * 2 * x * (1 - cos(2*x))/2, x)",
+                "integrate(2 * x * 16 * sin(x) * (-1/2) * cos(x), x)",
+                "integrate(16 * 2 * x * (e^{ix} - e^{-ix})^2 / (-4), x)"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(32*x*(1/2 - (1/4)*cos(2*x)), x)",
+            "integrate(32*x*(1/2 - (1/4)*(1 - 2*sin(x)**2)), x)",
+            "integrate(16*x, x)",
+            "integrate(32*x*(1/2 - (1/4)*(1 - (2x**2)/2! + (2x**4)/4!)), x)",
+            "integrate(32*x*(1/2 - 0.25), x)",
+            "integrate(32*x*(0.5 - (1/4)*sin(2*x)), x)",
+            "integrate(32*x*(1/2 + (1/4)*sin(2x + pi/2)), x)",
+            "integrate(32*x*(1 - (1/2)*(1 + (-1)*cos(2*x))), x)",
+            "integrate(16*(x + x**0) - 8*(x/(1+x**2))* (1-(1/4)*cos(2*x)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x, x)",
+                "integrate(16 * integrate(x, x)",
+                "integrate(4 * (4 * x), x)",
+                "integrate(8 * diff(x**2, x)",
+                "integrate(16 * sum(x**n/factorial(n) for n in range(1)), x)",
+                "integrate(16 * x, x)",
+                "integrate((8 * diff(x**2, x)",
+                "integrate((16 * x**0) * x, x)",
+                "integrate(16 * (t) * (diff(t, x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(16*x/2 - 2*x*(exp(2*I*x) + exp(-2*I*x))/4, x)",
+                "integrate(8*x - x/2 * (exp(2*I*x) + exp(-2*I*x))/2, x)",
+                "integrate(x * (8 - 1/2 * cos(2*x)), x)",
+                "integrate(8*x - (1/2) * integrate(cos(2*x), x)",
+                "integrate(4*(2*x - (1/4)x*cos(2*x)), x)",
+                "integrate(8*x - (x/2)*sqrt(1-(cos(2*x))**2), x)",
+                "integrate(8*x + integrate(-1/2 * cos(2*x), x)",
+                "integrate(8*x - (x/2)(exp(2*I*x) + exp(-2*I*x))/2 + 0*0, x)",
+                "integrate(8*x, x)",
+                "integrate(8*x - x/2*(exp(2*I*x) + exp(-2*I*x)), x)",
+                "integrate(8*x - (2/4)*x*(exp(2*I*x) + exp(-2*I*x)), x)"
+              ],
+              "children": []
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(8*x - 8*x*cos(2*x), x)",
+                "integrate(8*x - 4*(e**(2*I*x) + e**(-2*I*x))*x, x)",
+                "integrate(8*x - 4*(e**(2*I*x)*x + e**(-2*I*x)*x), x)",
+                "integrate(8*x - 8*(1 - (2*x**2)/factorial(2)), x)",
+                "integrate(8*x, x)",
+                "integrate(7*x - 8*x*cos(2*x), x)",
+                "integrate(8*x - 8*x*cos(2*t*x), x)",
+                "integrate(8*x - 8*x*(1 - sin(2*x)**2), x)",
+                "integrate(8*x - 8*x*sin(\u03c0/2 - 2*x), x)",
+                "integrate(8*x - 16*x*sin\u00b2(x), x)",
+                "integrate(8*(1/2)*x*(2 - 2*cos(2*x)), x)"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
