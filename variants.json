@@ -1,161 +1,107 @@
 [
   {
-    "original": "integrate(1/(x**2 - x + 1), x)",
+    "original": "integrate(1/(x**2 - x + 1), (x, 0, 1))",
     "requested_difficulty": "easier",
-    "variant": "integrate(1/((x - 0.5)**2 + 0.75), x)",
-    "reasoning": "As a calculus professor, I find that simplifying the integrand makes it more approachable. By completing the square in the denominator, the expression can be transformed into a form that is easier to integrate.",
+    "variant": "integrate(1/((x - 1/2)**2 + 3/4), (x, 0, 1))",
+    "reasoning": "The denominator \\(x^2 - x + 1\\) can be transformed by completing the square. Recognizing that this form can potentially lead to trigonometric identities, we find:\n\\[\nx^2 - x + 1 = \\left(x - \\frac{1}{2}\\right)^2 + \\frac{3}{4}\n\\]\nThis substitution reveals a significant symmetry that can yield a simpler integral.",
     "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "easier",
+    "verification_passed": true,
+    "evaluation": null,
     "transformations_used": [
-      "lower a coefficient",
-      "remove nested functions",
-      "change a function to an easier one"
+      "simplify using function composition",
+      "remove cross terms in denominator",
+      "substitute a known derivative pattern",
+      "simplify using completion of square"
     ],
     "solution": null,
     "evaluations": {},
-    "timestamp": "2025-02-10T03:08:10.645699Z"
+    "timestamp": "2025-02-20T06:10:47.713654Z"
   },
   {
-    "original": "integrate(1/(x**2 - x + 1), x)",
+    "original": "integrate(1/(x**2 - x + 1), (x, 0, 1))",
     "requested_difficulty": "easier",
-    "variant": "integrate(1/(1 + (x - 0.5)**2), x)",
-    "reasoning": "As a creative mathematician, I'm going to use a trigonometric substitution. The denominator can be expressed in terms of sine and cosine, making integration straightforward with an arctan form.",
+    "variant": "integrate(1/(u**2 + 3/4), (u, -1/2, 1/2))",
+    "reasoning": "A well-known substitution technique in integrals with quadratic terms can be introduced, such as letting \\( u = x - \\frac{1}{2} \\). This shifts the bounds and makes the integral more manageable.",
     "variant_response": null,
     "verification_passed": null,
-    "evaluation": "easier",
+    "evaluation": null,
     "transformations_used": [
-      "lower a coefficient",
-      "remove nested functions",
-      "change a function to an easier one"
+      "simplify using function composition",
+      "remove cross terms in denominator",
+      "substitute a known derivative pattern",
+      "simplify using completion of square"
     ],
     "solution": null,
     "evaluations": {},
-    "timestamp": "2025-02-10T03:08:10.646670Z"
+    "timestamp": "2025-02-20T06:10:47.713807Z"
   },
   {
-    "original": "integrate(1/(x**2 - x + 1), x)",
+    "original": "integrate(1/(x**2 - x + 1), (x, 0, 1))",
     "requested_difficulty": "easier",
-    "variant": "integrate(1/(x**2 - x + 1), x)",
-    "reasoning": "As a student who favors polynomials, I want to express the integrand in terms of rational functions. I can achieve this by breaking it down using polynomial long division or partial fractions, making it easy to handle.",
+    "variant": "integrate(1/(x**2 - x + 1), (x, 0, 1)) + integrate(1/(x**2 - x + 1), (x, 0, 1))",
+    "reasoning": "Utilizing symmetry, we can explore the property of the integrand over the interval. The integrand is symmetric about \\(x = \\frac{1}{2}\\) when transformed. We can use this property to simplify the evaluation.",
     "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "equivalent",
+    "verification_passed": true,
+    "evaluation": null,
     "transformations_used": [
-      "lower a coefficient",
-      "remove nested functions",
-      "change a function to an easier one"
+      "simplify using function composition",
+      "remove cross terms in denominator",
+      "substitute a known derivative pattern",
+      "simplify using completion of square"
     ],
     "solution": null,
     "evaluations": {},
-    "timestamp": "2025-02-10T03:08:10.707710Z"
+    "timestamp": "2025-02-20T06:10:47.713831Z"
   },
   {
-    "original": "integrate(1/(x**2 - x + 1), x)",
-    "requested_difficulty": "equivalent",
-    "variant": "integrate(1/((x - 1/2)**2 + 3/4), x)",
-    "reasoning": "As a calculus professor, I appreciate the elegance of completing the square. By converting the quadratic expression in the denominator, I can enhance my integral simplification.",
-    "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "easier",
-    "transformations_used": [
-      "alter constant terms",
-      "swap numerator and denominator with reciprocal",
-      "use alternate but equivalent radical forms",
-      "rearrange the order of terms",
-      "apply algebraic identities that preserve complexity"
-    ],
-    "solution": null,
-    "evaluations": {},
-    "timestamp": "2025-02-10T03:08:14.594766Z"
-  },
-  {
-    "original": "integrate(1/(x**2 - x + 1), x)",
-    "requested_difficulty": "equivalent",
-    "variant": "integrate(3/4 / (3/4*(x**2 - x + 1)), x)",
-    "reasoning": "As a creative mathematician, I like to explore alternative forms. By taking the reciprocal of the denominator and multiplying by 1 (as \\(\\frac{3/4}{3/4}\\)), I can express the integrand in a more inspiring way.",
-    "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "equivalent",
-    "transformations_used": [
-      "alter constant terms",
-      "swap numerator and denominator with reciprocal",
-      "use alternate but equivalent radical forms",
-      "rearrange the order of terms",
-      "apply algebraic identities that preserve complexity"
-    ],
-    "solution": null,
-    "evaluations": {},
-    "timestamp": "2025-02-10T03:08:13.721734Z"
-  },
-  {
-    "original": "integrate(1/(x**2 - x + 1), x)",
-    "requested_difficulty": "equivalent",
-    "variant": "integrate(1/((x**2 - x + 1)), x)",
-    "reasoning": "As a student who enjoys polynomials, I can relate the quadratic in the denominator to its linear components, thus allowing for polynomial long division if needed, or focusing on simply factoring its roots, but here, it remains irreducible.",
-    "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "equivalent",
-    "transformations_used": [
-      "alter constant terms",
-      "swap numerator and denominator with reciprocal",
-      "use alternate but equivalent radical forms",
-      "rearrange the order of terms",
-      "apply algebraic identities that preserve complexity"
-    ],
-    "solution": null,
-    "evaluations": {},
-    "timestamp": "2025-02-10T03:08:13.527725Z"
-  },
-  {
-    "original": "integrate(1/(x**2 - x + 1), x)",
+    "original": "integrate(1/(x**2 - x + 1), (x, 0, 1))",
     "requested_difficulty": "harder",
-    "variant": "integrate(1/(x**2 - x + 1 + x**2), x)",
-    "reasoning": "As a calculus professor, I love to introduce complexity through substitutions while retaining the form of the integral. By adding a quadratic term to the denominator, I can create a more complex scenario while still keeping the integration approachable. This presents an elegant challenge in the form of a quadratic polynomial.",
+    "variant": "integrate(exp(-x) / (x**2 - x + 1), (x, 0, 1))",
+    "reasoning": "To complicate the integrand, we can integrate the original integrand with an additional exponential term. This results in a product of functions that may yield additional dimensions of complexity, I will integrate it over the same limits.",
     "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "easier",
+    "verification_passed": true,
+    "evaluation": null,
     "transformations_used": [
-      "introduce a composite trigonometric function",
-      "include a higher degree term",
-      "add a product of functions"
+      "use more complex substitutions",
+      "add non-elementary functions",
+      "increase algebraic complexity"
     ],
     "solution": null,
     "evaluations": {},
-    "timestamp": "2025-02-10T03:08:14.975681Z"
+    "timestamp": "2025-02-20T06:10:48.011559Z"
   },
   {
-    "original": "integrate(1/(x**2 - x + 1), x)",
+    "original": "integrate(1/(x**2 - x + 1), (x, 0, 1))",
     "requested_difficulty": "harder",
-    "variant": "integrate(1/(tan(x)**2 - tan(x) + 1), x)",
-    "reasoning": "As a creative mathematician, I enjoy substituting a trigonometric function for the variable to explore new perspectives on the integral. Here, I can use the substitution \\( x = tan(t) \\) which adds a layer of trigonometric manipulation, making the integration more intricate.",
+    "variant": "integrate(x**2 / (x**2 - x + 1), (x, 0, 1))",
+    "reasoning": "We can introduce a power function in the numerator that depends on the integrand, such as \\( x^{n} \\) where \\( n \\) is a parameter. This allows analysis of how different powers influence the behavior of the integral.",
     "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "harder",
+    "verification_passed": true,
+    "evaluation": null,
     "transformations_used": [
-      "introduce a composite trigonometric function",
-      "include a higher degree term",
-      "add a product of functions"
+      "use more complex substitutions",
+      "add non-elementary functions",
+      "increase algebraic complexity"
     ],
     "solution": null,
     "evaluations": {},
-    "timestamp": "2025-02-10T03:08:15.128192Z"
+    "timestamp": "2025-02-20T06:10:48.011578Z"
   },
   {
-    "original": "integrate(1/(x**2 - x + 1), x)",
+    "original": "integrate(1/(x**2 - x + 1), (x, 0, 1))",
     "requested_difficulty": "harder",
-    "variant": "integrate(1/(x**3 - x**2 + 1), x)",
-    "reasoning": "As a student who loves polynomials, I propose to modify the integrand by increasing the degree of the polynomial in the denominator. Adding a cubic term results in an expression that provides a challenge yet still offers some polynomial familiarity.",
+    "variant": "integrate(sin(pi * x) / (x**2 - x + 1), (x, 0, 2))",
+    "reasoning": "By changing the limits of integration and introducing an oscillating function (like sine), we can create new dynamics in the integral that need to be considered, thus providing deeper insights into convergence and oscillation effects.",
     "variant_response": null,
-    "verification_passed": null,
-    "evaluation": "harder",
+    "verification_passed": true,
+    "evaluation": null,
     "transformations_used": [
-      "introduce a composite trigonometric function",
-      "include a higher degree term",
-      "add a product of functions"
+      "use more complex substitutions",
+      "add non-elementary functions",
+      "increase algebraic complexity"
     ],
     "solution": null,
     "evaluations": {},
-    "timestamp": "2025-02-10T03:08:14.894021Z"
+    "timestamp": "2025-02-20T06:10:48.011589Z"
   }
 ]

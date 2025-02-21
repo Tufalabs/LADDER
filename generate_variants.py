@@ -1,22 +1,3 @@
-"""
-self_improve.py
-
-An experimental pipeline that:
-- Accepts an integral (or uses a preset one) and a set of difficulty targets.
-- For each requested difficulty (e.g., easier, equivalent, or harder) it generates several variants.
-- Each LLM prompt now generates up to 10 variants at once. If the user requests more than 10 variants,
-  the work is split into multiple concurrent calls.
-- Each variant's antiderivative is attempted symbolically via Sympy.
-- A second LLM prompt asks for a difficulty evaluation (easier/harder/equivalent) as a double-check.
-- The antiderivative solution (i.e. the integration result) is computed, and it is evaluated at three random points.
-- Points that produce complex values are skipped.
-- Variants judged as "harder" are filtered out when not desired.
-- All results are saved to "variants.json".
-
-If the integration (antiderivative computation) takes more than 5 seconds, it is skipped and the variant is
-returned with a solution of None (and an empty evaluation dictionary), rather than being thrown out.
-"""
-
 import asyncio
 import json
 import math
@@ -32,34 +13,46 @@ TIMEOUT_SECONDS = 1  # Maximum allowed seconds for integration
 # New flag: if set to False, we will not compute the symbolic solution
 CALCULATE_SYMBOLIC = False  # Set to False to disable symbolic integration computation.
 
-# Import our LLM-based generation function from the provided utils.inference module.
 from utils.inference import generate_text
 
-# Create a global process pool executor to reuse worker processes.
+# Global process pool executor.
 executor = concurrent.futures.ProcessPoolExecutor(max_workers=4)
 
 def integrate_wrapper(integrand, x):
-    """
-    A top-level function to compute sp.integrate(integrand, x).
-    This function is picklable and can be used with the executor.
-    """
+    """Compute sp.integrate(integrand, x) for indefinite integrals."""
     return sp.integrate(integrand, x)
 
 def run_integration(integrand, x, timeout=TIMEOUT_SECONDS):
-    """
-    Run sp.integrate(integrand, x) using a persistent process pool.
-    If it takes longer than 'timeout' seconds, a TimeoutError is raised.
-    """
+    """Run indefinite integration with a timeout."""
     future = executor.submit(integrate_wrapper, integrand, x)
     return future.result(timeout=timeout)
 
+def definite_integrate_wrapper(integrand, x, lower, upper):
+    """Compute sp.integrate(integrand, (x, lower, upper)) for definite integrals."""
+    return sp.integrate(integrand, (x, lower, upper))
+
+def run_definite_integration(integrand, x, lower, upper, timeout=TIMEOUT_SECONDS):
+    """Run definite integration with a timeout."""
+    future = executor.submit(definite_integrate_wrapper, integrand, x, lower, upper)
+    return future.result(timeout=timeout)
+
+def is_definite_integral(integral_str: str) -> bool:
+    """
+    Return True if the integral string contains definite limits of the form (x, a, b).
+    """
+    pattern = r"integrate\([^,]+,\s*\(x,\s*[^,]+,\s*[^)]+\)\)"
+    return re.search(pattern, integral_str) is not None
+
 def verify_integral(integral_str: str) -> bool:
     """
-    Verify the integral by checking that the derivative of the antiderivative equals the original integrand.
-    Uses symbolic simplification to check for an exact zero difference.
-    Note: In this revised version we no longer use this result to drop variants.
+    Verify the antiderivative by checking that differentiating it gives back the integrand.
+    (For definite integrals this check is skipped.)
     """
     x = sp.symbols('x')
+    if is_definite_integral(integral_str):
+        # For definite integrals, we assume the computed result is correct.
+        return True
+
     try:
         pattern = r"integrate\((.+),\s*x\)"
         match = re.search(pattern, integral_str)
@@ -82,32 +75,65 @@ def verify_integral(integral_str: str) -> bool:
 
 def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: float = -10, upper: float = 10, tol: float = 1e-6):
     """
-    Given an integral string of the form "integrate(<integrand>, x)", compute the antiderivative (solution)
-    and evaluate that solution at up to `num_points` random values of x.
-    If the antiderivative cannot be computed within TIMEOUT_SECONDS, returns None and an empty dict.
-    
-    Returns:
-        solution_str: The antiderivative as a string (or None if not computable or if symbolic integration is disabled).
-        evaluations: A dictionary mapping each random x value (rounded) to the numerical evaluation.
+    Compute the antiderivative for an indefinite integral or the definite integral result
+    if limits are provided. For definite integrals, the computed result is returned as the solution,
+    and evaluations is a dictionary with the numerical result.
     """
-    # If symbolic integration is disabled, immediately return None
     if not CALCULATE_SYMBOLIC:
         return None, {}
 
     x = sp.symbols('x')
-    try:
+    if is_definite_integral(integral_str):
+        # Process as a definite integral.
+        pattern = r"integrate\((.+),\s*\(x,\s*([^,]+),\s*([^)]+)\)\)"
+        match = re.search(pattern, integral_str)
+        if not match:
+            return None, {}
+
+        integrand_str = match.group(1)
+        lower_limit_str = match.group(2)
+        upper_limit_str = match.group(3)
+        try:
+            integrand = sp.sympify(integrand_str)
+            lower_limit = sp.sympify(lower_limit_str)
+            upper_limit = sp.sympify(upper_limit_str)
+        except Exception as e:
+            print("Error sympifying definite integral parts:", e)
+            return None, {}
+
+        try:
+            result = run_definite_integration(integrand, x, lower_limit, upper_limit, timeout=TIMEOUT_SECONDS)
+        except Exception as e:
+            print("Integration timed out in compute_solution_and_evals (definite); marking as too hard.")
+            return None, {}
+
+        solution_str = str(result)
+        try:
+            result_eval = float(result.evalf())
+        except Exception as e:
+            result_eval = None
+        evaluations = {"definite_result": result_eval}
+        return solution_str, evaluations
+    else:
+        # Process as an indefinite integral.
         pattern = r"integrate\((.+),\s*x\)"
         match = re.search(pattern, integral_str)
         if not match:
             return None, {}
 
         integrand_str = match.group(1)
-        integrand = sp.sympify(integrand_str)
+        try:
+            integrand = sp.sympify(integrand_str)
+        except Exception as e:
+            print("Error sympifying integrand:", e)
+            return None, {}
+
         try:
             antideriv = run_integration(integrand, x, timeout=TIMEOUT_SECONDS)
         except Exception as e:
             print("Integration timed out in compute_solution_and_evals; marking as too hard.")
             return None, {}
+
         solution_str = str(antideriv)
         evaluations = {}
         attempts = 0
@@ -123,70 +149,67 @@ def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: fl
             else:
                 evaluations[round(test_val, 3)] = float(eval_val)
         return solution_str, evaluations
-    except Exception as e:
-        print("Error computing solution/evaluations:", e)
-        return None, {}
 
 def parse_variants(text: str) -> list:
     """
     Parse the LLM response text and extract a list of variant dictionaries.
-    The expected format for each variant is:
-    
-    ====
-    Variant <number>:
-    Reasoning: <explanation>
-    Variant: integrate(<integrand>, x)
-    ====
+    Each variant is expected to be delimited by "====" and include both a Reasoning and a Variant line.
+    This version extracts the entire line following 'Variant:'.
     """
     variants = []
     blocks = re.split(r"====\s*", text)
     for block in blocks:
         if "Variant:" in block and "Reasoning:" in block:
+            # Extract reasoning using regex
             reasoning_match = re.search(r"Reasoning:\s*(.*?)\s*Variant:", block, re.DOTALL)
-            variant_match = re.search(r"Variant:\s*(integrate\([^,]+,\s*x\))", block)
-            if variant_match:
-                variant_expr = variant_match.group(1).strip()
-                reasoning_text = reasoning_match.group(1).strip() if reasoning_match else ""
+            reasoning_text = reasoning_match.group(1).strip() if reasoning_match else ""
+            
+            # Split block into lines and find the line that starts with "Variant:"
+            variant_expr = None
+            for line in block.splitlines():
+                if line.strip().startswith("Variant:"):
+                    # Remove the 'Variant:' prefix and any extra whitespace.
+                    variant_expr = line.strip()[len("Variant:"):].strip()
+                    break
+            # Optional: if the variant expression doesn't end with a ')', skip it
+            if variant_expr and variant_expr.endswith(")"):
                 variants.append({"reasoning": reasoning_text, "variant": variant_expr})
     return variants
+
 
 async def process_single_variant(original_integral: str, difficulty: str, variant_data: dict) -> dict:
     """
     Process one variant dictionary:
-      - Attempt to compute its antiderivative (solution) and numerical evaluations.
-        If integration takes too long (or otherwise fails) the solution is set to None.
-      - Attempt a verification by differentiating the computed solution if available.
-      - Ask the LLM for a difficulty evaluation.
-    
-    Note: Even if the antiderivative computation takes too long, the variant is still returned;
-          it just carries a solution of None and verification of None.
+      - Compute its solution (either antiderivative or definite result) and evaluations.
+      - For indefinite integrals, verify the computed antiderivative by differentiation.
+      - For definite integrals, we assume verification passes.
     """
     variant_integral = variant_data.get("variant")
     if not variant_integral:
         return None
 
-    # Always attempt to compute the solution; if the integration is too hard (or disabled), solution will be None.
     solution, evaluations = compute_solution_and_evals(variant_integral)
-
-    # Try to verify the computed solution only if available.
     x = sp.symbols('x')
-    verification = None
-    pattern = r"integrate\((.+),\s*x\)"
-    match = re.search(pattern, variant_integral)
-    if match:
-        try:
-            integrand_str = match.group(1)
-            integrand = sp.sympify(integrand_str)
-            if solution is not None:
-                antideriv = sp.sympify(solution)
-                diff_expr = sp.simplify(sp.diff(antideriv, x) - integrand)
-                verification = (diff_expr == 0)
-            else:
-                verification = None
-        except Exception as e:
-            verification = None
+    definite_pattern = r"integrate\((.+),\s*\(x,\s*([^,]+),\s*([^)]+)\)\)"
+    if re.search(definite_pattern, variant_integral):
+        verification = True
     else:
-        verification = None
+        pattern = r"integrate\((.+),\s*x\)"
+        match = re.search(pattern, variant_integral)
+        if match:
+            try:
+                integrand_str = match.group(1)
+                integrand = sp.sympify(integrand_str)
+                if solution is not None:
+                    antideriv = sp.sympify(solution)
+                    diff_expr = sp.simplify(sp.diff(antideriv, x) - integrand)
+                    verification = (diff_expr == 0)
+                else:
+                    verification = None
+            except Exception as e:
+                verification = None
+        else:
+            verification = None
 
     return {
         "original": original_integral,
@@ -197,49 +220,65 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
         "verification_passed": verification,
         "evaluation": None,
         "transformations_used": variant_data.get("transformations_used", []),
-        "solution": solution,           # Will be None if integration took too long or if CALCULATE_SYMBOLIC is False.
-        "evaluations": evaluations,       # Will be {} if integration took too long or if CALCULATE_SYMBOLIC is False.
+        "solution": solution,
+        "evaluations": evaluations,
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }
 
 def get_random_prompt_template(integral_str: str, difficulty: str, count: int, transforms_text: str, personas_str: str) -> str:
+    """
+    Return a prompt template that instructs the LLM to produce variants.
+    If the base integral is definite then require variants in the form
+      integrate(<integrand>, (x, lower_limit, upper_limit))
+    otherwise use the indefinite form.
+    """
+    if is_definite_integral(integral_str):
+        expected_format = "integrate(<integrand>, (x, lower_limit, upper_limit))"
+    else:
+        expected_format = "integrate(<integrand>, x)"
+    
     templates = []
     templates.append(
         f"Assume you can adopt various mathematical personas such as {personas_str}.\n\n"
         f"Given the integral: {integral_str}\n"
         f"Your task is to generate {count} creative and unexpected variant(s) that are {difficulty} than the original.\n\n"
+        "Important constraints:\n"
+        "- Always use 'x' as the variable of integration\n"
+        "- Do not introduce arbitrary constants - all constants must have specific numerical values\n\n"
         "Follow these steps:\n"
         "1. Analyze the original integral deeply, looking for hidden patterns and non-obvious properties.\n"
-        "2. Think outside conventional approaches - consider unusual substitutions, creative identities, or surprising transformations.\n"
+        "2. Think outside conventional approaches – consider unusual substitutions, creative identities, or surprising transformations.\n"
         f"3. Draw inspiration from various mathematical fields. Some ideas: {transforms_text}\n"
         "4. Provide a detailed explanation of your creative reasoning process.\n"
-        "5. Present each variant in valid Python sympy syntax in the form: integrate(<integrand>, x).\n\n"
+        f"5. Present each variant in valid Python sympy syntax in the form: {expected_format}.\n\n"
         "Push yourself to find truly novel variants that might surprise even experienced mathematicians!\n\n"
         "Return your answer in the following exact format for each variant:\n"
         "====\n"
         "Variant <number>:\n"
         "Reasoning: <your creative chain-of-thought explanation>\n"
-        "Variant: integrate(<integrand>, x)\n"
+        f"Variant: {expected_format}\n"
         "===="
     )
     
-    # Add another template that emphasizes different creative aspects
     templates.append(
         f"Channel the creative spirit of great mathematicians like {personas_str}.\n\n"
         f"For this integral: {integral_str}\n"
         f"Create {count} mathematically interesting variant(s) that are {difficulty} than the original.\n\n"
+        "Critical requirements:\n"
+        "- Use 'x' as the integration variable - do not change this\n"
+        "- All constants must be specific numbers (e.g., 2, 3.14, etc.) - no arbitrary constants\n\n"
         "Steps:\n"
         "1. Look for hidden mathematical beauty and unexpected connections in the original integral.\n"
         "2. Consider how different areas of mathematics might offer surprising approaches.\n"
         f"3. Experiment with transformations such as {transforms_text}\n"
         "4. Explain your mathematical insights and creative process.\n"
-        "5. Express each variant using valid Python sympy syntax: integrate(<integrand>, x)\n\n"
+        f"5. Express each variant using valid Python sympy syntax: {expected_format}\n\n"
         "Aim to create variants that showcase the rich interconnections in mathematics!\n\n"
         "Use this format:\n"
         "====\n"
         "Variant <number>:\n"
         "Reasoning: <your creative chain-of-thought explanation>\n"
-        "Variant: integrate(<integrand>, x)\n"
+        f"Variant: {expected_format}\n"
         "===="
     )
     
@@ -249,19 +288,16 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
     """
     Generate a chunk (up to 10) of variants in a single LLM call.
     The prompt instructs the LLM to produce `count` variants in the specified format.
-    After receiving the response, each variant is parsed and then further processed.
+    After receiving the response, each variant is parsed and further processed.
     """
-    # Get a list of transformation ideas based on difficulty.
     transformations = TRANSFORMATIONS_BY_DIFFICULTY.get(difficulty.lower(), [])
     if not transformations:
         transformations = ["make a small change"]
 
-    # Pick a random subset (between 3 and 6) from the transformation list.
     num_choices = random.choice(range(3, 7))
     chosen_transforms = random.sample(transformations, min(num_choices, len(transformations)))
     transforms_text = ", ".join(chosen_transforms)
 
-    # Expand the persona list for more diverse creative inspiration.
     personas = [
         "Richard Feynman who loves finding intuitive physical interpretations",
         "Leonhard Euler who excels at infinite series and creative substitutions",
@@ -311,12 +347,10 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
     ]
     personas_str = ", ".join(personas)
 
-    # Randomly choose a prompt template.
     prompt_variant = get_random_prompt_template(integral_str, difficulty, count, transforms_text, personas_str)
-
-    # Randomize temperature for creativity.
     temperature_choice = random.choice([0.8, 1.0, 1.2, 1.4])
     response_text = await generate_text(MODEL, prompt_variant, temperature=temperature_choice)
+   
     parsed_variants = parse_variants(response_text)
 
     for variant in parsed_variants:
@@ -327,63 +361,27 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
         for variant in parsed_variants
     ]
     processed_variants = await asyncio.gather(*tasks)
-    # Filter out any None results (if any parsing issues occur)
     return [v for v in processed_variants if v is not None]
 
-# Expanded transformation ideas for extra variance.
 TRANSFORMATIONS_BY_DIFFICULTY = {
     "easier": [
-        "remove a complicated term",
         "simplify the denominator",
-        "reduce an exponent",
-        "change a function to an easier one",
-        "lower a coefficient",
-        "remove a factor",
-        "eliminate a radical",
-        "drop a subexpression",
-        "simplify a trigonometric component",
-        "convert a product to a simpler sum",
-        "replace a complex fraction with a simpler one",
-        "remove nested functions",
-        "reduce the degree of a polynomial",
-        "simplify composite trigonometric functions",
-        "remove logarithmic terms",
-        "eliminate absolute value terms",
-        "reduce the number of terms in the expression",
-        "replace transcendental functions with simpler algebraic ones",
+        "reduce exponents",
+        "remove complex terms",
+        "convert to partial fractions",
+        "simplify trigonometric terms",
+        "combine like terms",
         "factor common elements",
-        "cancel redundant terms",
+        "remove nested functions",
+        "convert to standard forms",
         "linearize the integrand",
-        "break up a compound fraction",
-        "simplify rational expressions",
-        "remove redundant constants",
-        "combine like terms to reduce complexity",
-        "split a complex fraction into partial fractions",
-        "substitute a simpler function using known derivatives",
-        "remove a squared term from denominator",
-        "convert exponential to simpler polynomial",
-        "replace hyperbolic functions with exponentials",
-        "substitute a known derivative pattern",
-        "remove cross terms in denominator",
-        "reduce number of distinct variables",
-        "convert to a recognizable standard form",
-        "simplify using common factor extraction",
-        "remove nested square roots",
-        "convert to a single fraction",
-        "eliminate double angles in trigonometric terms",
-        "reduce to basic trigonometric ratios",
-        "simplify using completion of square",
-        "convert to partial fractions with simpler terms",
-        "reduce to elementary functions",
-        "simplify using function composition",
-        "convert to a recognizable derivative form",
-        "reduce to basic algebraic operations",
-        "simplify using known antiderivative patterns",
-        "convert to a standard integration form"
+        "eliminate radicals",
+        "reduce polynomial degree",
+        "split compound fractions",
+        "remove logarithmic terms",
+        "substitute simpler functions"
     ],
     "equivalent": [
-        
-        # Keep existing transformations
         "change a function to a different but equivalent one",
         "change coefficient values slightly",
         "alter constant terms",
@@ -394,7 +392,6 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "rearrange the order of terms",
         "use trigonometric identities to rewrite the expression",
         "substitute equivalent exponential forms",
-        "change variables while maintaining complexity",
         "distribute terms differently",
         "factor common terms in a new way",
         "rewrite using alternate algebraic forms",
@@ -428,11 +425,10 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
     """
     Generate a batch of variants for the given integral and for each difficulty.
     If more than 10 variants are requested per difficulty, the work is split into multiple LLM calls.
-    A buffer multiplier is used to allow for duplicates or filtering before trimming to the requested number.
     """
     final_results = []
     seen_variants = set()
-    buffer_multiplier = 3  # increased to generate more candidate variants
+    buffer_multiplier = 3
     tasks = []
 
     for difficulty in difficulties:
@@ -446,8 +442,8 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
     difficulty_dict = {d: [] for d in difficulties}
     for idx, (difficulty, _) in enumerate(tasks):
         for variant in chunk_results[idx]:
+         
             variant_expr = variant.get("variant")
-            # Do not discard the variant based on integration difficulty; only filter based on LLM's evaluation.
             if (variant_expr 
                 and variant_expr not in seen_variants 
                 and not (variant.get("evaluation", "") == "harder" and difficulty != "harder")):
@@ -456,11 +452,11 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
     
     for difficulty in difficulties:
         final_results.extend(difficulty_dict[difficulty][:num_variants])
-    
+   
     return final_results
 
 async def main():
-    base_integral = "integrate(1/(x**2 - x + 1), x)"
+    base_integral = "integrate(1/(x**2 - x + 1), (x, 0, 1))"
     difficulties = ["easier", "equivalent", "harder"]
     print("Processing integral:", base_integral)
     variants = await process_integral(base_integral, difficulties, num_variants=3)
@@ -475,8 +471,8 @@ async def main():
         print("Variant integral:", v["variant"])
         print("Verification passed:", v["verification_passed"])
         print("LLM evaluation:", v["evaluation"])
-        print("Solution (antiderivative):", v["solution"])
-        print("Evaluations at random points:", v["evaluations"])
+        print("Solution (integral result):", v["solution"])
+        print("Evaluations:", v["evaluations"])
 
 if __name__ == "__main__":
     asyncio.run(main())

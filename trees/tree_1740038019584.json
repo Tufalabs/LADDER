@@ -1,0 +1,1249 @@
+{
+  "base_question": "integrate((arctan(x)/(1-x**2) + arctanh(x)/(1+x**2)), x)",
+  "tree": [
+    {
+      "level": 0,
+      "variants": [
+        "integrate((arctan(x)/(1-x**2) + arctanh(x)/(1+x**2)), x)",
+        "integrate((1/2 * (log(1 + x**2) - log(1 - x**2)))/(1 - x**2), x)",
+        "integrate((arctan(x)/(1 - x**2) + arctanh(x)/(1 + x**2)), x).expand()",
+        "integrate((arctan(tan(u))/(1 - tan(u)**2) + arctanh(tan(u))/(1 + tan(u)**2)), u)",
+        "integrate(Summation(((-1)**n * x**(2*n+1))/(2*n + 1) + (1/2)*Summation(((-1)**n * (2*n + 1)**(-1) * x**(2*n)))/(1 - x**2)), x)",
+        "integrate(PartialFraction(arctan(x)/(1-x**2) + arctanh(x)/(1+x**2), x)",
+        "integrate((arctan(x)/(1-x**2) - (1/2)*arctanh(x)/(1+x**2)), x)",
+        "integrate((hyperbolic_arctan(x)/(1-x**2)+(hyperbolic_arctanh(x)/(1+x**2)), dx)",
+        "integrate((1/2 * (arctan(x) + arctanh(x))/(x**2)), x)",
+        "integrate(Sum(arctan(n)/n, n), x)",
+        "integrate(numeric_integrate((arctan(x)/(1-x**2) + arctanh(x)/(1+x**2)), x, (a, b)), x)"
+      ],
+      "children": [
+        {
+          "level": 1,
+          "variants": [
+            "integrate(log(1+x**2)/(1-x**2), x)",
+            "integrate(log(1+(-x)**2)/(1-(-x)**2), x)",
+            "integrate(log(1+x**2)/(1-x**2), x)",
+            "integrate(sum((-1)**(n-1)*(x**(2*n))/(n) for n in range(1, 10))/(1-x**2), x)",
+            "integrate(log(sinh(x))/(1-x**2), x)",
+            "integrate(2*x/(1+x**2)/(1-x**2), x)",
+            "integrate(log(1+u)/(1-u), u=x**2)",
+            "integrate(log(1+x**2)/(partial fraction expression of 1-x^2), x)",
+            "integrate(sum(a_n*sin(n*pi*x), n=1, \u221e)/(1-x**2), x)",
+            "integrate(log(z)/(1-z**2), z)",
+            "integrate(sum((-1)**(n-1) * (x**2)**n / n for n in range(1, oo)) / (1-x**2), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(log(1+x**2)/(1-x**2), x)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+x^2)}{1+x^2}, x\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+x^2)}{2(1-x)}, x\\right) + \\text{integrate}\\left(\\frac{\\log(1+x^2)}{2(1+x)}, x\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+\\tan^2(t))}{1-\\tan^2(t)} \\sec^2(t), t\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+x) + \\log(1-x)}{1-x^2}, x\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log\\left(1+\\left(\\frac{u}{1-u}\\right)^2\\right)}{1-\\left(\\frac{u}{1-u}\\right)^2} \\cdot \\frac{1}{(1-u)^2}, u\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+\\sin^2(\\theta))}{1-\\sin^2(\\theta)} \\cos(\\theta), \\theta\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(e^x + e^{-x})}{1-x^2}, x\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+\\cos^2(x))}{1-\\cos^2(x)}, x\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\sum_{n=1}^{\\infty} \\frac{(-1)^{n-1}}{n} x^{2n}}{1-x^2}, x\\right) \\)",
+                "\\( \\text{integrate}\\left(\\frac{\\log(1+z^2)}{1-z^2}, z\\right) \\) (where \\( z \\) is a complex variable)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(log(1+x**2)/(1-x**2), x)",
+                    "integrate(log((1+x**2)/(1-x**2)), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(arctan(x)/(1+x**2), x)",
+            "integrate(arctan(x)**2/2, x)",
+            "integrate(arctan(tan(x))/(1 + tan(x)**2), x)",
+            "integrate(-arctan(x)**2/2 + x*arctan(x)/(1+x**2), x)",
+            "integrate(arctan(x) * sum((-1)**n * x**(2*n), (n, 0, oo)), x)",
+            "integrate(arctan(k*x)/(1+k**2*x**2), x)",
+            "integrate(1/(2*i) * (log(1 + I*x) - log(1 - I*x))/(1 + x**2), x)",
+            "integrate(log(1+x**2)/(1+x**2), x)",
+            "integrate(sum((-1)**n * x**(2*n + 1)/(2*n + 1), (n, 0, oo))/(1 + x**2), x)",
+            "integrate((pi/4 - arctan(1/x))/(x**2 + 1), x)",
+            "integrate(arctan(x), 1 / (1+x**2), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(x)**2, x)",
+                "integrate((\\frac{\\pi}{2} - arctan(1/x))**2, x)",
+                "integrate((1/2 * ln(1 + x**2))**2, x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(x)**2, x)",
+                    "integrate(tan(x)**(-1)**2, x)",
+                    "integrate((1/2 * atan(2*x/(1-x**2)))**2, x)",
+                    "integrate((1/(2*i) * log((1+I*x)/(1-I*x)))**2, x)",
+                    "integrate(sum(((-1)**n * x**(2*n))/(n*(2*n+1)), (n, 0, oo)), x)",
+                    "integrate(x*atan(x) - 2*integrate(x/(1+x**2)*atan(x), x), x)",
+                    "integrate((sin(atan(x)) / cos(atan(x)))**2, x)",
+                    "integrate((integrate(1/(1+t**2), (t, 0, x)))**2, x)",
+                    "integrate((1/2*(atan(x)+atan(-x)))**2, x)",
+                    "integrate(tanh(-1*(x/sqrt(1+x**2)))**2, x)",
+                    "integrate(u**2 / (1 + tan(u)**2), u)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate((arctan(x) + arctanh(x))/(1-x**2 + 1+x**2), x)",
+            "integrate((1/2 * log((1 + x)/(1 - x)) + 1/2 * log(1 + x**2))/(1 + x**2), x)",
+            "integrate((t + (1/2) * log(1 + tan(t)**2))/(1 + tan(t)**2), t)",
+            "integrate((arctan(x) + sinh(x)/(1 - x**2))/(1 + x**2), x)",
+            "integrate(((1+k)*arctan(x) + k*arctanh(x))/(k*(1-x**2) + (1+k)*(1+x**2)), x)",
+            "integrate((log(1 + x**2) + log(1 + x**2 + 1))/(1-x**2 + 1+x**2), x)",
+            "integrate((arctan(e^(ix)) + arctanh(e^(ix)))/(1 + e^(2ix)), ix)",
+            "integrate((sum((-1)**n * x**(2*n+1)/(2*n+1) for n in range(0, 100)))/(1+x**2), x)",
+            "integrate(differentiate(arctan(x) + arctanh(x)), x)",
+            "integrate((arctan(ix) + arctanh(ix))/(1 + x**2), ix)",
+            "integrate((arctan(-x) + arctanh(-x))/(1-x**2 + 1+x**2), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate((arctan(x) + arctanh(x))/(1-x**2 + 1+x**2), x)",
+                "integrate((arctan(x) + arctanh(x))/2, x)",
+                "integrate(arctan(x) + (1/2) * log((1 + x)/(1 - x)), x)",
+                "integrate(t + (1/2) * log((1 + tan(t))/(1 - tan(t))), tan(t))",
+                "integrate(log(1 + x^2) / 2, x)",
+                "integrate((-arctan(-x) - arctanh(-x))/2, x)",
+                "integrate(differentiate((arctan(x) + arctanh(x))/2, x), x)",
+                "2 * integrate((arctan(x) + arctanh(x))/2, (x, -1, 1))",
+                "integrate(arctan(x), x) + integrate(arctanh(x), x)",
+                "integrate((arctan(x) + (x * arctanh(x))/2), x)",
+                "integrate((1/2) * arctan(x) + (1/2) * arctanh(x), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate((arctan(x) + arctanh(x))/(1-x**2 + 1+x**2), x)",
+                    "integrate((arctan(-x) + arctanh(-x))/2, x)",
+                    "integrate((arctan(x) + log(1+x)/(1-x))/2, x)",
+                    "integrate((arctan(sqrt(u)) + arctanh(sqrt(u)))/2, 2*sqrt(u) / (1 + u), u)",
+                    "integrate((t + log(cos(t)/(1-sin(t))))/2, t)",
+                    "integrate((arctan(x) + arctanh(x))/2, x) - integrate((1/(1+x^2) + 1/(1-x^2))/2, x)",
+                    "integrate((arctan(x) + (1/2)*log((1+x)/(1-x)))/2, x)",
+                    "integrate((arctan(x) + (1/2)*(log(1+x) - log(1-x)))/2, x)",
+                    "integrate(((1/4)*arctan(sqrt(v)) + (1/4)*log((1+sqrt(v))/(1-sqrt(v))))/2, nv**(1/2)/2, v)",
+                    "integrate((2*arctan(x) - arctanh(x))/(4), x)",
+                    "integrate((arctan(x) + 0.5*arctanh(1/(1+x^2)))/2, x)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(arctan(x) + arctanh(x), x)",
+            "integrate(arctan(x) + 1/2 * log((1 + x)/(1 - x)), x)",
+            "integrate(u + arctanh(tan(u)), u)",
+            "integrate((pi/2 - arctan(1/x)) + arctanh(x), x)",
+            "integrate(arctan(x), x) + integrate(arctanh(x), x)",
+            "integrate(sum((-1)**(n-1) * x**n / n for n in range(1, oo)), x)",
+            "integrate(arctan(sinh(t)) + arctanh(sinh(t)), t)",
+            "integrate(1/(1 + x**2) + 1/(1 - x**2), x)",
+            "integrate(arctan(x), x) + x * arctan(x) - integrate(x/(1+x**2), x)",
+            "integrate(diff(arctan(x), x) + diff(arctanh(x), x), x)",
+            "integrate(arctan(x) + (1/2) * log((1 + x) / (1 - x)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(x) + arctanh(x), x)",
+                "integrate(log(1 + x**2)/2 + log(1 + x)/(1 - x), x)",
+                "integrate(atan(x) + (1/2)*log((1+x)/(1-x)), x)",
+                "integrate(t + (1/2)*log((1+tan(t))/(1-tan(t))), tan(t))",
+                "integrate(diff(atan(x), x) + diff(arctanh(x), x), x)",
+                "integrate(atan(x) + atan(I*x), x)",
+                "integrate(atan(u/sqrt(1-u^2)) + (1/2)*log((1+u/sqrt(1-u^2))/(1-u/sqrt(1-u^2))), u)",
+                "integrate(atan(-x) + arctanh(-x), x)",
+                "integrate(integrate(1/(1+x^2), x) + integrate(1/(1-x^2), x), x)",
+                "integrate(sum([(x**n)/(n*(n+1)), n, 0, oo]), x)",
+                "integrate(atan(sinh(t)) + arctanh(sinh(t)), t)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(x) + arctanh(x), x)",
+                    "integrate(arctan(x) + 1/2 * ln((1 + x)/(1 - x)), x)",
+                    "integrate(sum(series(arctan(x) + arctanh(x), x, 0, 10), x)",
+                    "integrate(t + arctanh(tan(t)), t)",
+                    "integrate(arctan(x) + ln(1 + x) - ln(1 - x), x)",
+                    "integrate(x - (1/3)*x^3 + (1/5)*x^5 + ... + (1/2) * ln((1 + x)/(1 - x)), x)",
+                    "integrate(pi/4 + arctan(2*x/(1 - x^2)), x)",
+                    "integrate(arctan(1/x) + arctanh(1/x), x)",
+                    "integrate(1/(1 + x^2) + 1/(1 - x^2), x)",
+                    "integrate(darctan(1/x) + darctanh(1/x), x)",
+                    "integrate(ln(sqrt(1+x^2)) + ln(sqrt(1-x^2)), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(arctan(tan(x))/(1-tan(x)**2), x)",
+            "integrate(x/(1-tan(x)**2), x)",
+            "integrate(arctan(sin(x)/cos(x))/(1-sin(x)**2/cos(x)**2), x)",
+            "integrate(arctan(1/tan(x))/(cos(x)**2), x)",
+            "integrate(arctan(cot(x))/(1-cot(x)**2), x)",
+            "integrate(arctan(u)/(1-u**2) * (1/(1+u**2)), u)",
+            "integrate(floor(x)/(1-tan(x)**2), x)",
+            "integrate(arctan(tan(x))*(1-tan(x)**2) - x/(1-tan(x)**2), x)",
+            "integrate(arctan(-tan(x))/(1-tan(x)**2), x)",
+            "integrate(arctan(tan(x))*sec(x)**2, x)",
+            "integrate(arctan(exp(1j*x))/(1-exp(2*1j*x)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(x/(1 - tan(x)**2), x)",
+                "integrate(x * sec(x)**2, x)",
+                "integrate(t/(1 - t**2) * dt/(1 + t**2), t)",
+                "integrate(x * (cos(x)**2 - sin(x)**2), x)",
+                "integrate(x * (1/(1 - tan^2(x))) - integrate(1/(1 - tan^2(x)), x), x)",
+                "integrate(sin(x)/cos(x) * x / (cos(x)**2), x)",
+                "integrate(x / u, -du/(2*(1-u)), u)",
+                "integrate(x * (1 + u^2) / u**2, u)",
+                "integrate(x/(1 - tan(x)**2) + x * tan(x)**2 / (1 - tan(x)**2), x)",
+                "integrate(x * (e^(ix) - e^(-ix)) / (1 - (e^(ix)/e^(-ix))^2), x)",
+                "integrate((atan(x) - x * tan(x))/(1 + x**2 + tan^2(x)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(x/(1 - tan(x)**2), x)",
+                    "integrate(x * sec(x)**2, x)",
+                    "integrate(x * sum(tan(x)**(2*n), (n, 0, oo)), x)",
+                    "integrate((u + tan(u)) / (1 - tan(u)**2), u)",
+                    "integrate(1/(1 - tan(x)**2), x) + integrate(x, x)",
+                    "integrate(x, 1/(1 - tan(x)**2) * dx)",
+                    "integrate((x - pi) / (1 - tan(x)**2), x)",
+                    "integrate(arctan(u)/(cos(arctan(u))**2), u)",
+                    "integrate(x * (1/(1 - tan(x)**2) + tan(x)), x)",
+                    "integrate(x/(sec(x)**2 - 1), x)",
+                    "integrate(x/(1 - tan(complex(x))**2), complex(x))"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(tan(x))/(sec(x)**2 - 2), x)",
+                "integrate(arctan(t)/(t**2 + 1 - 2), t)",
+                "integrate(arctan(tan(x - n*pi))/(sec(x)**2 - 2), x)",
+                "integrate(arctan(tan(x))/(1/cos(x)**2 - 2), x)",
+                "integrate(arctan(2 sin(x)/(1 - sin^2(x)))/(sin^2(x) - 1), x)",
+                "integrate(-arctan(-tan(x))/(sec(x)**2 - 2), x)",
+                "integrate(arctan(tan(x))/(tan^2(x) - 1), x)",
+                "integrate(arctan(ran^2(x))/(1 - r^2), x)",
+                "integrate(arctan(tan(x))/(sec(x) - sqrt(2)), x)",
+                "integrate(d/arctan(tan(x) + 1)/(sec^2(x) + 3), x)",
+                "integrate(sum((-1)**n * (tan(x)**(2*n + 1))/(2*n + 1), (n, 0, oo)) / (sec(x)**2 - 2), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(x/(tan(x)**2 - 1), x)",
+                    "integrate(x/(sec(x)**2 - 2), x)",
+                    "integrate(x/(sin(x)**2/cos(x)**2 - 1), x)",
+                    "integrate(x/((tan(x) - 1)*(tan(x) + 1)), x)",
+                    "integrate(x/(1/tan(x)**2 - 1), x)",
+                    "integrate(tan(x)*x/(u**2 - 1)*(sec(x)**2), x)",
+                    "integrate(-x/(tan(-x)**2 - 1), x)",
+                    "integrate(x/((sinh(x)/cosh(x))**2 - 1), x)",
+                    "integrate(log(sin(x)/cos(x))/(tan(x)**2 - 1), x)",
+                    "integrate(x / (-\\cot^2(x)), x)",
+                    "integrate(x / (\\sec^2(x) - 2), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(tan(x))/(1/cos(x)**2 - 2), x)",
+                    "integrate(x * cos(x)**2 / sin(x)**2, x)",
+                    "integrate((x + pi) / (1/cos(x)**2 - 2), x)",
+                    "integrate(x / (1/(cos(x)**2 - 2*cos^2(x))), x)",
+                    "integrate((pi/2 - arctan(1/tan(x))) / (1/cos(x)**2 - 2), x)",
+                    "integrate(arctan(u) / (1/u**2 - 2) * 1/(1 + u**2), u)",
+                    "integrate(-arctan(-tan(x)) / (1/cos(x)**2 - 2), x)",
+                    "integrate((arctan(tan(x + pi)))/ (1/cos(x)**2 - 2), x)",
+                    "integrate((log(sin(x)/cos(x))) / (1/cos(x)**2 - 2), x)",
+                    "integrate(arctan(tan(x)) * cos(x)**4 / (2 - 1), x)",
+                    "integrate(arctan(sec(x)) / (sec(x)**2 - 2), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(tan(x))/(sec(x)**2 - 2*cos(x)**2), x)",
+                    "integrate(x/(sec(x)**2 - 2*cos(x)**2), x)",
+                    "integrate(arctan(tan(x))/(1 + tan(x)**2 - 2cos(x)**2), x)",
+                    "integrate(arctan(tan(x))/((sec(x)**2)/2 - cos(x)**2), x)",
+                    "integrate(arctan(sin(x)/cos(x))/(sec(x)**2 - 2*cos(x)**2), x)",
+                    "integrate(arctan(tan(x + pi))/(sec(x + pi)**2 - 2*cos(x + pi)**2), x)",
+                    "integrate(1/(1 + tan(x)**2)/(sec(x)**2 - 2*cos(x)**2), x)",
+                    "integrate(arctan(-tan(x))/(sec(-x)**2 - 2*cos(-x)**2), x)",
+                    "integrate(arctan(k)/(sec(x)**2 - 2*cos(x)**2), x)",
+                    "integrate(arctan(tan(pi/4 + u))/(sec(pi/4 + u)**2 - 2cos(pi/4 + u)**2), u)",
+                    "integrate((arctan(tan(x + 2k*pi))/(sec(x)**2 - 2*cos(x)**2), x) for k in integers)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(tan(x))/(1 + tan(x)**2), x)",
+                "integrate(arctan(tan(x))/(sec(x)**2), x)",
+                "integrate(arctan(tan(x))*cos(x)**2, x)",
+                "integrate(x/(1 + tan(x)**2), x)",
+                "integrate(arctan(u)/(1 + u**2), u*sec(x)**2)",
+                "integrate(arctan(u)/(1 + u**2), u**(-1) * sec(x)**2)",
+                "integrate(differentiate(arctan(tan(x)), x)/(1+tan(x)**2), x)",
+                "integrate(sum((-1)**(n) * tan(x)**(2*n)/(2*n+1), (n, 0, infinity)), x)",
+                "integrate(sin(x)/cos(x)*arctan(cos(x)), x)",
+                "integrate(sin(x)*arctan(tan(x)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(tan(x)) * cos(x)**2, x)",
+                    "integrate((x + pi) * cos(x)**2, x)",
+                    "\\(\\int x \\cos^2(x) \\, dx\\)",
+                    "\\(\\int \\text{arctan}(\\tan(x)) \\cdot \\frac{1 + \\cos(2x)}{2} \\, dx\\)",
+                    "\\(\\int \\text{arctan}(\\tan(\\cos^{-1}(u))) u^2 \\, (-\\frac{1}{\\sqrt{1-u^2}}) \\, du\\)",
+                    "\\(\\int \\text{arctan}\\left(\\frac{\\sin(x)}{\\cos(x)}\\right) \\cos^2(x) \\, dx\\)",
+                    "\\(\\int x \\cos^2(x) \\, dx \\text{ over intervals reflecting the periodicity of } \\tan\\)",
+                    "\\(\\int \\text{arctan}(\\tan(x)) (1 - \\sin^2(x)) \\, dx\\)",
+                    "\\(\\int (-\\ln(1 + \\sin(x)/\\cos(x))) \\cos^2(x) \\, dx\\)",
+                    "\\(\\int \\text{arctan}(\\tan(2x)) \\cos^2(x) \\, dx\\)",
+                    "\\(\\int u \\, dv \\text{ where } u = \\text{arctan}(\\tan(x)) \\text{ and } dv = \\cos^2(x) dx\\)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(sin(x)/cos(x)) * sec(x)**2, x)",
+                    "integrate(x * sec(x)**2, x)",
+                    "\\(\\int \\tan(x) \\sec^2(x) \\, dx\\)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(u) * 1/(1 + u**2), u).subs(u, tan(x))",
+                    "integrate(log(1 + tan(x)**2) / 2, x)",
+                    "integrate(arctan(tan(x)) * (1/(1 + tan(x)**2)), x)",
+                    "integrate(arctan(u) * (1 + u**2)**-1, u)",
+                    "integrate(1/2 * arctan(sqrt(v)) * (1/(1 + v)), v)",
+                    "integrate((arctan(u) + C) * (1 + 1 + u**2)**-1, u)",
+                    "integrate((1/2i) * (log(1 - i*u) - log(1 + i*u)), u)",
+                    "integrate(arctan(u) / (1 + u**2) + 1/a, u)",
+                    "integrate(Sum((-1)**n * u**(2*n + 1) / (2*n + 1), (n, 0, oo)) * (1/(1 + u**2)), u)",
+                    "integrate(u^(1/2) * arctan(cos(theta) / sin(theta)), u)",
+                    "integrate(arctan(-u) * (1/(1 + u**2)), u)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(differentiate(arctan(x) + arctanh(x)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(differentiate(arctan(x) + arctanh(x)), x)",
+                "integrate(differentiate(arctan(x) + (1/2)*log((1 + x)/(1 - x))), x)",
+                "integrate(differentiate((pi/2) - arctan(1/x) + arctanh(x)), x)",
+                "integrate(differentiate(arctan(-x) + arctanh(-x)), x)",
+                "integrate(differentiate(integrate(differentiate(x/(1 + x^2)), dx) + arctanh(x)), x)",
+                "integrate(differentiate(arctan(tan(x)) + arctanh(tanh(x))), x)",
+                "integrate(differentiate(y + z), x)",
+                "integrate(differentiate(series(arctan(x), x, 0, 10) + series(arctanh(x), x, 0, 10)), x)",
+                "integrate(differentiate(inverse(u) + ua), x)",
+                "integrate(differentiate(arctan(x) + arctanh(x)), x)",
+                "integrate((1/(1+x**2) + 1/(1-x**2)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(1/(1+x**2) + 1/(1-x**2), x)",
+                    "integrate(1/(1+x**2) + 1/2/(1-x) + 1/2/(1+x), x)",
+                    "integrate(1/(1+tan(t)**2) + 1/(1-tan(t)**2), t)",
+                    "integrate((1-x**2 + 1+x**2) / ((1+x**2)(1-x**2)), x)",
+                    "integrate(1/4 * (1/cos(atan(x))**2 + 1/sin(atan(x))**2), x)",
+                    "integrate(1/(1+u) + 1/(1-u), u)",
+                    "integrate((1+x**2)/(1+x**2)*(1-x**2), x)",
+                    "integrate(sum(1/(1-z**2)**n, (n, 1, oo)), x)",
+                    "integrate(1/(1+tanh(t)**2) + 1/(1-tanh(t)**2), t)",
+                    "integrate(exp(-t) / (1+exp(-2*t)) + exp(t) / (1-exp(-2*t)), t)",
+                    "integrate(dlog(1+x**2) + dlog(1-x**2), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(1/(1+x**2), x) + integrate(1/(1-x**2), x)",
+                    "integrate(1/(1+exp(I*x)**2), x) + integrate(1/(1-exp(I*x)**2), x)",
+                    "integrate(1/(1+(-x)**2), x) + integrate(1/(1-x**2), x)",
+                    "integrate(Sum((-1)**(n)/(2*n + 1)*x**(2*n), (n, 0, oo)), x) + integrate(1/(1-x**2), x)",
+                    "integrate(diff(atan(x), x), x) + integrate(diff(1/2*ln((1+x)/(1-x)), x), x)",
+                    "integrate( (t/(1+t**2) + (1-t)/(1-t**2)).subs(t, 1+x), x)",
+                    "integrate((1/(1+x**2) + 1/(1-x**2))/2, x) + integrate(1/(1-x**2), x)",
+                    "integrate(1/(1+tan(theta)**2), tan(theta)) + integrate(1/(1-tan(theta)**2), tan(theta))",
+                    "integrate(1/(1+(x**2)), x) + integrate(1/(1+(evaluate(1-x**2)), x))",
+                    "integrate(1/(1+w**2 - 2wx), w) + integrate(1/(1-x**2 + 2wx), w)",
+                    "integrate(1/(1+x**2), x) + integrate(1/(1-x**2), x) + integrate(-1/(1-x**2), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(1/(1 + tan(t)**2), t) + integrate(1/(1 - tanh(u)**2), u)",
+                    "integrate(1/(1 + cot(t)**2), t)",
+                    "integrate(1/(1 - sin(v)**2/cos(v)**2), v)",
+                    "integrate(1/(1 + cot(t)**2), t) + integrate(1/(sin(u)**2), u)",
+                    "integrate(cos(t)**2 / sin(t)**2, t) + integrate(1/(1 - tanh(u)**2), u)",
+                    "integrate(cos(t)**2, t) + integrate(1/(1 - csch(u)**2), u)",
+                    "integrate(1/(1+x**2), x) + integrate(1/(1 - tanh(u)**2), u)",
+                    "integrate(1/(1 + 0.1*tan(t)**2), t) + integrate(1/(1 - tanh(u)**2), u)",
+                    "integrate(1/(1 + tan(t)**2), t) + integrate(1/(cosh(u)**2), u)",
+                    "integrate(A/(A + tan(t)**2), t) + integrate(1/(1 - vtanh(u)**2), u)",
+                    "integrate(1/(1 + x**2), x) + integrate(1/(1 - cosh(u)**2), u)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(arctan(sin(x))/(1-sin(x)**2), x)",
+            "integrate(arctan(sin(x))/cos(x)**2, x)",
+            "integrate(log(1 + sin(x))/2, x)",
+            "integrate(sin(x) * d(arctan(sin(x))) + arctan(sin(x)), x)",
+            "integrate(arctan(u)/(1-u**2), u=sin(x))",
+            "integrate(arctan(-sin(x))/(1-sin(x)**2), x)",
+            "integrate(arctan(a)/(1 - a**2), a=sin(x))",
+            "integrate(sum(((sin(x))**(2*k + 1))/(2*k + 1), k=0, oo)/(1 - sin(x)**2), x)",
+            "integrate(arctan(sqrt(1-t**2))/(t**2), t=cos(x))",
+            "integrate(approx_arctan(sin(x))/(1-sin(x)**2), x)",
+            "integrate(arctan(cos(x))/(1-cos(x)**2), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(sin(x)) * sec(x)**2, x)",
+                "integrate(arctan(sin(x)) * (1/cos(x))**2, x)",
+                "integrate(arctan(sin(x)) * tan(x)**2, x)",
+                "integrate(arctan(sin(x)) * (1 + tan(x)**2), x)",
+                "integrate(arctan(2*tan(x/2)/(1 + tan(x/2)**2)) * sec(x)**2, x)",
+                "integrate(arctan(u) * (1/(1-u**2)), u)",
+                "integrate(arctan(sin(x)) * (1/(1-sin(x)**2)), x)",
+                "integrate(arctan(sin(x)) * diff(tan(x)), x)",
+                "integrate(arctan(1/(sqrt(1+t**2))) * (1/(1+t**2)**2), t)",
+                "integrate(arctan(sin(x)) * sec(x)**(2 + 1e-5), x)",
+                "integrate(log(1 + sin(x)**2) * sec(x)**2, x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(sin(tan(x))) * 1, x)",
+                    "integrate(arctan(sin(tan(x))), x)",
+                    "integrate(arctan(sin(tan(x))) + arctan(cos(tan(x))), x) - integrate(arctan(cos(tan(x))), x)",
+                    "integrate(arctan(sin(sin(tan(x)))) * (cos(tan(x)) + 1), x)",
+                    "integrate(arctan(sin(tan(x + 0.1))) + c, x)",
+                    "integrate(x * d(arctan(sin(tan(x)))) , x)",
+                    "integrate(sum(((-1)**n) * (sin(tan(x)))**(2*n + 1) / (2*n + 1), (n, 0, 5)), x)",
+                    "integrate(arctan(-sin(tan(x))) * 1, x)",
+                    "integrate(arctan(cos(tan(x))) * 1, x)",
+                    "integrate(arctan(2 * sin(tan(x)) * cos(tan(x))), x)",
+                    "integrate(arctan(sin(tan(x + \u03c0))) + \u03c0/4, x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(sin(x)), x) + integrate(1, x)",
+                    "integrate(arctan(sin(x)), x) + integrate(1, x)",
+                    "integrate(arctan(sin(x + 2*pi)), x) + integrate(1, x)",
+                    "integrate(arctan(cos(x)), x) + integrate(1, x)",
+                    "integrate(sin(x)/(1 + sin(x)^2), x) + integrate(1, x)",
+                    "integrate(arctan(sin(-x)), x) + integrate(1, x)",
+                    "integrate(arctan(sin(x + pi/2)), x) + integrate(1, x)",
+                    "integrate((pi/2 - arctan(cos(x))), x) + integrate(1, x)",
+                    "integrate(arctan(sinh(x)/cosh(x)), x) + integrate(1, x)",
+                    "integrate(arctan(-sin(x)), x) + integrate(1, x)",
+                    "integrate(log(1 + sin(x)/(1 - sin(x))), x) + integrate(1, x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(sin(x), x) * integrate(sec(x)**2, x)",
+                    "integrate(sin(x), x) * integrate(1/(cos(x)**2), x)",
+                    "integrate((e**(ix) - e**(-ix))/(2*I), x) * integrate(sec(x)**2, x)",
+                    "integrate(cos(x), x) * integrate(sec(x)**2, x)",
+                    "integrate(sin(x), x) * integrate(1/(1-tan(x)**2), x)",
+                    "integrate(sin(x), x) * integrate((1 + tan(x))/(cos(x)**2), x)",
+                    "integrate(cos(x), x) * integrate(cos(x)**(-2), x)",
+                    "integrate(sin(x), (x, 0, pi)) * integrate(sec(x)**2, (x, 0, pi/4))",
+                    "integrate(sqrt(1 - cos(x)**2), x) * integrate(sec(x)**2, x)",
+                    "integrate(sum((-1)**n * (x**(2*n+1))/(factorial(2*n+1)), (n, 0, oo)), x) * integrate(sec(x)**2, x)",
+                    "integrate(FourierTransform(sin(x), x, omega), omega) * integrate(sec(x)**2, x)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(2*tan(x)/(1 + tan(x)**2)) / (1 - (2*tan(x)/(1 + tan(x)**2))**2), x)",
+                "integrate(arctan(tan(2*x)) / (1 - tan(2*x)**2), x)",
+                "integrate(arctan(2*u/(1 + u**2)) / (1 - (2*u/(1 + u**2))**2) * (1 + u**2)**(-1), u)",
+                "integrate((1/(2*i)) * ln((1 + (2*tan(x)/(1 + tan(x)**2))*i)/(1 - (2*tan(x)/(1 + tan(x)**2))*i)) / (1 - (2*tan(x)/(1 + tan(x)**2))**2), x)",
+                "integrate(arctan(2sin(x)/(cos^2(x) + sin^2(x))) / (1 - (2sin(x)/(cos^2(x) + sin^2(x)))**2), x)",
+                "integrate(arctan(tan(2*x)) / (1 + 4*tan^2(x))**(1/2), x)",
+                "integrate(arctan(2*tan(x + pi/4)/(1 + tan(x + pi/4)**2)) / (1 - (2*tan(x + pi/4)/(1 + tan(x + pi/4)**2))**2), x)",
+                "integrate(arctan(2*t/(1 + t**2)) / (1 - (2*t/(1 + t**2))**2) * (2 / (1 + t**2)) , t)",
+                "integrate(arctan(2*tan(x)/cos(2*x)) / (cos(2*x) - 2*sin(2*x)**2), x)",
+                "integrate(arctan((1 - e^(2ix))/(1 + e^(2ix))) / (1 - ((1 - e^(2ix))/(1 + e^(2ix)))**2), x)",
+                "integrate(arctan(r) / (1 - (2*r/(1 + r**2))**2) * (1 + r**2), r)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(2*x / (1 - tan(2*x)**2), x)",
+                    "integrate(2*x * (cos(2*x)**2 / cos(4*x)), x)",
+                    "integrate(2*(x + x**3/3 + x**5/5 + ...) / (1 - tan(2*(x + x**3/3 + x**5/5 + ...))**2), x)",
+                    "integrate(2*(u/2) / (1 - tan(u)**2), u/2)",
+                    "integrate(2*x / (1 - tanh(2*x)**2), x)",
+                    "integrate(2*x * cos(2*x)**2, x)",
+                    "integrate(2*x * cos^2(2*x)/cos(4x), x)",
+                    "integrate(x, dv=(2/(1 - tan(2*x)**2), x))",
+                    "integrate(2*x/(cos^2(2*x) - sin^2(2*x)), x)",
+                    "integrate(2*x * sec(2*x)**2, x)",
+                    "integrate(2*x / (sin^2(2x)/cos^2(2x) - 1), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(tan(2*x)) / (1 - tan(2*x)**2), x)",
+                    "integrate((2*x) / (1 - tan(2*x)**2), x)",
+                    "integrate(arctan(2*tan(x)/(1 - tan(x)**2)) / (1 - (2*tan(x)/(1 - tan(x)**2))**2), x)",
+                    "integrate(1 / (1 - tan(2*x)**2), x)",
+                    "integrate(2*arctan(tan(x)) / (1 - tan(x)**2), x)",
+                    "integrate(arctan(tan(2*x + pi)) / (1 - tan(2*x + pi)**2), x)",
+                    "integrate(arctan(tan(2*x)) / (1 - (tan(2*x + \u03c0/2))**2), x)",
+                    "integrate(arctan(2sin(x)/cos(x)) / (1 - (2sin(x)/cos(x))**2), x)",
+                    "integrate(arctan(2*tan(x)) / (1 - (2*tan(x))**2), x)",
+                    "integrate(arctan(tan(u)) / (1 - tan^2(u)), u/2)",
+                    "integrate(arctan(-tan(2*x)) / (1 - (-tan(2*x))**2), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(2*(sin(x)/cos(x))) / (1 - (2*(sin(x)/cos(x)))**2), x)",
+                    "integrate(arctan(u) / (1 - u**2), x)",
+                    "integrate(arctan(2(t/cos(x))) / (1 - (2(t/cos(x)))**2), t)",
+                    "integrate(arctan(2(tan(x)))*sum((2*tan(x))**(2*n), (n, 0, oo)), x)",
+                    "integrate(arctan(2tan(x))/(1 - (1/4)*(2tan(x))**2), x)",
+                    "integrate(arctan(2*sinh(x)/cosh(x))/(1 - (2*sinh(x)/cosh(x))**2), x)",
+                    "integrate(arctan(2y) / (1 - (2y)**2), y)",
+                    "integrate(arctan(z)/(2sec(x)^2)/(1-z^2), z)",
+                    "integrate(arctan(2*tan(x))/((1/(2)*sec(x)^2)-tan(x)^2), x)",
+                    "integrate(arctan(2 * (e^(ix) - e^(-ix))/(e^(ix) + e^(-ix))) / (1 - (2 * (e^(ix) - e^(-ix))/(e^(ix) + e^(-ix)))**2), x)",
+                    "integrate(arctan(2*(e^(ix)-e^(-ix))/(e^(ix)+e^(-ix))) / (1 - 4*(e^(ix)-e^(-ix))^2/((e^(ix)+e^(-ix))^2), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(arctan(sin(x)) * log(cos(x)), x)",
+                "integrate(arctan(cos(u)) * log(sin(u)), u)",
+                "integrate(arctan(sin(x)) * -log(sec(x)), x)",
+                "integrate(log(cos(x)) * arctan(1 - \\sin(x)), x)",
+                "integrate(log(cos(x)) * atan(sin(x)/cos(x)), x)",
+                "integrate(sum(arctan(sin(x)), log(cos(x)), n=0, infinity), x)",
+                "integrate(arctan(1 - sin(x)) * log(cos(x)), x)",
+                "integrate(arctan(sin(x)) * (log(cos(x)) + C), x)",
+                "integrate(arctan(e^(ix)) * log(cos(x)), x)",
+                "integrate(-arctan(sin(x)) * log(cos(-x)), x)",
+                "integrate(log(cos(x)) * diff(arctan(sin(x))), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(arctan(u) * log(sqrt(1-u**2)), u)",
+                    "integrate((1/2) * log(1-u**2), u) + integrate(arctan(u) * (1/2) * log(1-u**2), u)",
+                    "integrate(arctan(u) * (1/2 * log(1 - u**2)), u)",
+                    "integrate((1/(2*i) * log((1 + I*u)/(1 - I*u))) * log(sqrt(1-u**2)), u)",
+                    "integrate(-arctan(-u) * log(sqrt(1 - (-u)**2)), u)",
+                    "integrate(arctan(sqrt(v)) * log(sqrt(1 - v)), v)",
+                    "integrate((pi/2 - arctan(1/u)) * log(sqrt(1 - u**2)), u)",
+                    "integrate(arctan(-u) * log(sqrt(1 - (-u)**2)), u)",
+                    "integrate(arctan(u) * (log(sqrt(1-u**2)) / arctan(u)), u)",
+                    "integrate(log(sqrt(1 - (tan(arctan(u)))**2)) * arctan(u), u)",
+                    "integrate(sum(((-1)**(n-1) * u**(2*n-1)) / (2*n - 1), (n, 1, oo)) * log(sqrt(1-u**2)), u)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(sin(x)/(1-x**2), x)",
+            "integrate((e**(I*x) - e**(-I*x))/(2*i*(1-x**2)), x)",
+            "integrate(sin(t*x)/(1-x**2), x)",
+            "integrate(sin(x)/(1 - x**2), x).expand()",
+            "integrate(tan(x) * cos(x)/(1-x**2), x)",
+            "integrate(sin(sqrt(1-u))/(u), -1, 1)",
+            "integrate(sum((-1)**n * x**(2*n+1) / factorial(2*n+1), (n, 0, oo)) / (1 - x**2), x)",
+            "integrate(-1/diff(cos(x), x)/(1-x**2), x)",
+            "integrate(sin(x)/(u**2), x).subs(u, sin(x)/(1-x**2))",
+            "integrate(1/(1-x**2)' * (I*sin(x) + 1), x)",
+            "integrate(sin(asin(x))/(1-sin(y)**2), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(sin(x)/(1-x**2), x)",
+                "integrate((exp(I*x) - exp(-I*x)) / (2 * (1 - x**2)), x)",
+                "integrate(sin(x) / (1 - x**2), x) + integrate(sin(-x) / (1 - x**2), x)",
+                "integrate(sum((-1)**n * x**(2*n+1) / factorial(2*n+1) for n in range(0, 10)) / (1 - x**2), x)",
+                "integrate(sin(sqrt(1 - u)) / u, -sqrt(1 - u) / (2*sqrt(1-u)), u)",
+                "integrate((cos(x) - 1) / (x - 1 + x**2), x)",
+                "integrate(sin(sqrt(t)) / (1 - t), 2 * sqrt(t), t)",
+                "integrate((sin(x + \u03c0/4) - cos(x + \u03c0/4)) / (1 - x**2), x)",
+                "integrate(sin(x) / (1 - x**2 + x), x) - integrate(sin(x)/(x**2 + 1), x)",
+                "integrate(cos(x) / (x ** 2 - 1), x)",
+                "integrate(sin(1/x) / (1 - (1/x)**2), 1/x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(sin(x)/(1-x**2), x)",
+                    "`integrate(sin(x)/(a - x**2), x)` (where `a` is a constant)",
+                    "`integrate(sin(z)/(1-z**2), z)` (extending to complex variable)",
+                    "`integrate(sin(q*x)/(1-q*x**2), x)` (with \\( q \\) a rational coefficient)",
+                    "integrate(sin(x) * sum((-1)**n * x**(2*n + 1) / factorial(2 * n + 1), (n, 0, oo)) / (1 - x**2), x)",
+                    "integrate((e^(I*x) - e^(-I*x)) / (2i * (1 - x**2)), x)",
+                    "integrate(sin(x) * integrate(1 / (1 - x**2), x), x)",
+                    "integrate(tan(x) / (sqrt(1 + tan(x)**2) * (1 - (tan(x)/sqrt(1 + tan(x)**2))**2)), x)",
+                    "integrate(sum((-1)**n * cos(n*x)/(n**2 + 1), (n, 1, oo)), x)",
+                    "integrate(sin(x) / ((1 - x) * (1 + x)), x)",
+                    "integrate(sin(atan(x)) / (1 - tan(atan(x))**2), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(rational(1+x**2), x)",
+            "integrate(cos(x)**2, x)",
+            "integrate(1 / (1+x) - (x / (1+x)), x)",
+            "integrate(diff(tan(x)), x)",
+            "integrate(1 / (sin(u)**2), u)",
+            "integrate(imaginary(exp(ix)/(1+exp(2*ix))), x)",
+            "integrate(1/(1+(x+1)**2), x - 1)",
+            "integrate(1/x, x) + integrate(1/(1+x**2), x)",
+            "integrate(1/(1+(-x)**2), x)",
+            "integrate(log(1+x**2), x)",
+            "integrate(1/(1+sinh(t)**2), t)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(1/(1+x**2), x)",
+                "integrate(1/(1+tan(x)**2), x)",
+                "integrate(1/(1+(sin(x)/cos(x))**2), x)",
+                "integrate(1/(1+(-x)**2), x)",
+                "integrate((1+x**2)/(1+x**2) - x**2/(1+x**2), x)",
+                "integrate(1/(1+I*x**2), x)",
+                "integrate(1/(1+x**2)^1, x)",
+                "integrate(1/(1+cot(x)**2), x)",
+                "integrate(1/(1+x**2)*DiracDelta(x), x)",
+                "integrate(1/(1+x**2)*exp(I*x), x)",
+                "integrate(1/(cos(x)**2), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(1/cos(u)**2, u)",
+                    "integrate(sec(u)**2, u)",
+                    "integrate(1/(1 + tan(u)**2), tan(u))",
+                    "integrate(2/(1 + cos(2*u)), u)",
+                    "integrate(diff(tan(u), u), u)",
+                    "integrate(1 + tan(u)**2, u)",
+                    "integrate(diff(atan(sin(u)/cos(u))), u)",
+                    "integrate(1/(sqrt(1 - (1/v)**2)), v)",
+                    "integrate(-1/(1+cot(u)**2), cot(u))",
+                    "integrate(tan(u)**2 + 1, u)",
+                    "integrate(tan(u)**2, u) + integrate(1, u)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(cos(t), t)",
+                    "integrate(re(cos(t)), t)",
+                    "integrate((exp(I*t) + exp(-I*t))/2, t)",
+                    "integrate(sum((-1)^n * t^(2*n) / factorial(2*n), (n, 0, oo)), t)",
+                    "integrate(sin(t + pi/2), t)",
+                    "integrate(sine(t), t)",
+                    "integrate(cos(t + 2*pi), t)",
+                    "integrate((1/2)*(cos(t) + cos(-t)), t)",
+                    "integrate(A*cos(w*t), t)",
+                    "integrate(sqrt(1 - sin^2(t)), t)",
+                    "integrate(1 - 2*sin(t/2)**2, t)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(cos(y)/(1-sin(y)**2), y)",
+                    "integrate(cos(y) / cos(y)**2, y)",
+                    "integrate(cos(y) / (1 - (sqrt(1 - cos(y)**2))**2), y)",
+                    "integrate(1 / (1 - u**2), u)",
+                    "integrate(1 / cos(y), y)",
+                    "integrate(cos(-y) / (1 - sin(-y)**2), y)",
+                    "integrate(1 / (cos(y)**-1), y)",
+                    "integrate(cos(2*t) / (1 - sin(2*t)**2) * 2, t)",
+                    "integrate(sin(z) / (1 - cos(z)**2), z)",
+                    "integrate(cos(sqrt(y)) / (1 - sin(sqrt(y))**2), sqrt(y))"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(1 - x**2/(1+x**2), x)",
+                "integrate(1 - 1/(1+x**2), x)",
+                "integrate(2 - 2*x**2/(1+x**2), x)",
+                "integrate(1 - tanh(x)**2, x)",
+                "integrate(1 - (k*x)**2/(1+(k*x)**2), x)",
+                "integrate(1 - (x**4)/(1+x**2), x)",
+                "integrate(1 - x**2/(2+x**2), x)",
+                "integrate(1 - (1+x**2)**(-1) * x**2, x)",
+                "integrate(1 - y/(1+y), y**0.5)",
+                "integrate(sum((-1)**n * x**(2*n)/factorial(2*n), (n, 0, oo)), x)",
+                "integrate(1 - (x**2 * (1+x**2)**(-1)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(1 - x**2/(1+x**2), x)",
+                    "integrate(1/(1 + x**2), x)",
+                    "integrate(1, x) - integrate(x**2/(1 + x**2), x)",
+                    "integrate(1/(1 + tan(x)**2), x)",
+                    "integrate(1 - 1/u, x), where \\( u = 1 + x^2 \\)",
+                    "integrate(1/(u**2), x), where \\( u = 1 + x^2 \\)",
+                    "integrate(log(1 + x**2), x)",
+                    "integrate(1 - (y**2)/(1 + y**2), y), where \\( y = 1/x \\)",
+                    "integrate(-1 + 1/(1 + (-x)**2), x)",
+                    "integrate(1 - 1/(v**2 + 1), v), where \\( v = -x \\)",
+                    "integrate(sum((-1)**n * x**(2*n)/(2*n + 1), (n, 0, oo)), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(1, x) - integrate(x**2/(1+x**2), x)",
+                "integrate(1, x) - integrate(1 - 1/(1+x**2), x)",
+                "integrate(1, x) - integrate(tan(theta)**2/(1+tan(theta)**2), theta)",
+                "integrate(1, x) - integrate(x**3/3, x) + integrate(tan^{-1}(x), x)",
+                "integrate(1, x) + integrate(x/(1+x**2), x)",
+                "integrate(1, x) - integrate(x**2/(e**x + x**2), x)",
+                "integrate(ln(1+x**2), x)",
+                "integrate(1, x) - integrate(1 - 1/sinh(x)**2, x)",
+                "integrate(1, x) - integrate(2cos(theta)^2/(1 + cos(theta)^2), theta)",
+                "integrate(1, x) - integrate(1/(1+x**2)*beta(x,1), x)",
+                "integrate(1, x) - integrate(summation(1/n**2, (n, 1, oo)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "\\( \\int 1 \\, dx - \\int 1 \\, dx + \\int \\frac{1}{1+x^2} \\, dx \\)",
+                    "integrate(1**1, x)",
+                    "integrate(exp(0*I), x) + integrate(0, x) + integrate(1/(1+x**2), x)",
+                    "integrate(1/(1+(hyperbolic_tan(x))**2), x)",
+                    "integrate(1/(1 + sin(t)**2), sin(t), x)",
+                    "integrate(0 + 1, x) + integrate(0, x) + integrate(1/(1+x**2), x)",
+                    "integrate(1/(1+y**2), y)",
+                    "integrate((1-x)/(1+x**2), x) + integrate((1+x)/(1+x**2), x)",
+                    "integrate(1/(1+(sqrt(1-u**2))**2), u)",
+                    "integrate((1, -1), (1+x**2, 1))",
+                    "integrate(1/2*(1/(1+x**2) + 1/(1-x**2)), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "\\( \\int 1 \\, dx - \\left(\\int 1 \\, dx - \\int \\frac{1}{1+x^2} \\, dx\\right) \\)",
+                    "integrate(tan(x), x) - integrate(1, x)",
+                    "integrate(e^(0), x) - integrate(1, x) + integrate(1/(1 + exp(x)**2), x)",
+                    "integrate(1, x) - integrate(1, x) + integrate(sin(x)/(cos(x)**2), x)",
+                    "integrate(1, x) - integrate(1, x) + integrate(1/(1+(x**2)), x)",
+                    "integrate(1, x) - integrate(1, x) + integrate(1/(1+(tan(u)**2)), u)",
+                    "integrate(cos(u), u) - integrate(sin(u), u) + integrate(1/(1+(sin(u)/cos(u))**2), u)",
+                    "integrate(1, x) - integrate(-1/(1 + (ix)**2), x)",
+                    "integrate(1, x) - integrate(1, x) + integrate(lambda/(1+x**2), x)",
+                    "integrate(1, x) - integrate(1, x) + integrate(1/(t^3), dt)",
+                    "integrate(1/(1+(u-1)**2), u)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "\\( \\int 1 \\, dx - \\int \\frac{u-1}{u} \\frac{du}{\\sqrt{u-1}} \\)",
+                    "\\( \\int 1 \\, dx - \\int 2v \\frac{(v^2 + 1)}{v^2 + 1} \\, dv \\)",
+                    "integrate(1, x) - integrate((v)/(v+1)*1/sqrt(v), v+1)",
+                    "integrate(1, x) - integrate(1/sqrt(u-1), u)",
+                    "integrate(1, x) - integrate((u-1)/sqrt(u-1), u) + integrate(1/sqrt(u-1), u)",
+                    "integrate(1, x) - integrate(log(u), du/sqrt(u-1))",
+                    "integrate(1, x) - integrate((u-1)*u^(-1/2), u)",
+                    "integrate(1, x) - integrate((t^2)/(1+t^2)*1/t, 2*t)",
+                    "integrate(1, x) - integrate((w^2)/(w^2+1)*2*w, w)",
+                    "integrate(1, x) - integrate(1/sqrt(v), v) + integrate(log(u), du)",
+                    "integrate(1, x) - integrate(exp(-u)/(1+exp(-u)), du/sqrt(u-1))"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate(sum((-1)**n*x**(2*n+1)/(2*n+1), (n, 0, oo)), x)",
+            "integrate(sum((-1)**n*y**((2*n+1)/2)/(2*n+1), (n, 0, oo)) * (1/(2*sqrt(y))), y)",
+            "integrate(sum(-1**n/(2*n + 1) * x**(2*n + 1), (n, 0, oo)), x)",
+            "integrate(log(1+x**2)/x, x)",
+            "integrate(sum((-1)**n*(x*sin(x))**(2*n+1)/(2*n+1), (n, 0, oo)), x)",
+            "integrate(sum((-1)**n*x**(2*n+1)/(2*n+1) * (1/factorial(n))), (n, 0, oo)), x)",
+            "integrate(sum((-1)**n*(1 + \u03b5)**n * x**(2*n+1)/(2*n+1), (n, 0, oo)), x)",
+            "integrate(log(1 + x**2), x)",
+            "integrate(sum((-1)**n*(1/x**(2*n+1))*x**(2*n+1)/(2*n+1), (n, 0, oo)), x)",
+            "integrate(diff(tan(x), x), x)",
+            "integrate(sum((-1)**n*((sin(x))**(2*n+1))/(2*n+1), (n, 0, oo)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(atan(x), x)",
+                "integrate(arcsin(x / sqrt(1 + x**2)), x)",
+                "integrate(pi/2 - atan(1/x), x)",
+                "integrate(integrate(1/(1 + x**2), x), x)",
+                "integrate(-atan(-x), x)",
+                "integrate(1/(1 + x**2) * ln(1 + x**2), x)",
+                "integrate(atan(1/x), x)",
+                "integrate(1/(1 + x**2), atan(x))",
+                "integrate(sum((-1)**(n-1) * x**(2*n-1)/(2*n-1), (n, 1, oo)), x)",
+                "integrate(log((sqrt(1+x**2) + x)), x)",
+                "integrate(((x**2)/(1 + x**2) + 1), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(tan(t), t)",
+                    "integrate(sin(t)/cos(t), t)",
+                    "integrate(1/cot(t), t)",
+                    "integrate(sum(((-1)**(n+1) * t**(2*n - 2))/(2*n - 1), (n, 1, oo)), t)",
+                    "integrate((e^(it) - e^(-it))/(i*(e^(it) + e^(-it))), t)",
+                    "integrate(diff(ln(sec(t))), t)",
+                    "integrate(1/tan(t), t)",
+                    "integrate(-diff(ln(cos(t))), t)",
+                    "integrate(2*tan(t/2)/(1 - tan(t/2)**2), t)",
+                    "integrate(tan(-t), t)",
+                    "integrate((u - 1)/(iu + 1), u)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(1/(1+x**2), x)",
+                    "integrate(1/(1 + tan(y)**2), y)",
+                    "integrate(1/(cosh(t)**2), t)",
+                    "integrate((1+x**2)**(-1/2) * (1+x**2)**(-3/2) * (1+x**2)**(3/2), x)",
+                    "integrate(0.5 * (1/(1 - (-x**2))), x)",
+                    "integrate(0.5 * (1/(1 + I*x) + 1/(1 - I*x)), x)",
+                    "integrate(sum((-1)**n * x**(2*n), (n, 0, oo)), x)",
+                    "integrate(1/(1+tan(u)**2), u)",
+                    "integrate(1/(1+x**2), x) from (-oo, 0)",
+                    "integrate(1/(1+(-x)**2), x)",
+                    "integrate(sin(a)/a, a)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(pi/2 - atan(1/x), x)",
+                    "integrate(tan(atan(1/x)), x)",
+                    "integrate(pi/2 + atan(u), -1/u**2)",
+                    "integrate(atan(x) * 1, x)",
+                    "integrate(log(1 + x**2)/(2*x), x)",
+                    "integrate(pi/4 - x/(1+x**2), x)",
+                    "integrate(-atan(-x) + pi/2, x)",
+                    "integrate(sin(atan(r*cos(theta))), r**2)",
+                    "integrate(sum((-1)**n * x**(2*n+1) / (2*n + 1), (n, 0, oo)), x)",
+                    "integrate(log(1 + u**2)/u**2, -du)",
+                    "integrate(x/(1+x**2), dx)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(sum((-1)**n*x**(n+1), (n, 0, oo)), x)",
+                "integrate(x / (1 + x), x)",
+                "integrate(arctan(x), x)",
+                "integrate(ln(1 + x), x)",
+                "integrate(exp(-x), x)",
+                "integrate(1/(1 + x)**2, x)",
+                "integrate(sum((-1)**n*x**n, (n, 1, oo)), x)",
+                "integrate(x**2 / (1 + x), x)",
+                "integrate(exp(-x) * x, x)",
+                "integrate((1 - exp(-x)) / x, x)",
+                "integrate(sum((-1)**n*log(x)**(n+1), (n, 0, oo)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(sum((-1)**n*x**(n+1), (n, 0, oo)), x)",
+                    "integrate(-x/(1+x), x)",
+                    "integrate(-x(1+x)**(-1), x)",
+                    "integrate(sum((-1)**(n-1)*x**(n), (n, 1, oo)), x)",
+                    "integrate(-x * sum((-1)**m*x**m, (m, 0, oo)), x)",
+                    "integrate(-x/(1-x), x)",
+                    "integrate(-1 + 1/(1+x), x)",
+                    "integrate(-x*1/(1+x), x)",
+                    "integrate(-x * ((1+x)**(-2)), x)",
+                    "integrate(sum((-1)**n * log(1+x) * x**n / (n+1), (n, 0, oo)), x)",
+                    "integrate(sum((-1)**n * (-u)**(n+1), (n, 0, oo)), -1)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(sum((-1)**n*(x**2)**(n+1)/(2*n+1), (n, 0, oo)), x)",
+                "integrate(sum((-1)**(n) * (x**2)**(n) / (n + 1), (n, 1, oo)), x)",
+                "integrate((-1)**n * (x**2)**(n+1) * integrate(1/(2*n+1), (n, 0, oo)), x)",
+                "integrate(log(1 + (x**2)/2), x)",
+                "integrate(sum((-1)**n * u**(n+1)/(2*n+1), (n, 0, oo)).subs(u, x**2), x)",
+                "integrate(exp(-x**2) * sum((-1)**n * x**(2*(n+1))/(2*n+1), (n, 0, oo)), x)",
+                "integrate(tanh(x**2) * x**2, x)",
+                "integrate(beta(x**2, 1/2, 1), x)",
+                "integrate(-x * sum((-1)**n * (x**2)**(n+1)/(2*n), (n, 0, oo)), x)",
+                "integrate(sum((-1)**(n) * (x**2)**(n+1) / factorial(2*n+1), (n, 0, oo)), x)",
+                "integrate(sum(((x**2)/(1 + x**2))**(n+1), (n, 0, oo)), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(tan(x), x)",
+                    "integrate(sin(x)/cos(x), x)",
+                    "integrate(u/(1+u**2), u)",
+                    "integrate(sec(x) - 1, x)",
+                    "integrate(sum((-1)**n * x**(2*n-1) / (2*n) for n in range(1, inf)), x)",
+                    "integrate(2*tan(x/2)/(1 - tan(x/2)**2), x)",
+                    "integrate(cos(x)*sin(x)/cos(x)**2, x)",
+                    "integrate(2*t/(1-t**2), t)",
+                    "integrate(sinh(x)/cosh(x), x)",
+                    "integrate(diff(-ln(cos(x)), x))",
+                    "integrate(imaginary(e**(i*x))/(real(e**(i*x))), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(sum((-1)**n*u**(n+1)/(2*n+1), (n, 0, oo)), sqrt(u))"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(sum((-1)**n*(x**2)**(n)/(2*n+1), (n, 0, oo)), x)",
+                    "integrate(sum((-1)**n * x**(2*n) / (2*n + 1), (n, 0, oo)), x)",
+                    "integrate(tan(1/x) * x**2, x)",
+                    "integrate(sum((-1)**n * (x**2)**(n) / (2*n + 1), (n, 1, oo)), x)",
+                    "integrate(sum((-1)**n * ((0.5 * x)**2)**(n) / (n + 1), (n, 0, oo)), x)",
+                    "integrate(sum((-1)**n * (x**2)**n * integral(0, 1, u**n * du), (n, 0, oo)), x)",
+                    "integrate(sum((-1)**n * (x**2)**n / factorial(2*n + 1), (n, 0, oo)), x)",
+                    "integrate((exp(-x**2) * x**2).expand(), x)",
+                    "integrate(sum(e**(-n) * (-1)**n * (x**2)**n / (n+1), (n, 0, oo)), x)",
+                    "integrate(sum((-1)**n * ((\\lambda * x)**2)**n / (2*n + 1), (n, 0, oo)), x)",
+                    "integrate(sum((-1)**n * (2*x)**(2*n)/(2*n + 1), (n, 0, oo)), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 1,
+          "variants": [
+            "integrate((sum((-1)**n * x**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1-x**2) + sum((1)**n * x**(2*n + 1) / (1 - x**(2*n + 2)), (n, 0, oo)) / (1 + x**2)), x)",
+            "integrate((atan(x) / (1 - x**2) + sum(x**(2*n + 1) / (1 - x**(2*n + 2)), (n, 0, oo)) / (1 + x**2)), x)",
+            "integrate((sum((-1)**n * x**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1 - x**2) + x / (1 + x**2), x)",
+            "integrate((sum((-1)**n * x**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1 - x**2) + 0.5 * ln(1 + x**2), x)",
+            "integrate((sum((-1)**n * (x / (1 + x**2))**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1 - x**2), x)",
+            "integrate((sum((1)**n * (x / (1 + x**2))**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1 + x**2) + sum((-1)**n * x**(2*n + 1) / (1 - x**(2*n + 2)), (n, 0, oo)), x)",
+            "integrate((sum((-1)**n * x**(2*n + 1) / (2*n + 1) * sum((1 - x**2)**(n-1), (n, 1, oo)), (n, 0, oo)), x)",
+            "integrate((sum((-1)**n * sin((2*n + 1) * atan(x)) / (2*n + 1), (n, 0, oo)) / (1 - x**2), x)",
+            "integrate((sum((-1)**n * e**(i * (2*n + 1) * atan(x))) / (2*n + 1), (n, 0, oo)) / (1 - x**2), x)",
+            "integrate((sum((-1)**n * x**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1 - x**2) + partial fractions for x part, x)",
+            "integrate((laplace_transform_integration(sum((-1)**n * x**(2*n + 1) / (2*n + 1), (n, 0, oo), t) + laplace_transform_integration(sum((1)**n * x**(2*n + 1) / (1 - x**(2*n + 2)), (n, 0, oo), t)), x)"
+          ],
+          "children": [
+            {
+              "level": 2,
+              "variants": [
+                "integrate(atan(x) / (1 - x**2), x)",
+                "integrate((pi/2 - atan(1/x)) / (1 - x**2), x)",
+                "integrate(Sum((-1)**n * x**(2*n + 1) / (2*n + 1), (n, 0, oo)) / (1 - x**2), x)",
+                "integrate(atan(sqrt(u)) / (1 - u), u)",
+                "integrate(atan(x), x / (1 - x**2), x) + integrate(x / (1 - x**2), x)",
+                "integrate(atan(x) / -(x**2 - 1), x)",
+                "integrate(-atan(-x) / (1 - x**2), x)",
+                "integrate(atan(tan(t)) / (1 - tan(t)**2), t)",
+                "integrate(atan(x) / (1 - x**2), x) + integrate(atan(-x) / (1 - x**2), x)",
+                "integrate(a * atan(x) / (1 - x**2), x).subs(a, 1)",
+                "integrate(atan(1/u) / (1 - (1/u)**2), u)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(atan(x) / (1 - x**2), x)",
+                    "integrate(atan(tan(x))/(1 - tan(x)**2), x)",
+                    "integrate(-atan(-x)/(1 - x**2), x)",
+                    "integrate(1/(1-x**2)*diff(atan(x),x), x)",
+                    "integrate(log(1 + x**2)/(1 - x**2), x)",
+                    "integrate(-2*atan(x)/(2-x**2), x)",
+                    "integrate(atan(x)/(1 - 0.5*x**2), x)",
+                    "integrate(asin(x)/(1 - x**2), x)",
+                    "integrate(asin(sinh(x))/(1 - sinh(x)**2), x)",
+                    "integrate(0.5*atan(x)/(1 - x**2), x)",
+                    "integrate(log(x)/(1 - x**2), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(x / (1 - x**2) + x / (1 + x**2), x)",
+                "integrate(x * (1 + x**2)/(1 - x**4), x)",
+                "integrate(log(1 - x**2) + log(1 + x**2), x)",
+                "integrate(sin(theta)/(cos(theta)^2 + 1), theta)",
+                "integrate(x/(1 - (x**2)) + x/(1 + (x**2)), x)",
+                "integrate(x/(1 - x**2) + (1 - x**2)/(1 + x**2), x)",
+                "integrate(A/(a + b) + B/(c + d), x)",
+                "integrate(x * sum((-x**2)**n, (n, 0, oo)) + x * sum((-1)**n / (1 + x**2)**(n + 1), (n, 0, oo)), x)",
+                "integrate(1/(1 - z) + 1/(1 + z), z)",
+                "integrate(1/(1-x^2) + arctan(x), x)",
+                "integrate(diff(arctan(x),x) + x/(1-x**2), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(x/(1 - x**2) + x/(1 + x**2), x)",
+                    "integrate(2*x/(1 - x**4), x)",
+                    "integrate(x/(1 + tan(x)**2), x)",
+                    "integrate(x/(1 - x**2), x) + integrate(x/(1 + x**2), x)",
+                    "integrate(1/(1 - u)/(1 + u), (u**0.5))",
+                    "integrate(sinh(x)/(cosh(x)**2), x)",
+                    "integrate(x/(1 - x**2) - x/(1 + x**2), x) + 2*integrate(x/(1 + x**2), x)",
+                    "integrate(x/(1 - x**2), x) - integrate(1/(1 + x**2), x)",
+                    "integrate(x/(e**(x**2) - 1) + x/(e**(x**2) + 1), x)",
+                    "integrate(2*x/((1 + x**2)*(1 - x**2)), x)",
+                    "integrate(log(1 - x**2) + log(1 + x**2), x)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(x/(1 - x**2), x) + integrate(x/(1 + x**2), x)",
+                    "integrate(x/(1 - x**2) + x/(1 + x**2), x)",
+                    "integrate(-x/(1 - x**2) - x/(1 + x**2), x)",
+                    "integrate(-1/2 * log(1 - x**2) + 1/2 * log(1 + x**2), x)",
+                    "integrate(1/2 * log(1 + x**2), x) + integrate(1/2 * log(1 - x**2), x)",
+                    "integrate(sinh(t)/(1 - sinh(t)**2), t) + integrate(sinh(t)/(1 + sinh(t)**2), t)",
+                    "integrate(UnitStep(1-x**2) * x + UnitStep(1+x**2) * x, x)",
+                    "integrate(tan(theta)/(1 + tan(theta)**2), theta) + integrate(tan(theta)/(1 - tan(theta)**2), theta)",
+                    "integrate(re*exp(i*theta)/(1 - re**2*exp(2*i*theta)), re)",
+                    "integrate(derivative_expansion(x/(1 - x**2)), x) + integrate(derivative_expansion(x/(1 + x**2)), x)",
+                    "integrate(contour_integration(x/(1 - z**2) + x/(1 + z**2), z), z)"
+                  ],
+                  "children": []
+                },
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(x * sum(Taylor series of 1/(1 - x**2) around 0), x) + integrate(x * sum(Taylor series of 1/(1 + x**2) around 0), x)",
+                    "integrate(u**(1/2) * (1/(1 - u)), u)",
+                    "integrate(tan(t) * sum(1/(1 - tan(t)**2)), t)",
+                    "integrate(z**(1/3) * sum(1/(1 - z**(2/3))), z)",
+                    "integrate(x * (1/(1 - x**2) + 1/(1 + x**2)), x)",
+                    "integrate(x * sum(binomial(n, k) * x^(2*(n-k)), (k, 0, n)), x)",
+                    "integrate(beta(1/2, 1/2) * x * (x**2/(1-x**2)), x)",
+                    "integrate(x * sum((1/(1 - x**2) + 1/(1 + x**2)), x), x)",
+                    "integrate((1/y) * sum(1/(1 - (1/y)**2)), y)",
+                    "integrate(r * cos(theta) * sum(1/(1 - r**2 cos(theta)**2)), r)",
+                    "integrate(sum(x/(1 - x**2) + x/(1 + x**2), n), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "level": 2,
+              "variants": [
+                "integrate(x / (1 - x**2), x) + integrate(x / (1 + x**2), x)",
+                "integrate(x * (1/(1 - x**2) + 1/(1 + x**2)), x)",
+                "integrate(log(1 - x**2), x) + integrate(log(1 + x**2), x)",
+                "integrate(x * (1 + x**2) / ((1 - x**2) * (1 + x**2)), x)",
+                "integrate(tan(t) / (1 - tan(t)**2), t) + integrate(tan(t) / (1 + tan(t)**2), t)",
+                "integrate(x * (1/(1 - x**2)), x) + integrate(x * (1/(1 + x**2)), x)",
+                "integrate(-1/2 * differentials(log(-1 + x**2)), x) + integrate(1/2 * differentials(log(1 + x**2)), x)",
+                "integrate(x / (x**4 - 1), x)",
+                "integrate(1/2 * 1/(u - 1), u) + integrate(1/2 * 1/(u + 1), u)",
+                "integrate(g(x) / (1 - g(x)), x) + integrate(g(x) / (1 + g(x)), x)",
+                "integrate(2 * (x)/(-1 + x**4), x)"
+              ],
+              "children": [
+                {
+                  "level": 3,
+                  "variants": [
+                    "integrate(x / (1 - x**2), x)",
+                    "integrate(-1/2 * 1/u, u)",
+                    "integrate(1/2 * (1/(1-x) + 1/(1+x)), x)",
+                    "integrate(-1/2 * diff(log(1-x**2), x), x)",
+                    "integrate(tan(theta)/(1-tan(theta)**2), theta)",
+                    "integrate(1/2 * 1/(1-t), t)",
+                    "integrate(x * sum(x**(2*n), (n, 0, oo)), x)",
+                    "integrate(sin(theta)/(1-sin(theta)**2), theta)",
+                    "integrate(x/(1+x**2), x)",
+                    "integrate(i*1/(1-(-i*x)**2), x)",
+                    "integrate(exp(log(x)/(1-x**2)), x)"
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

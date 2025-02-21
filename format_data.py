@@ -5,7 +5,7 @@ import pyarrow.parquet as pq
 
 if __name__ == '__main__':
     # Path to the directories containing your JSON files
-    data_dirs = ['variant_results', 'variant_results1']  # Adjust these paths as needed
+    data_dirs = ['variant_results']  # Adjust these paths as needed
     remove_duplicates = True  # Flag to control duplicate removal
 
     train_samples = []

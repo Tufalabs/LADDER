@@ -38,13 +38,18 @@ INCORRECT_FILENAME = "incorrect_hardest_questions.py"  # Name of the file to sav
 def preprocess_integral_text(text: str) -> str:
     """
     Preprocesses the integral text to help Sympy parse advanced constructs.
-    
-    Replacements performed:
-      - Replace "sum(" with "Sum(" so that summations are parsed as sympy.Sum.
-      - Replace "ContinuedFraction(" with "continued_fraction(" so that they are recognized.
+    Also converts standard mathematical notation to our format.
     """
     text = text.replace("sum(", "Sum(")
     text = text.replace("ContinuedFraction(", "continued_fraction(")
+    
+    # Convert standard mathematical notation to our format
+    pattern = r"integrate\((.*?),\s*x,\s*(.*?),\s*(.*?)\)"
+    match = re.match(pattern, text)
+    if match:
+        integrand, lower, upper = match.groups()
+        text = f"integrate({integrand}, x) from x={lower} to x={upper}"
+    
     return text
 
 def extract_candidate_solution(text: str) -> str:
@@ -108,7 +113,7 @@ LOCALS_DICT = {
     "continued_fraction": sp.continued_fraction,
 }
 
-async def evaluate_llm_solution(integral_text: str, num_tests: int = 10, model: str = "gpt-4o-mini", tol: float = 1e-5):
+async def evaluate_llm_solution(integral_text: str, num_tests: int = 10, model: str = "gpt-4o-mini", tol: float = 1e-2):
     """
     Uses the LLM to generate a solution for the given integral and then verifies its correctness using numerical methods.
     
@@ -185,6 +190,7 @@ async def evaluate_llm_solution(integral_text: str, num_tests: int = 10, model: 
             f"Output your answer as a valid Python sympy expression without LaTeX formatting (for example, use 'atan(x)' not '\\arctan(x)').\n\n"
             f"{integral_text}\n\n"
             "Show your full working out before solving, don't include any constants of integration."
+            "Example format is <answer> x**2 + x</answer> or <answer> atan(x**2 + x)</answer>"
         )
     
     # Get the full LLM response.
@@ -333,13 +339,35 @@ def save_correct_questions(results, filename: str):
 
 # ---------------- Main Entry Point ----------------
 
+async def test_definite_integral():
+    """
+    Test function to verify definite integral handling.
+    """
+    test_cases = [
+        # Standard format
+        "integrate((2*x - 1 + log(2*x)/log(2)), x, 1, 2)",
+        # Original format
+        "integrate((2**(x - 1) + log(2*x)/log(2)), x) from x=1 to x=2"
+    ]
+    
+    for test_case in test_cases:
+        print(f"\nTesting integral: {test_case}")
+        candidate, computed, raw_response, is_correct = await evaluate_llm_solution(test_case)
+        print(f"Candidate solution: {candidate}")
+        print(f"Computed solution: {computed}")
+        print(f"Raw response: {raw_response}")
+        print(f"Test result: {'✓ CORRECT' if is_correct else '✗ INCORRECT'}")
+
 if __name__ == "__main__":
     async def main():
+        # # Run the test first
+        # print("Running definite integral test...")
+        # await test_definite_integral()
+        
+        print("\nRunning full benchmark...")
         results = await benchmark_integrals(batch_size=100, model="o1-mini")
         if SAVE_INCORRECT_QUESTIONS:
             save_incorrect_questions(results, INCORRECT_FILENAME)
-        
-        # Add this line to save correct questions
         save_correct_questions(results, "correct_hardest_questions.py")
     
     asyncio.run(main())

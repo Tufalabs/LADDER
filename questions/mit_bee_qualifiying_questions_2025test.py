@@ -11,6 +11,7 @@ For example: "integrate(1/(x**2 - x + 1), x)"
 #https://math.mit.edu/~yyao1/integrationbee.html
 #just the qualifier tests
 
+
 BASE_QUESTIONS = [
     "integrate(x + (x**0.5)/(1 + (x**0.5)), x)",
     
@@ -18,7 +19,7 @@ BASE_QUESTIONS = [
     
     "integrate((3*sin(x) - sin(3*x))**(1/3), x)",
     
-    "integrate(log(x**(log(x**x)))/log(x**2), x)",
+    "integrate(log(x**(log(x**x)))/x**2, x",
     
     "integrate(cos(20*x)*sin(25*x), x, -pi/2, pi/2)",
     
@@ -26,13 +27,13 @@ BASE_QUESTIONS = [
     
     "integrate((x*log(x)*cos(x) - sin(x))/(x*log(x)**2), x)",
     
-    "integrate((2*x - 1 + log(2*x)), x, 1, 2)",
+    "integrate((2**(x - 1) + log(2*x)/log(2)), x, 1, 2)",
     
-    "integrate(x**2024*(1 - x**2025)**2025, x)",
+    "integrate(x**2024*(1 - x**2025)**2025, x, 0, 1)",
     
-    "integrate((x - 1/2)*(x - 1)*x, x)",
+    "integrate((x - 1/2)*(x - 1)*x, x, 0, 10)",
     
-    "integrate(floor(x)/2, x)",
+    "integrate(floor(x)/2, x, 0, 20)",
     
     "integrate((exp(2*x)*(x**2 + x))/(x*exp(x)*4 + 1), x)",
     
@@ -44,7 +45,7 @@ BASE_QUESTIONS = [
     
     "integrate(sin(x)*sinh(x), x)",
     
-    "integrate(sin(x)*cos(pi/3 - x), x)",
+    "integrate(sin(x)*cos(pi/3 - x), x, 0, pi/3)",
     
     "integrate((cos(x) + cos(x + 2*pi/3) + cos(x - 2*pi/3))**2, x)",
     
