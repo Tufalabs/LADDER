@@ -1,3 +1,6 @@
+
+Code for LADDER [paper](https://arxiv.org/abs/2503.00735)
+
 # Integration Problem Generator and Dataset Builder
 
 This project provides tools to generate and process mathematical integration problems, specifically designed for creating training datasets for machine learning models.
