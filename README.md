@@ -5,7 +5,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-**LADDER** is a Python package for generating problem variants and building datasets. It uses LLMs to generate sub easier problems of base problem essentially achieving heirichal RL by creating a tree of problem difficulties. Based on the [LADDER paper](https://arxiv.org/abs/2503.00735).
+**LADDER** is a Python package for generating datasets for RL. It uses LLMs to generate sub easier problems of base problem essentially achieving heirichal RL by creating a tree of problem difficulties. Based on the [LADDER paper](https://arxiv.org/abs/2503.00735).
 
 
 ## 🚀 Quick Start
