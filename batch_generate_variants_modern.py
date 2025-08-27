@@ -10,8 +10,8 @@ import argparse
 import asyncio
 from pathlib import Path
 
-from src.ladder.batch_generator import BatchGenerator
-from src.ladder.questions.mit_bee_regular_season_questions import BASE_QUESTIONS
+from ladder.batch_generator import BatchGenerator
+from ladder.questions.mit_bee_regular_season_questions import BASE_QUESTIONS
 
 
 async def main():

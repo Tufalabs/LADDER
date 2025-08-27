@@ -26,9 +26,6 @@ git clone https://github.com/username/ladder.git
 cd ladder
 
 # Install in development mode
-make install-dev
-
-# Or install directly
 pip install -e ".[dev]"
 ```
 
@@ -94,39 +91,31 @@ asyncio.run(main())
 
 ```bash
 # Install development dependencies
-make install-dev
+python setup_dev.py install
 
-# Install pre-commit hooks
-pre-commit install
-
-# Run all checks
-make check
+# Or manually
+pip install -e ".[dev]"
 ```
 
 ### Code Quality
 
 ```bash
-# Format code
-make format
+# Run all quality checks (format, lint, type-check, test)
+python setup_dev.py all
 
-# Run linting  
-make lint
-
-# Run type checking
-make type-check
-
-# Run tests
-make test
-
-# Run tests with coverage
-make test-cov
+# Individual commands
+python setup_dev.py format      # Format code
+python setup_dev.py lint        # Run linting
+python setup_dev.py type-check  # Run type checking
+python setup_dev.py test        # Run tests
+python setup_dev.py clean       # Clean build artifacts
 ```
 
 ### Project Structure
 
 ```
 ladder/
-├── src/ladder/              # Main package
+├── ladder/                  # Main package
 │   ├── __init__.py         # Package exports
 │   ├── generate_variants.py # Core variant generation
 │   ├── batch_generator.py  # Batch processing
@@ -136,7 +125,6 @@ ladder/
 ├── tests/                 # Test suite
 ├── docs/                  # Documentation  
 ├── pyproject.toml        # Modern Python packaging
-├── Makefile              # Development commands
 └── README.md            # This file
 ```
 
@@ -201,7 +189,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes and add tests
-4. Run the quality checks (`make check`)
+4. Run the quality checks (`python setup_dev.py all`)
 5. Commit your changes (`git commit -m 'Add amazing feature'`)
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request

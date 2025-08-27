@@ -68,7 +68,8 @@ ladder-generate = "ladder.cli:generate_variants"
 ladder-batch = "ladder.cli:batch_generate"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["ladder*"]
 
 [tool.black]
 line-length = 88
