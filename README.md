@@ -5,16 +5,8 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-**LADDER** is a modern Python package for generating mathematical integration problem variants and building datasets for machine learning research. Based on the [LADDER paper](https://arxiv.org/abs/2503.00735).
+**LADDER** is a Python package for generating problem variants and building datasets. It uses LLMs to generate sub easier problems of base problem essentially achieving heirichal RL by creating a tree of problem difficulties. Based on the [LADDER paper](https://arxiv.org/abs/2503.00735).
 
-## ✨ Features
-
-- 🧮 **Intelligent Variant Generation**: Create easier, equivalent, and harder variants of integration problems
-- 🚀 **Async Processing**: High-performance batch processing with concurrent execution  
-- 🔧 **Multiple AI Models**: Support for OpenAI, Anthropic, DeepSeek, and more
-- 📊 **Comprehensive Testing**: Full test coverage with pytest
-- 🛠️ **Modern Python**: Type hints, dataclasses, and Python 3.9+ features
-- 📦 **Easy Installation**: Modern packaging with pyproject.toml
 
 ## 🚀 Quick Start
 
@@ -25,8 +17,10 @@
 git clone https://github.com/username/ladder.git
 cd ladder
 
-# Install in development mode
-pip install -e ".[dev]"
+# Install with uv (recommended)
+uv sync --dev
+
+
 ```
 
 ### Basic Usage

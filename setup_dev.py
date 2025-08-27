@@ -50,9 +50,16 @@ def main():
     success = True
     
     if command == "install":
-        success = run_command("pip install -e .[dev]", "Installing in development mode")
-        if success:
-            print("✅ Installation complete")
+        # Try uv first, fall back to pip
+        uv_success = run_command("uv sync --dev", "Installing with uv")
+        if uv_success:
+            print("✅ Installation complete with uv")
+            success = True
+        else:
+            print("⚠️  uv not found, falling back to pip")
+            success = run_command("pip install -e .[dev]", "Installing with pip")
+            if success:
+                print("✅ Installation complete with pip")
     
     elif command == "test":
         success = run_command("pytest", "Running tests")
